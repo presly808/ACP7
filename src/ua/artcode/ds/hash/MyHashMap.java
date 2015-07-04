@@ -1,10 +1,7 @@
 package ua.artcode.ds.hash;
 
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MyHashMap<K,V> implements Map<K,V> {
 
@@ -43,6 +40,15 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public boolean containsValue(Object value) {
+
+        Iterator<Bucket<K,V>> iterator = new BucketIterator();
+        while(iterator.hasNext()){
+            Bucket<K,V> next = iterator.next();
+            if (next.value.equals(value)) {
+                return true;
+            }
+        }
+
         return false; // iterator
     }
 
@@ -100,7 +106,15 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public Set<K> keySet() {
-        return null;
+        Set<K> keys = new HashSet<>();
+
+        Iterator<Bucket<K,V>> iterator = new BucketIterator();
+        while(iterator.hasNext()){
+            Bucket<K,V> next = iterator.next();
+            keys.add(next.key);
+        }
+
+        return keys;
     }
 
     @Override
@@ -113,19 +127,21 @@ public class MyHashMap<K,V> implements Map<K,V> {
         return null;
     }
 
+
+
     private class BucketIterator implements Iterator<Bucket<K,V>> {
 
         Bucket<K,V> current;
+        int position = 0;
 
         public BucketIterator() {
-            current = table[0];
+            findNextNotNullBucket();
+        }
 
-            int i = 0;
-            for (; i < table.length && table[i] == null; i++) {
+        private void findNextNotNullBucket() {
+            for (; position < table.length && table[position] == null; position++) {
             }
-
-            current = table[i];
-
+            current = position < table.length ? table[position] : null;
         }
 
         @Override
@@ -135,7 +151,15 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
         @Override
         public Bucket<K,V> next() {
-            //todo home work
+            Bucket<K,V> forRet = current;
+
+            if(current.next != null){
+                current = current.next;
+            } else {
+                position++; // chage start position in search for findNextNotNullBucket()
+                findNextNotNullBucket();
+            }
+
             return current;
         }
     }
