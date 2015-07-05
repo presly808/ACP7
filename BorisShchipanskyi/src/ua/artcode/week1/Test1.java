@@ -5,14 +5,12 @@ package ua.artcode.week1;
  */
 public class Test1 {
     public static void main(String[] args) {
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-        System.out.println("Serhii");
-
+        printSome();
+    }
+    public static void printSome(){
+        System.out.println("My Version");
+        System.out.println("My Version");
+        System.out.println("My Version");
+        System.out.println("My Version");
     }
 }
