@@ -1,4 +1,4 @@
-package ua.artcode.week1;
+package ua.artcode;
 
 /**
  * Created by boris on 7/5/15.
