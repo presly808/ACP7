@@ -1,7 +1,6 @@
 package week1.hashMap;
 
 import java.util.*;
-import java.util.Iterator;
 
 public class MyHashMap<K, V> implements Map<K, V>, Iterable<MyHashMap.Bucket<K,V>> {
 
@@ -156,11 +155,11 @@ public class MyHashMap<K, V> implements Map<K, V>, Iterable<MyHashMap.Bucket<K,V
         if ((m.size() + this.size >= threshold)) {
             resize(table.length);
         }
-//        MyHashMap<K, V> map = (HashMap<K, V>) m;
         Iterator<? extends Entry<? extends K, ? extends V>> iterator = m.entrySet().iterator();
 
         for (Entry<? extends K, ? extends V> entry : m.entrySet()) {
-
+            put(entry.getKey(), entry.getValue());
+            size++;
         }
     }
 
