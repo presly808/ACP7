@@ -1,4 +1,4 @@
-package week1.binaryTree;
+package ua.artcode.week1.binaryTree;
 
 import java.util.Iterator;
 import java.util.Stack;

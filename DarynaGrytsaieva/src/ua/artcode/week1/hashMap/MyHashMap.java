@@ -1,8 +1,8 @@
-package week1.hashMap;
+package ua.artcode.week1.hashMap;
 
 import java.util.*;
 
-public class MyHashMap<K, V> implements Map<K, V>, Iterable<MyHashMap.Bucket<K,V>> {
+public class MyHashMap<K, V> implements Map<K, V> {
 
     public static final int DEFAULT_TABLE_SIZE = 16;
     final float loadFactor = 0.75f;
@@ -200,15 +200,6 @@ public class MyHashMap<K, V> implements Map<K, V>, Iterable<MyHashMap.Bucket<K,V
         return null;
     }
 
-    @Override
-    public Iterator<Bucket<K, V>> iterator() {
-        return new BucketIterator();
-    }
-
-
-//    public Iterator<Bucket<K,V>> iterator() {
-//        return new BucketIterator();
-//    }
 
     private class BucketIterator implements Iterator<Bucket<K, V>> {
 
