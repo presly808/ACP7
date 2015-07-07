@@ -69,33 +69,13 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public V put(K key, V value) {
-       //reSize();
+
         if ((1.0 *size) / table.length > loadFactor) {
-            Bucket<K, V>[] resizeTable = new Bucket[table.length * 2];
-            BucketIterator iter = new BucketIterator();
-             while (iter.hasNext()) {
 
-                 int hash = Math.abs(iter.next().getKey().hashCode());
+            reSize(table.length);
 
-                 int position = hash % resizeTable.length;
-                 if(resizeTable[position] == null){
-                     resizeTable[position] = iter.next();
-                 } else {
-                     Bucket iterator = resizeTable[position];
-
-                     while(iterator.next != null) {
-                         iterator = iterator.next;
-                     }
-                     iterator.next = iter.next();
-
-                 }
-             }
-            table = resizeTable;
         }
-
-        int hash = Math.abs(key.hashCode());
-
-        int position = hash % table.length;
+        int position = findPosition(key);
 
         if(table[position] == null){
             table[position] = new Bucket<K, V>(key,value);
@@ -128,32 +108,30 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
         return null;
     }
-    private void reSize() {
-        if ((1.0 *size) / table.length > loadFactor) {
-            Bucket<K,V>[] resizeTable = new Bucket [table.length * 2];
-            BucketIterator iter = new BucketIterator();
-            while (iter.hasNext()) {
-                int hash = Math.abs(iter.next().getKey().hashCode());
+    private void reSize(int tableSize) {
 
-                int position = hash % resizeTable.length;
-                if(resizeTable[position] == null){
-                    resizeTable[position] = new Bucket<K, V>(iter.next().getKey(),iter.next().getValue());
-                } else {
+        Bucket<K, V>[] resizeTable = new Bucket[table.length * 2];
+        BucketIterator iter = new BucketIterator();
+        while (iter.hasNext()) {
 
-                    Bucket iterator = resizeTable[position];
+            int hash = Math.abs(iter.next().getKey().hashCode());
 
+            int position = hash % resizeTable.length;
+            if(resizeTable[position] == null){
+                resizeTable[position] = iter.next();
+            } else {
+                Bucket iterator = resizeTable[position];
 
-                   while(iterator.next != null) {
-                      iterator = iterator.next;
-                   }
-                    iterator.next = new Bucket<K, V>(iter.next().getKey(), iter.next().getValue());
+                while(iterator.next != null) {
+                    iterator = iterator.next;
                 }
+                iterator.next = iter.next();
 
             }
-            table = resizeTable;
-
         }
-    }
+        table = resizeTable;
+        }
+
 
     @Override
     public V remove(Object key) {
