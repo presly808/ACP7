@@ -109,27 +109,19 @@ public class MyHashMap<K,V> implements Map<K,V> {
         return null;
     }
     private void reSize(int tableSize) {
+        MyHashMap <K, V> newMap = new MyHashMap<K, V>();
+        newMap.table = (Bucket<K, V>[])new Bucket[table.length * 2];
 
-        Bucket<K, V>[] resizeTable = new Bucket[table.length * 2];
-        BucketIterator iter = new BucketIterator();
+        Iterator<Bucket<K, V>> iter = new BucketIterator();
+
         while (iter.hasNext()) {
 
-            int hash = Math.abs(iter.next().getKey().hashCode());
+            Bucket<K, V> current = iter.next();
 
-            int position = hash % resizeTable.length;
-            if(resizeTable[position] == null){
-                resizeTable[position] = iter.next();
-            } else {
-                Bucket iterator = resizeTable[position];
-
-                while(iterator.next != null) {
-                    iterator = iterator.next;
-                }
-                iterator.next = iter.next();
-
-            }
+            newMap.put(current.getKey(), current.getValue());
         }
-        table = resizeTable;
+        size = newMap.size;
+        table = newMap.table;
         }
 
 
