@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 /**
@@ -15,8 +17,8 @@ public class FileHelper {
                 "5.Delete file - del+file" +"\n"+
                 "6.Show file content - type" +"\n"+
                 "6. Delete file or dir - del" +"\n"+
-                "7. Create dir - mkdir" +"\n"+
-                "8. Create file - new+filename" +"\n"+
+                "7. Create dir - mkdir+pathname(D:\\***)" +"\n"+
+                "8. Create file - new+pathname(C:\\***)" +"\n"+
                 "9. Show folder structure - tree" +"\n"+
                 "10. Copy file - copy" +"\n"+
                 "11. Compare content of files - fc" +"\n"+
@@ -30,11 +32,24 @@ public class FileHelper {
             System.out.println(s);
     }
 
-    public void fileIsDirectory(){
-
+    public boolean find(File ourFile,String name){
+        String []listFolder=ourFile.list();
+        for(String s:listFolder){
+            if(s.equals(name)){return true;};
+        }
+        return false;
     }
 
-    public void findFile(){
-
+    public void showTree(File ourFile){
+        String []listFolder=ourFile.list();
+        for(String s:listFolder){
+            System.out.println(s);;
+        }
     }
+
+    public void copy(File source, File dest) throws IOException {
+        Files.copy(source.toPath(), dest.toPath());
+    }
+
+
 }
