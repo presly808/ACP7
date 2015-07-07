@@ -2,14 +2,11 @@ package week1.MyHashMap;
 
 import java.util.*;
 
-/**
- * Created by Джек on 02.07.2015.
- */
-public class MyHashMap<K,V> implements Map<K,V> {
+public class MyHashMap<K, V> implements Map<K, V> {
 
     public static int DEFAULT_TABLE_SIZE = 16;
     private int size = 0;
-    private Bucket<K,V>[] table;
+    private Bucket<K, V>[] table;
     private double loadFactor = 0.75;
 
     public MyHashMap() {
@@ -31,10 +28,10 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
         int position = findPosition(key);
 
-        if(table[position] == null){
+        if (table[position] == null) {
             return false;
         } else {
-            Bucket<K,V> iter = findInBucket(key, position);
+            Bucket<K, V> iter = findInBucket(key, position);
             return iter != null;
         }
 
@@ -43,7 +40,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
     @Override
     public boolean containsValue(Object value) {
 
-        Iterator<Bucket<K,V>> iter = new BucketIterator();
+        Iterator<Bucket<K, V>> iter = new BucketIterator();
 
         while (iter.hasNext()) {
             if (iter.next().getValue().equals(value)) {
@@ -59,10 +56,10 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
         int position = findPosition(key);
 
-        if(table[position] == null){
+        if (table[position] == null) {
             return null;
         } else {
-            Bucket<K,V> iter = findInBucket(key, position);
+            Bucket<K, V> iter = findInBucket(key, position);
             return iter != null ? iter.value : null;
         }
     }
@@ -70,60 +67,62 @@ public class MyHashMap<K,V> implements Map<K,V> {
     @Override
     public V put(K key, V value) {
 
-        int hash = Math.abs(key.hashCode());
+        if ((1.0 * size) / table.length > loadFactor) {
 
-        int position = hash % table.length;
+            reSize(table.length);
 
-        if(table[position] == null){
-            table[position] = new Bucket<K, V>(key,value);
+        }
+        int position = findPosition(key);
+
+        if (table[position] == null) {
+            table[position] = new Bucket<K, V>(key, value);
         } else {
 
             Bucket iter = table[position];
+            if (iter.getKey().equals(key)) {
+                iter.setValue(value);
+                return null;
+            } else {
 
-            // find last node in bucket
+                while (iter.next != null) {
+                    iter = iter.next;
+                    if (iter.getKey().equals(key)) {
+                        iter.setValue(value);
+                        return null;
+                    }
+                }
 
-            while(iter.next != null){
-                iter = iter.next;
+                iter.next = new Bucket<K, V>(key, value);
             }
-
-            iter.next = new Bucket<K,V>(key,value);
 
 
         }
 
         size++;
         System.out.println("Length - " + table.length);
-       // reSize();
+        System.out.println("Size - " + size);
+
 
         return null;
     }
-    private void reSize() {
-        if ((1.0 *size) / DEFAULT_TABLE_SIZE > loadFactor) {
-            Bucket<K,V>[] resizeTable = new Bucket [table.length * 2];
-            BucketIterator iter = new BucketIterator();
-            while (iter.hasNext()) {
-                int hash = Math.abs(iter.next().getKey().hashCode());
 
-                int position = hash % resizeTable.length;
-                if(resizeTable[position] == null){
-                    resizeTable[position] = new Bucket<K, V>(iter.next().getKey(),iter.next().getValue());
-                } else {
+    private void reSize(int tableSize) {
+        MyHashMap<K, V> newMap = new MyHashMap<K, V>();
+        newMap.table = (Bucket<K, V>[]) new Bucket[table.length * 2];
 
-                    Bucket iterator = resizeTable[position];
+        Iterator<Bucket<K, V>> iter = new BucketIterator();
 
-                    // find last node in bucket
-                   while(iterator.next != null) {
-                      iterator = iterator.next;
-                   }
-                    iterator.next = new Bucket<K, V>(iter.next().getKey(), iter.next().getValue());
-                }
+        while (iter.hasNext()) {
 
-            }
-            table = resizeTable;
+            Bucket<K, V> current = iter.next();
 
+            newMap.put(current.getKey(), current.getValue());
         }
-    }
+        size = newMap.size;
+        table = newMap.table;
 
+
+    }
     @Override
     public V remove(Object key) {
 
@@ -145,7 +144,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
             } else {
                 // check nodes in bucket
-                while (iter.next != null){
+                while (iter.next != null) {
                     iter = iter.next;
                     if (iter.key.equals(key)) {
                         V value = iter.value;
@@ -165,7 +164,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public void clear() {
-        for (int i = 0; i < table.length; i++){
+        for (int i = 0; i < table.length; i++) {
             table[i] = null;
         }
         size = 0;
@@ -174,7 +173,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
     @Override
     public Set<K> keySet() {
         Set<K> set = new HashSet<K>();
-        Iterator <Bucket<K,V>> iter = new BucketIterator();
+        Iterator<Bucket<K, V>> iter = new BucketIterator();
 
         while (iter.hasNext()) {
             set.add(iter.next().getKey());
@@ -196,15 +195,16 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-        Set<Entry<K,V>> set2 = new HashSet<Entry<K, V>>();
-        Set<Bucket<K,V>> set = new HashSet<Bucket<K, V>>();
+        Set<Entry<K, V>> set2 = new HashSet<Entry<K, V>>();
+        Set<Bucket<K, V>> set = new HashSet<Bucket<K, V>>();
         BucketIterator iter = new BucketIterator();
         while (iter.hasNext()) {
             set.add(iter.next());
         }
         return null;
     }
-    public Set<Bucket<K, V>> entrySett() {
+
+    public Set<Bucket<K, V>> myEntrySet() {
 
         Set<Bucket<K, V>> set = new HashSet<Bucket<K, V>>();
         BucketIterator iter = new BucketIterator();
@@ -214,23 +214,24 @@ public class MyHashMap<K,V> implements Map<K,V> {
         return set;
 
     }
-        private class BucketIterator implements Iterator<Bucket<K,V>> {
 
-        Bucket<K,V> current;
+    private class BucketIterator implements Iterator<Bucket<K, V>> {
+
+        Bucket<K, V> current;
         int index = 0;
 
         public BucketIterator() {
 
 
-            findTableIndex ();
+            findTableIndex();
 
         }
 
-        private void findTableIndex () {
+        private void findTableIndex() {
             while (index < table.length && table[index] == null) {
                 index++;
             }
-            current = index < table.length ? table[index] :  null;
+            current = index < table.length ? table[index] : null;
         }
 
         @Override
@@ -239,20 +240,20 @@ public class MyHashMap<K,V> implements Map<K,V> {
         }
 
         @Override
-        public Bucket<K,V> next() {
-            Bucket <K,V> iterator = current;
+        public Bucket<K, V> next() {
+            Bucket<K, V> iterator = current; // why are you using interator refernece, just use current // it is simple way to do mistake if you create something, but dont realize why you need it
             if (iterator.next != null) {
                 current = iterator.next;
             } else {
                 index++;
-                findTableIndex ();
+                findTableIndex();
             }
             return iterator;
         }
     }
 
-    private Bucket<K,V> findInBucket(Object key, int position){
-        Bucket<K,V> iter = table[position];
+    private Bucket<K, V> findInBucket(Object key, int position) {
+        Bucket<K, V> iter = table[position];
 
         // find last node in bucket
         do {
@@ -267,15 +268,15 @@ public class MyHashMap<K,V> implements Map<K,V> {
         return null;
     }
 
-    private int findPosition(Object key){
+    private int findPosition(Object key) {
         int hash = Math.abs(key.hashCode());
         return hash % table.length;
     }
 
-    private static class Bucket<KB,VB> {
+    private static class Bucket<KB, VB> {
         KB key;
         VB value;
-        Bucket<KB,VB> next;
+        Bucket<KB, VB> next;
 
         public Bucket(KB key, VB value, Bucket next) {
             this.key = key;

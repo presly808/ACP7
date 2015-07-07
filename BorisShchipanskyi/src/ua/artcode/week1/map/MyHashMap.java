@@ -100,9 +100,9 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public V put(K key, V value) {
-        System.out.println("load status: " + getLoadStatus() + " size: " + size() + " dSize: " + defaultSize);
+        //System.out.println("load status: " + getLoadStatus() + " size: " + size() + " dSize: " + defaultSize);
         if (loadFactor <= getLoadStatus()) {
-            System.out.println("Start to recreate map: " + getLoadStatus());
+            //System.out.println("Start to recreate map: " + getLoadStatus());
             recreateMap();
         }
         int position = getPosition(key);
@@ -146,6 +146,17 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public V remove(Object key) {
+        int position = getPosition(key);
+        Bucket<K, V> bucket = table[position];
+        if (bucket.getNext() == null) {
+            table[position] = null;
+        } else {
+            while (key.hashCode() != bucket.getKey().hashCode()) {
+                bucket = bucket.getNext();
+            }
+            table[position] = (bucket.getNext() != null) ? bucket.getNext() : null;
+
+        }
 //        Iterator<Bucket<K, V>> iter = new BucketIterator();
 //        while (iter.hasNext()) {
 //            Bucket<K, V> bucket = iter.next();
@@ -184,11 +195,11 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public Set<Entry<K, V>> entrySet() {
-        Set<Entry<K,V>> entrySet = new HashSet<>();
+        Set<Entry<K, V>> entrySet = new HashSet<>();
         Iterator<Bucket<K, V>> iter = new BucketIterator();
         while (iter.hasNext()) {
             Bucket<K, V> bucket = iter.next();
-            Entry<K,V> entry = new AbstractMap.SimpleEntry<K, V>(bucket.getKey(), bucket.getValue());
+            Entry<K, V> entry = new AbstractMap.SimpleEntry<K, V>(bucket.getKey(), bucket.getValue());
             entrySet.add(entry);
         }
         return entrySet;
