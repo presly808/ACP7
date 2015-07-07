@@ -107,22 +107,22 @@ public class MyHashMap<K, V> implements Map<K, V> {
     }
 
     private void reSize(int tableSize) {
+        MyHashMap<K, V> newMap = new MyHashMap<K, V>();
+        newMap.table = (Bucket<K, V>[]) new Bucket[table.length * 2];
 
-        MyHashMap<K,V> newMap = new MyHashMap<K,V>();
-        newMap.table = (Bucket<K,V>[])new Bucket[table.length * 2];
-        Iterator<Bucket<K,V>> iter = new BucketIterator();
+        Iterator<Bucket<K, V>> iter = new BucketIterator();
 
+        while (iter.hasNext()) {
 
-        while (iter.hasNext()){
-            Bucket<K,V> curr = iter.next();
-            newMap.put(curr.key, curr.value);
+            Bucket<K, V> current = iter.next();
+
+            newMap.put(current.getKey(), current.getValue());
         }
-
         size = newMap.size;
         table = newMap.table;
+
+
     }
-
-
     @Override
     public V remove(Object key) {
 
