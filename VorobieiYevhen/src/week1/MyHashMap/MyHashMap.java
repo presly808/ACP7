@@ -2,9 +2,6 @@ package week1.MyHashMap;
 
 import java.util.*;
 
-/**
- * Created by Джек on 02.07.2015.
- */
 public class MyHashMap<K, V> implements Map<K, V> {
 
     public static int DEFAULT_TABLE_SIZE = 16;
