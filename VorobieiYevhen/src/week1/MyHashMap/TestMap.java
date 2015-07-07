@@ -9,7 +9,7 @@ public class TestMap {
     public static void main(String[] args) {
 
         MyHashMap<User, Integer> map = new MyHashMap<User, Integer>();
-        HashMap<User, Integer> test  = new HashMap<User, Integer>();
+        HashMap<User, Integer> test = new HashMap<User, Integer>();
 
 
         User user1 = new User("Antony", 18);
@@ -31,6 +31,9 @@ public class TestMap {
         User user17 = new User("Peter", 45);
         User user18 = new User("Rankle", 16);
         User user19 = new User("Susy", 19);
+        User user20 = new User("Tom", 57);
+        User user21 = new User("Una", 17);
+        User user22 = new User("Viva", 21);
 
         System.out.println(map.size());
         System.out.println(map.put(user1, 1));
@@ -71,49 +74,13 @@ public class TestMap {
         map.put(user19, 16);
         System.out.println(map.size());
 
+        test.put(user20, 21);
+        test.put(user21, 22);
+        test.put(user22, 23);
 
-
-
-
-      /*  System.out.println(test.size());
-        System.out.println(test.put(user1, 1));
-        System.out.println(test.size());
-        test.put(user2, 2);
-        System.out.println(test.containsKey(user3));
-        test.put(user3, 3);
-        test.put(user4, 4);
-        System.out.println(test.containsKey(user3));
-        System.out.println(test.size());
-        test.put(user4, 5);
-        System.out.println(test.size());
-        test.put(user5, 5);
-        System.out.println(test.size());
-        System.out.println(test.remove(user3));
-        System.out.println(test.size());
-        System.out.println(test.containsKey(user3));
-        System.out.println(test.get(user2));
-        System.out.println(test.containsValue(1));
-        System.out.println(test.containsValue(4));
-        System.out.println(test.keySet());
-        System.out.println(test.values());
-        test.put(user6, 6);
-        test.put(user7, 7);
-        test.put(user8, 8);
-        test.put(user9, 8);
-        test.put(user10, 8);
-        test.put(user11, 9);
-        test.put(user12, 10);
-        test.put(user13, 11);
-        test.put(user14, 12);
-        System.out.println(test.values());
-        System.out.println(test.size());
-        test.put(user15, 11);
-        test.put(user16, 13);
-        test.put(user17, 14);
-        test.put(user18, 15);
-        test.put(user19, 16);
-        System.out.println(test.size());*/
-
+        map.putAll(test);
+        System.out.println(map.values());
+        System.out.println(map.size());
 
 
     }
