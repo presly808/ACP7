@@ -69,6 +69,29 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public V put(K key, V value) {
+       //reSize();
+        if ((1.0 *size) / table.length > loadFactor) {
+            Bucket<K, V>[] resizeTable = new Bucket[table.length * 2];
+            BucketIterator iter = new BucketIterator();
+             while (iter.hasNext()) {
+
+                 int hash = Math.abs(iter.next().getKey().hashCode());
+
+                 int position = hash % resizeTable.length;
+                 if(resizeTable[position] == null){
+                     resizeTable[position] = iter.next();
+                 } else {
+                     Bucket iterator = resizeTable[position];
+
+                     while(iterator.next != null) {
+                         iterator = iterator.next;
+                     }
+                     iterator.next = iter.next();
+
+                 }
+             }
+            table = resizeTable;
+        }
 
         int hash = Math.abs(key.hashCode());
 
@@ -79,26 +102,34 @@ public class MyHashMap<K,V> implements Map<K,V> {
         } else {
 
             Bucket iter = table[position];
+            if (iter.getKey().equals(key)) {
+                iter.setValue(value);
+                return null;
+            } else {
 
-            // find last node in bucket
+                while (iter.next != null) {
+                    iter = iter.next;
+                    if (iter.getKey().equals(key)) {
+                        iter.setValue(value);
+                        return null;
+                    }
+                }
 
-            while(iter.next != null){
-                iter = iter.next;
+                iter.next = new Bucket<K, V>(key, value);
             }
-
-            iter.next = new Bucket<K,V>(key,value);
 
 
         }
 
         size++;
         System.out.println("Length - " + table.length);
-       // reSize();
+        System.out.println("Size - " + size);
+
 
         return null;
     }
     private void reSize() {
-        if ((1.0 *size) / DEFAULT_TABLE_SIZE > loadFactor) {
+        if ((1.0 *size) / table.length > loadFactor) {
             Bucket<K,V>[] resizeTable = new Bucket [table.length * 2];
             BucketIterator iter = new BucketIterator();
             while (iter.hasNext()) {
@@ -111,7 +142,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
                     Bucket iterator = resizeTable[position];
 
-                    // find last node in bucket
+
                    while(iterator.next != null) {
                       iterator = iterator.next;
                    }
@@ -204,7 +235,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
         }
         return null;
     }
-    public Set<Bucket<K, V>> entrySett() {
+    public Set<Bucket<K, V>> myEntrySet() {
 
         Set<Bucket<K, V>> set = new HashSet<Bucket<K, V>>();
         BucketIterator iter = new BucketIterator();
