@@ -2,7 +2,7 @@ package ua.artcode.week1.hashMap;
 
 import java.util.*;
 
-public class MyHashMap<K, V> implements Map<K, V> {
+public class MyHashMap<K, V> implements Map<K, V>, Iterable<MyHashMap.Bucket<K, V>> {
 
     public static final int DEFAULT_TABLE_SIZE = 16;
     final float loadFactor = 0.75f;
@@ -13,13 +13,9 @@ public class MyHashMap<K, V> implements Map<K, V> {
     public MyHashMap() {
         table = new Bucket[DEFAULT_TABLE_SIZE];
         threshold = (int) (table.length * loadFactor);
+        size = 0;
     }
 
-//    public void checkInputKey(Object key){
-//        if (key.getClass() != K){
-//
-//        }
-//    }
 
     @Override
     public int size() {
@@ -35,6 +31,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
     public boolean containsKey(Object key) {
 
         int position = findPosition(key);
+
 
         if (table[position] == null) {
             return false;
@@ -63,6 +60,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
         int position = findPosition(key);
 
+
         if (table[position] == null) {
             return null;
         } else {
@@ -73,38 +71,35 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public V put(K key, V value) {
-        if (size++ >= threshold) {
+        putBucket(table, key, value);
+        size++;
+        if (size >= threshold) {
             resize(table.length);
         }
 
-        putBucket(table, key, value);
-        size++;
 
         return null;
     }
 
-    public void putBucket(Bucket<K, V>[] table, K key, V value) {
+    public V putBucket(Bucket<K, V>[] table, K key, V value) {
         int position = findPosition(key);
 
         if (table[position] == null) {
             table[position] = new Bucket<>(key, value);
         } else {
-            int marker = 0;
             Bucket iter = table[position];
             // find last node in bucket
             while (iter.next != null) {
-                if (iter.key.equals(key)) {
+                if (iter.key==key && iter.key.equals(key)) {
                     iter.value = value;
-                    marker = 1;
+                    return null;
                 } else {
 
                     iter = iter.next;
                 }
             }
-            if (marker != 1) {
-                iter.next = new Bucket<>(key, value);
-            }
         }
+        return null;
     }
 
     private void resize(int oldLength) {
@@ -128,6 +123,9 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public V remove(Object key) {
+        if (key==null){
+            throw new IllegalArgumentException("Unable to use null argument");
+        }
         if (!this.containsKey(key)) {
             return null;
         }
@@ -200,6 +198,15 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return null;
     }
 
+    @Override
+    public Iterator<Bucket<K, V>> iterator() {
+        return new BucketIterator();
+    }
+
+
+//    public Iterator<Bucket<K,V>> iterator() {
+//        return new BucketIterator();
+//    }
 
     private class BucketIterator implements Iterator<Bucket<K, V>> {
 
@@ -239,7 +246,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
     private Bucket<K, V> findInBucket(Object key, int position) {
         Bucket<K, V> iter = table[position];
         // find last node in bucket
-        while (iter.next != null) {
+        while (iter != null) {
             if (iter.key.equals(key)) {
                 return iter;
             }
