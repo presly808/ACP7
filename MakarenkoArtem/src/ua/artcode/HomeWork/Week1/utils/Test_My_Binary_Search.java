@@ -1,5 +1,7 @@
 package ua.artcode.HomeWork.Week1.utils;
 
+import ua.artcode.HomeWork.Week1.utils.My_Binary_Search;
+
 /**
  * Created by HOME on 02.07.2015.
  */

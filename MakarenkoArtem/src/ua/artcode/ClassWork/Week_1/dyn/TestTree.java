@@ -1,6 +1,6 @@
 package ua.artcode.ClassWork.Week_1.dyn;
 
-import ua.artcode.ds.dyn.BinarySearchTree;
+import ua.artcode.ClassWork.Week_1.dyn.BinarySearchTree;
 
 import java.util.ArrayList;
 import java.util.List;

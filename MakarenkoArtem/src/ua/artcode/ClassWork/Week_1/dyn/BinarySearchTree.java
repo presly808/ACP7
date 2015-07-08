@@ -1,8 +1,6 @@
 package ua.artcode.ClassWork.Week_1.dyn;
 
-import ua.artcode.ds.dyn.*;
-
-public class BinarySearchTree<E> implements ua.artcode.ds.dyn.ITree<E> {
+public class BinarySearchTree<E> implements ITree<E> {
 
     private TreeNode root; // null
     private int size;

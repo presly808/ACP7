@@ -4,7 +4,7 @@ package ua.artcode.HomeWork.Week2;
  * Created by HOME on 08.07.2015.
  */
 public interface IMyCMD {
-    void help();                       // show all available commands
+    //void help();                       // show all available commands
     void cd();                         // changeCurrentLocation
     void find();                       // find file(dir)
     void dir();                         // show directoryContent

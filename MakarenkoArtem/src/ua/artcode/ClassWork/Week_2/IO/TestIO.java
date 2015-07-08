@@ -1,6 +1,5 @@
 package ua.artcode.ClassWork.Week_2.IO;
 
-import ua.artcode.week2.io.IOUtils;
 
 import java.io.FileNotFoundException;
 
