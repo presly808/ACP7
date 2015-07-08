@@ -1,4 +1,4 @@
-package week1;
+package ua.artcode.week1;
 
 /**
  * Created by Daryna on 01-Jul-15.
