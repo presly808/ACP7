@@ -39,6 +39,8 @@ public class MyConsole {
             commandRun(new CommandMkdir(), text);
         }else if(command.equalsIgnoreCase("mkf")){
             commandRun(new CommandMkf(), text);
+        }else if(command.equalsIgnoreCase("del") || command.equalsIgnoreCase("rm")){
+            commandRun(new CommandDel(), text);
         }
     }
 

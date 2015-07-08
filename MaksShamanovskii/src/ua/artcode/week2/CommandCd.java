@@ -14,13 +14,13 @@ public class CommandCd implements ICommand {
         if(text.equals("")){
             return currentPath.substring(0, currentPath.length());
         }
-        String newPath = currentPath + "/" + text;
-        if (ConsoleHelper.find(newPath)) {
-            return newPath;
-        }
         if (text.equals("..")) {
             int index = currentPath.lastIndexOf("/");
             return currentPath.substring(0, index);
+        }
+        String newPath = currentPath + "/" + text;
+        if (ConsoleHelper.find(newPath)) {
+            currentPath = newPath;
         }
         return currentPath;
     }

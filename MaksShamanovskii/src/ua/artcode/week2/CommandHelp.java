@@ -9,8 +9,11 @@ public class CommandHelp implements ICommand{
         System.out.println("cd - Change the shell working directory.");
         System.out.println("find - Searches the directory tree rooted");
         System.out.println("dir - Display the list of currently remembered directories.");
+        System.out.println("ls - Display the list of currently remembered directories.");
         System.out.println("mkdir - Creates directories with the specified names.");
         System.out.println("mkf - Creates files with the specified names.");
+        System.out.println("del - Removes given file or directory.");
+        System.out.println("rm - Removes given file or directory.");
 
     }
 
