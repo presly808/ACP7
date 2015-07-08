@@ -6,9 +6,12 @@ public class CommandHelp implements ICommand{
     @Override
     public void getHelp() {
         System.out.println("Display information about builtin commands.");
-        System.out.println("cd [directory]");
-        System.out.println("find [directory]");
-        System.out.println("dir [directory]");
+        System.out.println("cd - Change the shell working directory.");
+        System.out.println("find - Searches the directory tree rooted");
+        System.out.println("dir - Display the list of currently remembered directories.");
+        System.out.println("mkdir - Creates directories with the specified names.");
+        System.out.println("mkf - Creates files with the specified names.");
+
     }
 
     @Override

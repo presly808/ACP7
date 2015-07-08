@@ -35,6 +35,10 @@ public class MyConsole {
             commandRun(new CommandFind(), text);
         }else if(command.equalsIgnoreCase("help")){
             commandRun(new CommandHelp(), text);
+        }else if(command.equalsIgnoreCase("mkdir")){
+            commandRun(new CommandMkdir(), text);
+        }else if(command.equalsIgnoreCase("mkf")){
+            commandRun(new CommandMkf(), text);
         }
     }
 

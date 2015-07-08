@@ -6,8 +6,9 @@ public class CommandFind implements ICommand {
 
     @Override
     public void getHelp() {
-        System.out.println("'find' searches the directory tree rooted at each file name FILE by\n" +
-                "evaluating the EXPRESSION on each file it finds in the tree.");
+        System.out.println("Searches the directory tree rooted at each file name FILE by");
+        System.out.println("evaluating the EXPRESSION on each file it finds in the tree.");
+        System.out.println("find [directory_name]");
     }
 
     @Override
