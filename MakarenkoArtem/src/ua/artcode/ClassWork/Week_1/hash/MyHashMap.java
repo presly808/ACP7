@@ -1,4 +1,4 @@
-package ua.artcode.week1.hash;
+package ua.artcode.ClassWork.Week_1.hash;
 
 
 import java.util.*;

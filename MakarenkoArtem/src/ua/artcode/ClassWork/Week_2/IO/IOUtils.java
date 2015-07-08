@@ -1,4 +1,4 @@
-package ua.artcode.week2.io;
+package ua.artcode.ClassWork.Week_2.IO;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

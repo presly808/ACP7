@@ -1,4 +1,6 @@
-package ua.artcode.week1.dyn;
+package ua.artcode.ClassWork.Week_1.dyn;
+
+import java.util.Collection;
 
 
 public interface ITree<T> {

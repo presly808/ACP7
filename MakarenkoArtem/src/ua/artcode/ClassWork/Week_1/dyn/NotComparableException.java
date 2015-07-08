@@ -1,4 +1,4 @@
-package ua.artcode.week1.dyn;
+package ua.artcode.ClassWork.Week_1.dyn;
 
 public class NotComparableException extends RuntimeException {
 
