@@ -1,4 +1,4 @@
-package ua.artcode.week1.utils;
+package ua.artcode.HomeWork.Week1.utils;
 
 /**
  * Created by HOME on 02.07.2015.

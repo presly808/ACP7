@@ -1,9 +1,8 @@
-package ua.artcode.week1.dyn;
+package ua.artcode.ClassWork.Week_1.dyn;
 
-import ua.artcode.ds.dyn.ITree;
-import ua.artcode.ds.dyn.NotComparableException;
+import ua.artcode.ds.dyn.*;
 
-public class BinarySearchTree<E> implements ITree<E> {
+public class BinarySearchTree<E> implements ua.artcode.ds.dyn.ITree<E> {
 
     private TreeNode root; // null
     private int size;
