@@ -22,7 +22,8 @@ public class FileHelper {
                 "9. Show folder structure - tree" +"\n"+
                 "10. Copy file - copy" +"\n"+
                 "11. Compare content of files - fc" +"\n"+
-                "12. For help - help" +"\n"+
+                "12. For help - help" +"\n" +
+                "13. For file content percentage information - content"+"\n" +
                 "13. For exit - exit");
 
     }
@@ -49,6 +50,18 @@ public class FileHelper {
 
     public void copy(File source, File dest) throws IOException {
         Files.copy(source.toPath(), dest.toPath());
+    }
+
+    public double [] folderContent(String []fileList){
+        double [] arr= new double[4];//1-video,2-audio,3-txt,4-other
+        for(String s:fileList){
+            if(s.endsWith(".avi")) arr[0]++;
+            if(s.endsWith(".mp3")) arr[1]++;
+            if(s.endsWith(".txt")) arr[2]++;
+            else arr[3]++;
+            }
+
+        return arr;
     }
 
 
