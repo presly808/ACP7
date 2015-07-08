@@ -1,4 +1,4 @@
-package week1.MyHashMap;
+package week1.myHashMap;
 
 import java.util.*;
 
