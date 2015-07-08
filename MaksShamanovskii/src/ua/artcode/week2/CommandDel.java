@@ -4,9 +4,9 @@ import java.io.File;
 
 public class CommandDel implements ICommand {
     @Override
-    public void getHelp() {
-        System.out.println("Removes given file or directory.");
-        System.out.println("del(rm) directory_name(file_name)");
+    public String getHelp() {
+        return "Removes given file or directory.\n" +
+                "del(rm) directory_name(file_name)";
     }
 
     @Override

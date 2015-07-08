@@ -2,19 +2,17 @@ package ua.artcode.week2;
 
 public class CommandHelp implements ICommand{
 
-
     @Override
-    public void getHelp() {
-        System.out.println("Display information about builtin commands.");
-        System.out.println("cd - Change the shell working directory.");
-        System.out.println("find - Searches the directory tree rooted");
-        System.out.println("dir - Display the list of currently remembered directories.");
-        System.out.println("ls - Display the list of currently remembered directories.");
-        System.out.println("mkdir - Creates directories with the specified names.");
-        System.out.println("mkf - Creates files with the specified names.");
-        System.out.println("del - Removes given file or directory.");
-        System.out.println("rm - Removes given file or directory.");
-
+    public String getHelp() {
+        return "Display information about builtin commands.\n" +
+                "cd - Change the shell working directory.\n" +
+                "find - Searches the directory tree rooted.\n" +
+                "dir - Display the list of currently remembered directories.\n" +
+                "ls - Display the list of currently remembered directories.\n" +
+                "mkdir - Creates directories with the specified names.\n" +
+                "mkf - Creates files with the specified names.\n" +
+                "del - Removes given file or directory.\n" +
+                "rm - Removes given file or directory.\n";
     }
 
     @Override
@@ -26,13 +24,13 @@ public class CommandHelp implements ICommand{
         }else if(text.equalsIgnoreCase("find")) {
             help(new CommandFind());
         }else if(text.equalsIgnoreCase("help") || text.equalsIgnoreCase("")) {
-            getHelp();
+            System.out.println(getHelp());
         }
         return currentPath;
     }
 
     private void help(ICommand command){
-        command.getHelp();
+        System.out.println(command.getHelp());
     }
 
 

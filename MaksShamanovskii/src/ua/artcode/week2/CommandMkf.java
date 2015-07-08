@@ -5,9 +5,9 @@ import java.io.IOException;
 
 public class CommandMkf implements ICommand{
     @Override
-    public void getHelp() {
-        System.out.println("Creates files with the specified names.");
-        System.out.println("mkf file_name");
+    public String getHelp() {
+        return "Creates files with the specified names.\n" +
+                "mkf file_name";
     }
 
     @Override

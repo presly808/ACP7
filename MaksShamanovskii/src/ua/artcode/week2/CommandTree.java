@@ -2,8 +2,8 @@ package ua.artcode.week2;
 
 public class CommandTree implements ICommand {
     @Override
-    public void getHelp() {
-
+    public String getHelp() {
+        return null;
     }
 
     @Override

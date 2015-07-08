@@ -2,7 +2,7 @@ package ua.artcode.week2;
 
 public interface ICommand {
 
-    void getHelp();
+    String getHelp();
 
     Object run(String currentPath, String text);
 }

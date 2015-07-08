@@ -4,9 +4,9 @@ import java.io.File;
 
 public class CommandMkdir implements ICommand {
     @Override
-    public void getHelp() {
-        System.out.println("Creates directories with the specified names.");
-        System.out.println("mkdir directory_name");
+    public String getHelp() {
+        return "Creates directories with the specified names.\n" +
+                "mkdir directory_name";
     }
 
     @Override

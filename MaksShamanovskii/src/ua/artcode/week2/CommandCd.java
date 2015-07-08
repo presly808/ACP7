@@ -2,11 +2,11 @@ package ua.artcode.week2;
 
 public class CommandCd implements ICommand {
     @Override
-    public void getHelp() {
-        System.out.println("Change the shell working directory.");
-        System.out.println("`..' is processed by removing the immediately previous pathname component");
-        System.out.println("back to a slash or the beginning of DIR.");
-        System.out.println("cd directory_name");
+    public String getHelp() {
+        return "Change the shell working directory.\n" +
+                "`..' is processed by removing the immediately previous pathname component\n" +
+                "back to a slash or the beginning of DIR.\n" +
+                "cd directory_name";
     }
 
     @Override

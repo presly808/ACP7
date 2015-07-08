@@ -4,9 +4,9 @@ import java.io.File;
 
 public class CommandDir implements ICommand {
     @Override
-    public void getHelp() {
-        System.out.println("Display the list of currently remembered directories.");
-        System.out.println("dir [directory_name]");
+    public String getHelp() {
+        return "Display the list of currently remembered directories.\n" +
+                "dir [directory_name]";
     }
 
     @Override
