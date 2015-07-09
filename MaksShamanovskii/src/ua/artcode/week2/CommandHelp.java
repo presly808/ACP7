@@ -12,7 +12,7 @@ public class CommandHelp implements ICommand{
                 "mkdir - Creates directories with the specified names.\n" +
                 "mkf - Creates files with the specified names.\n" +
                 "del - Removes given file or directory.\n" +
-                "rm - Removes given file or directory.\n";
+                "rm - Removes given file or directory.";
     }
 
     @Override
