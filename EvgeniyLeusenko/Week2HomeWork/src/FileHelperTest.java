@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 /**
@@ -78,6 +79,17 @@ public class FileHelperTest {
 
             if (command[0].equals("copy")) {
                 fh.copy(ourFile,new File("D:/"));
+            }
+
+            if (command[0].equals("content")) {
+                ourFile=new File(command[1]);
+                double [] arr=new double[4];//1-video,2-audio,3-txt,4-other
+                String []listFolder=ourFile.list();
+                arr=fh.folderContent(listFolder);
+                System.out.println("video="+(arr[0]/(arr[0]+arr[1]+arr[2]+arr[3]))+"\n"+
+                                   "audio="+(arr[1]/(arr[0]+arr[1]+arr[2]+arr[3]))+"\n"+
+                                   "txt="+(arr[2]/(arr[0]+arr[1]+arr[2]+arr[3]))+"\n"+
+                                   "others="+(arr[3]/(arr[0]+arr[1]+arr[2]+arr[3])));
             }
 
             if (command[0].equals("exit")) {
