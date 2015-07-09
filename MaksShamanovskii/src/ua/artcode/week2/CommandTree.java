@@ -3,9 +3,12 @@ package ua.artcode.week2;
 import java.io.File;
 
 public class CommandTree implements ICommand {
+    private String temp = "";
+
     @Override
     public String getHelp() {
-        return null;
+        return "Produces a depth indented listing of files.\n" +
+                "tree [directory_name]";
     }
 
     @Override
@@ -21,14 +24,16 @@ public class CommandTree implements ICommand {
     private void tree(String current){
         File file = new File(current);
         File[] files = file.listFiles();
-        String temp = "";
         for (File f : files) {
             if (files == null) {
                 return;
             }
-            System.out.println(temp + f.getName());
-            temp = temp + " ";
+            if(!f.getName().startsWith(".")){
+                String name = f.getName();
+                System.out.println(temp + name);
+            }
             if (f.isDirectory()) {
+                temp = temp + " ";
                 tree(f.getPath());
             }
         }

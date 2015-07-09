@@ -12,7 +12,9 @@ public class CommandHelp implements ICommand{
                 "mkdir - Creates directories with the specified names.\n" +
                 "mkf - Creates files with the specified names.\n" +
                 "del - Removes given file or directory.\n" +
-                "rm - Removes given file or directory.";
+                "rm - Removes given file or directory.\n" +
+                "tree - Produces a depth indented listing of files.\n" +
+                "type - Show the contents of a text file.\n";
     }
 
     @Override
@@ -25,6 +27,16 @@ public class CommandHelp implements ICommand{
             help(new CommandFind());
         }else if(text.equalsIgnoreCase("help") || text.equalsIgnoreCase("")) {
             System.out.println(getHelp());
+        }else if(text.equalsIgnoreCase("mkdir")) {
+            help(new CommandMkdir());
+        }else if(text.equalsIgnoreCase("mkf")) {
+            help(new CommandMkf());
+        }else if(text.equalsIgnoreCase("tree")) {
+            help(new CommandTree());
+        }else if(text.equalsIgnoreCase("del") || text.equalsIgnoreCase("rm")) {
+            help(new CommandDir());
+        }else if(text.equalsIgnoreCase("type")) {
+            help(new CommandType());
         }
         return currentPath;
     }
