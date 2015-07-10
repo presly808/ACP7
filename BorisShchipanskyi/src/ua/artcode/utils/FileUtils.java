@@ -10,7 +10,12 @@ import java.util.Scanner;
  */
 public class FileUtils {
     public static void showFolderContent(File file, String step){
-        System.out.println(step + file.getName());
+        String result = step + file.getName();
+        if(file.isDirectory())
+            System.out.println(result+"/");
+        else
+            System.out.println(result);
+
         if(file.isDirectory()){
             for(File f: file.listFiles()){
                 showFolderContent(f, step +"----");
@@ -29,14 +34,14 @@ public class FileUtils {
         }
     }
 
-    public static String findByNameWithRes(File file, String key){
+    public static String findByNameWithReq(File file, String key){
         String res = "";
         if(file.getName().contains(key)){
            res = file.getAbsolutePath() + "\n";
         }
         if (file.isDirectory()){
             for(File f: file.listFiles()){
-                res += findByNameWithRes(f, key);
+                res += findByNameWithReq(f, key);
             }
         }
         return res;
@@ -97,6 +102,25 @@ public class FileUtils {
     }
     public static String getAbsolutePath(File file){
         return file.getAbsolutePath();
+    }
+
+    public static String showFileContent(File file){
+        InputStream is = null;
+       StringBuilder builder = new StringBuilder();
+        try{
+            is = new FileInputStream(file);
+            int ch;
+            while((ch = is.read()) != -1){
+                builder.append((char)ch);
+            }
+
+            System.out.println(builder.toString());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return builder.toString();
     }
 
 }

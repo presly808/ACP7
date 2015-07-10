@@ -27,7 +27,9 @@ public class Help extends Command {
         commands.add(new Cd());
         commands.add(new Help());
         commands.add(new Pwd());
-//        commands.add();
+        commands.add(new Find());
+        commands.add(new Dir());
+        commands.add(new Type());
 //        commands.add();
 
 
