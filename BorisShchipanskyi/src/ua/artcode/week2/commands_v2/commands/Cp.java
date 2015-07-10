@@ -1,7 +1,6 @@
-package ua.artcode.week2.commands_v2;
+package ua.artcode.week2.commands_v2.commands;
 
 import ua.artcode.utils.FileUtils;
-import ua.artcode.week2.commands_v2.Command;
 
 import java.io.IOException;
 
@@ -11,6 +10,9 @@ import java.io.IOException;
 public class Cp extends Command {
     private final String NAME = "cp";
 
+    public Cp(){
+        super();
+    }
     public Cp(String command) {
         super(command);
     }
@@ -32,7 +34,7 @@ public class Cp extends Command {
 
 
     public void showHelp() {
-        System.out.printf("Command: %s can cope file from<File1> to <File2>  or to <Dir2>\n", NAME);
+        System.out.printf("Command: %s can copy file from <File1> to <File2>  or to <Dir2>\n", NAME);
         System.out.println("Use filter '-h' for getting help");
     }
 

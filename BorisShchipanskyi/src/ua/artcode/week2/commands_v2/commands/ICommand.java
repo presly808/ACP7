@@ -1,4 +1,4 @@
-package ua.artcode.week2.commands_v2;
+package ua.artcode.week2.commands_v2.commands;
 
 import java.io.IOException;
 

@@ -1,9 +1,9 @@
 package ua.artcode.week2.commands_v2.menu;
 
-import ua.artcode.week2.commands_v2.Command;
-import ua.artcode.week2.commands_v2.Cp;
-import ua.artcode.week2.commands_v2.ICommand;
+import ua.artcode.week2.commands_v2.command_utils.CommandUtils;
+import ua.artcode.week2.commands_v2.commands.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,12 +13,11 @@ import java.util.Scanner;
  * Created by boris on 7/9/15.
  */
 public class CommandsMenu {
-    List<String> commandNames;
+    Help help = new Help("help");
     Scanner lineScan = new Scanner(System.in);
-
+    File file = new File(".");
 
     public CommandsMenu() {
-        initNames();
         run();
     }
 
@@ -27,11 +26,14 @@ public class CommandsMenu {
         String line = getLine();
         while (!line.equals("0")) {
             if (line.equals("1")) {
-                showAllCommands();
+                shayHello();
             } else {
-                Command command = new Cp(line);
+                Command command = getCommand(line);
                 try {
-                    command.execute();
+                        command.execute();
+                    if(command instanceof Cd){
+                        file = command.getFile();
+                    }
                 }catch (IOException e){
                     System.out.println("Cannot execute! "+ e.getMessage());
                 }
@@ -44,27 +46,31 @@ public class CommandsMenu {
     }
 
 
-    private void initNames() {
-        commandNames = new ArrayList<>();
-        commandNames.add("cp");
-    }
-
-    private void showAllCommands() {
-        System.out.println("Commands:");
-        for (String command : commandNames) {
-            System.out.println(command);
-        }
-    }
-
     private void shayHello() {
         System.out.println("You are in FileHelper.");
-        System.out.println("press 1 - for get all commands list");
         System.out.println("press 0 - for exit");
-        System.out.println("enter your command:");
+        System.out.println("enter 'help' for more information");
 
     }
 
     private String getLine() {
         return lineScan.nextLine();
     }
+
+    private Command getCommand(String line){
+        String newCommand = CommandUtils.getCommand(line);
+        Command myCommand;
+        for(ICommand com: help.getCommands()){
+            if(newCommand.equals(com.getName())){
+                myCommand = (Command) com;
+                myCommand.setCommand(line);
+                myCommand.setFile(file);
+                return myCommand;
+
+            }
+        }
+        return null;
+    }
+
+
 }

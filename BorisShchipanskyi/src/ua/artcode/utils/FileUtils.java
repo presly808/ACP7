@@ -85,5 +85,18 @@ public class FileUtils {
         return sb.toString();
     }
 
+    public static File changeLocation(String path){
+        if(isDirectory(path))
+        return new File(path);
+        return new File(".");
+    }
+
+    public static String getPath(File file){
+        return file.getPath();
+
+    }
+    public static String getAbsolutePath(File file){
+        return file.getAbsolutePath();
+    }
 
 }
