@@ -1,4 +1,4 @@
-package ua.arcode.week1;
+package ua.artcode.week1;
 
 /**
  * Created by Олександр on 05.07.2015.
