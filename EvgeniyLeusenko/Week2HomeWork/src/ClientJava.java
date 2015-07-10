@@ -10,7 +10,7 @@ public class ClientJava {
     public static void main(String[] args) {
         int serverPort=6666;
         String address="127.0.0.1";
-        FileHelper fh = new FileHelper();
+        FileHelper fh = new FileHelper();//for menu
         fh.menu();
         try {
             InetAddress ipAddress = InetAddress.getByName(address);
