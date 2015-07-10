@@ -1,9 +1,9 @@
-package week1.myHashMap;
+package week1.myTreeSet;
 
 /**
  * Created by Джек on 03.07.2015.
  */
-public class User {
+public class User implements Comparable<User>{
     String name;
     int age;
 
@@ -50,5 +50,10 @@ public class User {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(User that) {
+        return this.getName().compareTo(that.getName());
     }
 }

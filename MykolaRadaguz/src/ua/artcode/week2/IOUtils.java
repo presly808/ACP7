@@ -1,4 +1,4 @@
-package ua.artcode.week2.io;
+package ua.artcode.week2;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * Created by serhii on 05.07.15.
+ * Created by pikolo on 05.07.15.
  */
 public class IOUtils {
 
-    public static void save(String source, String path) throws FileNotFoundException {
+    public static void save(String source, String path) throws FileNotFoundException{
         OutputStream os = null;
         try {
             os = new FileOutputStream(path);
@@ -23,14 +23,12 @@ public class IOUtils {
             e.printStackTrace();
         } finally {
             try {
-                if(os != null){
-                    os.close();
+                if (os != null){
+                os.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
-
-
 }

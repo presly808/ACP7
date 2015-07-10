@@ -1,10 +1,7 @@
-package week1.MyHashMap;
+package week1.myHashMap;
 
 import java.util.*;
 
-/**
- * Created by Джек on 02.07.2015.
- */
 public class MyHashMap<K, V> implements Map<K, V> {
 
     public static int DEFAULT_TABLE_SIZE = 16;
@@ -102,8 +99,6 @@ public class MyHashMap<K, V> implements Map<K, V> {
         }
 
         size++;
-        System.out.println("Length - " + table.length);
-        System.out.println("Size - " + size);
 
 
         return null;
@@ -163,6 +158,15 @@ public class MyHashMap<K, V> implements Map<K, V> {
     @Override
     public void putAll(Map<? extends K, ? extends V> m) {
 
+        Iterator<? extends Entry<? extends K, ? extends V>> iterator = m.entrySet().iterator();
+
+        while (iterator.hasNext()) {
+
+            Entry<? extends K, ? extends V> current = iterator.next();
+
+            put(current.getKey(), current.getValue());
+        }
+
     }
 
     @Override
@@ -207,16 +211,6 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return null;
     }
 
-    public Set<Bucket<K, V>> myEntrySet() {
-
-        Set<Bucket<K, V>> set = new HashSet<Bucket<K, V>>();
-        BucketIterator iter = new BucketIterator();
-        while (iter.hasNext()) {
-            set.add(iter.next());
-        }
-        return set;
-
-    }
 
     private class BucketIterator implements Iterator<Bucket<K, V>> {
 
@@ -244,9 +238,9 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
         @Override
         public Bucket<K, V> next() {
-            Bucket<K, V> iterator = current; // why are you using interator refernece, just use current // it is simple way to do mistake if you create something, but dont realize why you need it
-            if (iterator.next != null) {
-                current = iterator.next;
+            Bucket<K, V> iterator = current;
+            if (current.next != null) {
+                current = current.next;
             } else {
                 index++;
                 findTableIndex();
@@ -307,6 +301,8 @@ public class MyHashMap<K, V> implements Map<K, V> {
         public VB getValue() {
             return value;
         }
+
+
 
         public Bucket<KB, VB> getNext() {
             return next;
