@@ -1,5 +1,6 @@
 package ua.artcode.week2;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MyConsole {
@@ -41,11 +42,19 @@ public class MyConsole {
             commandRun(new CommandMkf(), text);
         }else if(command.equalsIgnoreCase("del") || command.equalsIgnoreCase("rm")){
             commandRun(new CommandDel(), text);
+        }else if(command.equalsIgnoreCase("tree")){
+            commandRun(new CommandTree(), text);
+        }else if(command.equalsIgnoreCase("type")){
+            commandRun(new CommandType(), text);
         }
     }
 
     private void commandRun(ICommand command, String text){
-        current = (String) command.run(current, text);
+        try {
+            current = (String) command.run(current, text);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
