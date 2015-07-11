@@ -45,8 +45,6 @@ public class MyTerminal {
             showHelp(argumentCommand);
         } else if (enteredCommand.equals("find")) {
             createNewFile(argumentCommand);
-        } else if (enteredCommand.equals("dir")) {
-            createNewFile(argumentCommand);
         } else if (enteredCommand.equals("type")) {
             createNewFile(argumentCommand);
         } else if (enteredCommand.equals("del")) {
@@ -72,9 +70,9 @@ public class MyTerminal {
         System.out.println("\"Show all available commands - help\",\n" +
                             "\"ChangeCurrentLocation - cd\",\n" +
                             "\"Find file(dir) - find\",\n" +
-                            "\"Show directoryContent - dir\",\n" +
+                            "\"List directory content - ls\",\n" +
                             "\"Show file (content) - type\",\n" +
-                            "\"Delete file or dir - del , rd\",\n" +
+                            "\"Delete file or dir - del\",\n" +
                             "\"Create dir - mkdir\",\n" +
                             "\"Create file - touch\",\n" +
                             "\"Show folder structure - tree\",\n" +
