@@ -5,7 +5,8 @@ package week2.concole;
  */
 public interface FileHelper {
     void help(); //show all available commands
-    public void dir();//show directoryContent
+    void dir();//show directoryContent
+    boolean mkdir();
 
 
 }

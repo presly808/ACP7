@@ -8,6 +8,7 @@ import java.io.*;
 public class MyFileHelper implements FileHelper {
 
     File file;
+    private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public MyFileHelper(File file) {
         this.file = file;
@@ -41,6 +42,40 @@ public class MyFileHelper implements FileHelper {
         catalog(file);
     }
 
+    @Override
+    public boolean mkdir() {
+        System.out.print("Write new directory name: ");
+        String folderName = null;
+
+
+        try {
+            folderName = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String[] notAllowed = {"+", "=", "[", "]", ":", ";", "«", ".", "/", "?", "\\", "*", "<", ">", "|"};
+        for (int i = 0; i < notAllowed.length; i++) {
+            if (folderName.contains(notAllowed[i])) {
+                System.out.println("Not allowed symbols in file name. File not created.");
+                return false;
+            }
+        }
+
+        if (folderName == null || folderName.equals("")) {
+            folderName = "New Folder";
+
+        } /*else if (file.getName().contentEquals(find)){ // TODO if folder exist
+            return  false;
+        }*/
+            File newFile = new File(file.getAbsolutePath() + "\\" + folderName);
+            newFile.mkdir();
+            System.out.println("Directory " + newFile.getName() + " has been created.");
+            return true;
+
+
+    }
+
     private static void readFullyByBytes (InputStream is) throws IOException {
         int oneByte;
         while ((oneByte = is.read()) != -1) {
@@ -62,7 +97,6 @@ public class MyFileHelper implements FileHelper {
                 }
             }
         }
-
 
     }
 }
