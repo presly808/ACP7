@@ -35,10 +35,34 @@ public class MyFileHelper implements FileHelper {
         }
     }
 
+    @Override
+    public void dir() {
+
+        catalog(file);
+    }
+
     private static void readFullyByBytes (InputStream is) throws IOException {
         int oneByte;
         while ((oneByte = is.read()) != -1) {
             System.out.print((char) oneByte);
         }
+    }
+
+    private static void catalog (File file) {
+        if (file.isDirectory()) {
+            for (File item : file.listFiles()) {
+                if (item.isDirectory()) {
+
+                    System.out.println("Directory:  "  + item.getAbsolutePath());
+
+                    catalog(item);
+
+                } else {
+                    System.out.println("\t\t\t" + "File: " + item.getName());
+                }
+            }
+        }
+
+
     }
 }
