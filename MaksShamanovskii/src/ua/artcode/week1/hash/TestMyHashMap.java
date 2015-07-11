@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class TestMyHashMap {
     public static void main(String[] args) {
-        MyHashMap<Integer, String> map = new MyHashMap<>();
+        MyHashMap<Integer, String> map = new MyHashMap<Integer, String>();
         map.put(5, "a");
         map.put(9, "b");
         map.put(12, "c");
