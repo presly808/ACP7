@@ -46,6 +46,9 @@ public class Console {
                 case "mkdir":
                     fileHelper.mkdir();
                     break;
+                case "find":
+                    fileHelper.find();
+                    break;
                 default:
                     System.out.println("No such command. View \"Help menu\" - \"help\"");
                     break;

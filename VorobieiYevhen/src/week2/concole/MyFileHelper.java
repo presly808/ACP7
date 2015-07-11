@@ -76,6 +76,24 @@ public class MyFileHelper implements FileHelper {
 
     }
 
+    @Override
+    public boolean find() {
+        System.out.print("Write file name: ");
+        String fileName = null;
+
+
+
+        try {
+            fileName = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        search(file, fileName);
+
+        return false;
+    }
+
     private static void readFullyByBytes (InputStream is) throws IOException {
         int oneByte;
         while ((oneByte = is.read()) != -1) {
@@ -98,5 +116,29 @@ public class MyFileHelper implements FileHelper {
             }
         }
 
+    }
+
+    private static boolean search (File file, String fileName) {
+        if (file.isDirectory()) {
+            for (File item : file.listFiles()) {
+                if (item.isDirectory() && item.getName().toLowerCase().contains(fileName.toLowerCase())) {
+
+                    System.out.println("Directory " + fileName + " location is:  " + item.getAbsolutePath());
+                    return true; // TODO deep search
+
+                } else if (item.isFile() && item.getName().toLowerCase().contains(fileName.toLowerCase())){
+                        try {
+                            System.out.println("File " + fileName + " location is:  " + item.getCanonicalPath());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    return  true;
+
+                } else {
+                    search(item, fileName);
+                }
+            }
+        }
+        return false;
     }
 }
