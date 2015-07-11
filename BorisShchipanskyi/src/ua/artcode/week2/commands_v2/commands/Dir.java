@@ -27,7 +27,7 @@ public class Dir extends Command{
             FileUtils.showFolderContent(new File(path), "+");
         }
         else{
-            throw new IOException("cannot execute command: "+ NAME);
+            throw new IOException("Command: "+ NAME +" Get Incorrect params!!!");
         }
     }
 

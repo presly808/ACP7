@@ -28,8 +28,9 @@ public class CommandsMenu {
             if (line.equals("1")) {
                 shayHello();
             } else {
-                Command command = getCommand(line);
+                Command command ;
                 try {
+                    command = getCommand(line);
                         command.execute();
                     if(command instanceof Cd){
                         file = command.getFile();
@@ -57,7 +58,7 @@ public class CommandsMenu {
         return lineScan.nextLine();
     }
 
-    private Command getCommand(String line){
+    private Command getCommand(String line)throws IOException{
         String newCommand = CommandUtils.getCommand(line);
         Command myCommand;
         for(ICommand com: help.getCommands()){
@@ -69,7 +70,7 @@ public class CommandsMenu {
 
             }
         }
-        return null;
+        throw new IOException(line);
     }
 
 

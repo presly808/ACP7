@@ -22,7 +22,7 @@ public class Find extends Command{
             }else
                 System.out.println("no file find!");
         }else{
-            throw new IOException("Cannot find!");
+            throw new IOException("Command: "+ NAME +" Get Incorrect params!!!");
         }
     }
 
