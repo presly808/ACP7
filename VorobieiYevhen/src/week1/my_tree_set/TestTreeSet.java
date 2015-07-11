@@ -1,6 +1,5 @@
-package week1.myTreeSet;
+package week1.my_tree_set;
 
-import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -37,7 +36,7 @@ public class TestTreeSet {
         User user21 = new User("Una", 17);
         User user22 = new User("Viva", 21);
 
-        set.add(user6);
+        /*set.add(user6);
         System.out.println(set.add(user4));
         set.add(user3);
         set.add(user2);
@@ -50,22 +49,36 @@ public class TestTreeSet {
         Iterator<User> iterator = set.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
-        }
+        }*/
 
 
         System.out.println(mySet.size());
+        mySet.add(user8);
+        mySet.add(user7);
+        mySet.add(user6);
         mySet.add(user5);
         mySet.add(user3);
-        mySet.add(user7);
-        mySet.add(user4);
         mySet.add(user2);
-        mySet.add(user6);
-        mySet.add(user8);
+        mySet.add(user4);
+        mySet.add(user9);
+        mySet.add(user10);
+        mySet.add(user22);
+        mySet.add(user18);
+       /* mySet.add(user11);
+        mySet.add(user12);
+        mySet.add(user13);
+        mySet.add(user16);
+        mySet.add(user15);
+        mySet.add(user14);
+        mySet.add(user19);
+        mySet.add(user20);
+        mySet.add(user21);
+        mySet.add(user17);
+        mySet.add(user1);*/
         System.out.println(mySet.size());
         System.out.println(mySet.contains(user1));
         System.out.println(mySet.contains(user10));
         mySet.print();
-        System.out.println(mySet2.size());
 
         System.out.println(mySet.findMin());
         System.out.println(mySet.findMax());

@@ -1,4 +1,4 @@
-package week1.myTreeSet;
+package week1.my_tree_set;
 
 /**
  * Created by Джек on 27.06.2015.
