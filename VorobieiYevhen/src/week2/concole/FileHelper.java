@@ -1,4 +1,4 @@
-package week2.myFileHelper;
+package week2.concole;
 
 /**
  * Created by Джек on 11.07.2015.

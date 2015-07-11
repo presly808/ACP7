@@ -1,4 +1,4 @@
-package week2.myFileHelper;
+package week2.concole;
 
 import java.io.BufferedReader;
 import java.io.File;
