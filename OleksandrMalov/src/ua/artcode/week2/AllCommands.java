@@ -3,7 +3,7 @@ package ua.artcode.week2;
 /**
  * Created by Олександр on 08.07.2015.
  */
-public class FileHelper {
+public class AllCommands {
     public static void main(String[] args) {
         help();
         cd();
