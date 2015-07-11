@@ -22,32 +22,27 @@ public class CommandsMenu {
     }
 
     private void run() {
-        shayHello();
+        showMainInfo();
         String line = getLine();
         while (!line.equals("0")) {
-            if (line.equals("1")) {
-                shayHello();
-            } else {
-                Command command ;
-                try {
-                    command = getCommand(line);
-                        command.execute();
-                    if(command instanceof Cd){
-                        file = command.getFile();
-                    }
-                }catch (IOException e){
-                    System.out.println("Cannot execute! "+ e.getMessage());
+            Command command;
+            try {
+                command = getCommand(line);
+                command.execute();
+                if (command instanceof Cd) {
+                    file = command.getFile();
                 }
-
+            } catch (IOException e) {
+                System.out.println("Cannot execute! " + e.getMessage());
             }
-        shayHello();
+            showMainInfo();
             line = getLine();
         }
 
     }
 
 
-    private void shayHello() {
+    private void showMainInfo() {
         System.out.println("You are in FileHelper.");
         System.out.println("press 0 - for exit");
         System.out.println("enter 'help' for more information");
@@ -58,11 +53,11 @@ public class CommandsMenu {
         return lineScan.nextLine();
     }
 
-    private Command getCommand(String line)throws IOException{
+    private Command getCommand(String line) throws IOException {
         String newCommand = CommandUtils.getCommand(line);
         Command myCommand;
-        for(ICommand com: help.getCommands()){
-            if(newCommand.equals(com.getName())){
+        for (ICommand com : help.getCommands()) {
+            if (newCommand.equals(com.getName())) {
                 myCommand = (Command) com;
                 myCommand.setCommand(line);
                 myCommand.setFile(file);
