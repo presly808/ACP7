@@ -27,7 +27,12 @@ public class Help extends Command {
         commands.add(new Cd());
         commands.add(new Help());
         commands.add(new Pwd());
-//        commands.add();
+        commands.add(new Find());
+        commands.add(new Dir());
+        commands.add(new Type());
+        commands.add(new Mkdir());
+        commands.add(new Touch());
+        commands.add(new Rm());
 //        commands.add();
 
 
@@ -53,7 +58,7 @@ public class Help extends Command {
     }
 
     public void showSimple() {
-        System.out.println("You can yse next commands:");
+        System.out.println("You can use next commands:");
         for (ICommand com : commands) {
             System.out.printf("Command: %s\n", com.getName());
         }
