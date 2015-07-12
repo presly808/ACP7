@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class MyTerminal {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void commands() {
+    public void commands() {
 
         String command = new String();
 
@@ -34,30 +34,31 @@ public class MyTerminal {
         String[] strings;
         strings = command.split(" ");
 
-        if (strings[0].equals("cd")) {
-            changeDirectory(strings[1]);
-        } else if(strings[0].equals("ls")) {
-            listOfFolders(strings[1]);
-        } else if (strings[0].equals("help")) {
-            showHelp(strings[1]);
-        } else if (strings[0].equals("find")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("dir")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("type")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("del")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("mkdir")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("touch")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("tree")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("cp")) {
-            createNewFile(strings[1]);
-        } else if (strings[0].equals("fc")) {
-            createNewFile(strings[1]);
+        String enteredCommand = strings[0];
+        String argumentCommand = strings[1];
+
+        if (enteredCommand.equals("cd")) {
+            changeDirectory(argumentCommand);
+        } else if(enteredCommand.equals("ls")) {
+            listOfFolders(argumentCommand);
+        } else if (enteredCommand.equals("help")) {
+            showHelp(argumentCommand);
+        } else if (enteredCommand.equals("find")) {
+            createNewFile(argumentCommand);
+        } else if (enteredCommand.equals("type")) {
+            createNewFile(argumentCommand);
+        } else if (enteredCommand.equals("del")) {
+            deleteFile(argumentCommand);
+        } else if (enteredCommand.equals("mkdir")) {
+            createNewDirectory(argumentCommand);
+        } else if (enteredCommand.equals("touch")) {
+            createNewFile(argumentCommand);
+        } else if (enteredCommand.equals("tree")) {
+            showTree(argumentCommand);
+        } else if (enteredCommand.equals("cp")) {
+            copyFile(argumentCommand);
+        } else if (enteredCommand.equals("fc")) {
+            compareFiles(argumentCommand);
         } else {
             System.err.printf("There is no such command");
         }
@@ -69,9 +70,9 @@ public class MyTerminal {
         System.out.println("\"Show all available commands - help\",\n" +
                             "\"ChangeCurrentLocation - cd\",\n" +
                             "\"Find file(dir) - find\",\n" +
-                            "\"Show directoryContent - dir\",\n" +
+                            "\"List directory content - ls\",\n" +
                             "\"Show file (content) - type\",\n" +
-                            "\"Delete file or dir - del , rd\",\n" +
+                            "\"Delete file or dir - del\",\n" +
                             "\"Create dir - mkdir\",\n" +
                             "\"Create file - touch\",\n" +
                             "\"Show folder structure - tree\",\n" +
@@ -80,38 +81,38 @@ public class MyTerminal {
 
     }
 
-    public static void changeDirectory(String myString) {
+    public void changeDirectory(String myString) {
 
         if (myString.equals("")){
         }
 
     }
 
-    private static void listOfFolders(String myString) {
+    private void listOfFolders(String myString) {
 
     }
 
-    private static void deleteFile(String myString) {
+    private void deleteFile(String myString) {
 
     }
 
-    private static void showTree(String myString) {
+    private void showTree(String myString) {
 
     }
 
-    private static void copyFile(String myString) {
+    private void copyFile(String myString) {
 
     }
 
-    private static void createNewFile(String myString) {
+    private void createNewFile(String myString) {
 
     }
 
-    private static void createNewDirectory(String myString) {
+    private void createNewDirectory(String myString) {
 
     }
 
-    private static void showDirectory(String myString) {
+    private void compareFiles(String myString) {
 
     }
 

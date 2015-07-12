@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Created by Legion on 05.07.2015.
  */
 public class MyConsol {
-    public static String fileOfHelp = "C://Users//Legion//IdeaProjects//ACP7//OlesBovsunivsky//src//Consol//File_Hellp";
+    public static String fileOfHpelp = "C://Users//Legion//IdeaProjects//ACP7//OlesBovsunivsky//src//Consol//File_Hellp";
     public String comandWay = "C://";
     File bufferFile;
 
