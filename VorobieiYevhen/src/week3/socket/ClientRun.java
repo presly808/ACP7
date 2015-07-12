@@ -14,7 +14,7 @@ public class ClientRun {
     public static void main(String[] args) throws IOException {
 
 
-            Socket socket = new Socket("192.168.1.45", 9999); //"127.0.0.1" or "localhost"
+            Socket socket = new Socket("localhost", 9999); //"127.0.0.1" or "192.168.1.45"
             PrintWriter pw = null;
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -25,7 +25,7 @@ public class ClientRun {
             try {
             String answer = bufferedReader.readLine();
             pw.println(answer);
-            pw.flush();
+                pw.flush();
 
         }catch (IOException e) {
 
