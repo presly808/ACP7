@@ -1,0 +1,13 @@
+package ua.artcode.week3;
+
+import java.io.File;
+
+/**
+ * Created by serhii on 12.07.15.
+ */
+public class TestRelativePath {
+    public static void main(String[] args) {
+        File file = new File("VorobieiYevhen/resources/Commands.txt");
+        System.out.println(file.exists());
+    }
+}
