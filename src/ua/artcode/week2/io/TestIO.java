@@ -1,5 +1,7 @@
 package ua.artcode.week2.io;
 
+import ua.artcode.utils.io.IOUtils;
+
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
