@@ -23,7 +23,7 @@ public class SimpleServerRunTest {
         while(true){
             Socket client = ss.accept();
 
-            String input = IOUtils.readAll(client.getInputStream());
+            // String input = IOUtils.readAll(client.getInputStream());
 
 
             String info = String.format("Hello from server, your inet add %s, time %tc",
