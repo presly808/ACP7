@@ -1,4 +1,4 @@
-package ua.artcode.week2.fileHelper;
+package ua.artcode.week2.file_helper;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
  * Created by Daryna on 08-Jul-15.
  */
 public class FileHelper {
-    String input;
     String command;
     String argument;
 
@@ -27,7 +26,7 @@ public class FileHelper {
         printMenu();
 
         while (true) {
-            someReader();
+            String input = someReader();
             someParser(input);
 
             switch (command) {

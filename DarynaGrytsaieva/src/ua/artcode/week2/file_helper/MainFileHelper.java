@@ -1,4 +1,4 @@
-package ua.artcode.week2.fileHelper;
+package ua.artcode.week2.file_helper;
 
 import java.io.IOException;
 
