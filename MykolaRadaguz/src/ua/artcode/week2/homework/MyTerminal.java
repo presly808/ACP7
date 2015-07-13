@@ -19,6 +19,7 @@ import java.util.Scanner;
             "Compare content of files - fc" */
 
 public class MyTerminal {
+
     private static Scanner scanner = new Scanner(System.in);
 
     public void commands() {

@@ -1,14 +1,14 @@
-package ua.artcode.week2;
+package ua.artcode.utils.io;
 
 import java.io.*;
-import java.net.Socket;
+import java.util.Scanner;
 
 /**
- * Created by pikolo on 05.07.15.
+ * Created by serhii on 05.07.15.
  */
 public class IOUtils {
 
-    public static void save(String source, String path) throws FileNotFoundException{
+    public static void save(String source, String path) throws FileNotFoundException {
         OutputStream os = null;
         try {
             os = new FileOutputStream(path);
@@ -21,8 +21,8 @@ public class IOUtils {
             e.printStackTrace();
         } finally {
             try {
-                if (os != null){
-                os.close();
+                if (os != null) {
+                    os.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -30,14 +30,28 @@ public class IOUtils {
         }
     }
 
+    public static String readAllS(InputStream inputStream) {
+        StringBuilder sb = new StringBuilder(); // Immutable
+
+        Scanner scanner = new Scanner(inputStream);
+
+        while (scanner.hasNextLine()) {
+            sb.append(scanner.nextLine());
+        }
+
+        return sb.toString();
+    }
+
     public static String readAll(InputStream inputStream) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(); // Immutable
 
-        BufferedReader bf = new BufferedReader ( new InputStreamReader(inputStream));
+        BufferedReader bf = new BufferedReader(
+                new InputStreamReader(inputStream));
 
+        String res = "";
         String line = null;
         try {
-            while ((line = bf.readLine()) != null){
+            while ((line = bf.readLine()) != null) {
                 sb.append(line);
             }
         } catch (IOException e) {
@@ -45,7 +59,7 @@ public class IOUtils {
         }
 
         return sb.toString();
-
     }
+
 
 }
