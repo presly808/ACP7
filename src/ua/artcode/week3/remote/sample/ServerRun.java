@@ -23,6 +23,9 @@ public class ServerRun {
             String info = String.format("Hello from server, your inet add %s, time %tc\n",
                     client.getInetAddress().toString(), new Date());
 
+            // String input = IOUtils.readAll(client.getInputStream());
+
+
             System.out.println(info);
 
             IOUtils.sendDataPure(info, client.getOutputStream());

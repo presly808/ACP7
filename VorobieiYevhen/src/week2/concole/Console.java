@@ -5,9 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Джек on 11.07.2015.
- */
+
 public class Console {
     private static String PATH = "C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\";
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,7 +20,7 @@ public class Console {
 
         while (true) {
 
-            System.out.println("\nSelect menu operation (Press \"Enter\" to exit).");
+            System.out.println("\nEnter menu (\"help\") operation (Press \"Enter\" to exit).");
             System.out.print(PATH + " > ");
 
             String select = null;
