@@ -27,7 +27,7 @@ public class FileHelper {
 
         while (true) {
             String input = someReader();
-            someParser(input);
+            parse(input);
 
             switch (command) {
                 case "help":
@@ -84,7 +84,7 @@ public class FileHelper {
         BufferedReader reader = new BufferedReader(inputStreamReader);
 
         // or BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
+        String input = null;
         try {
             input = reader.readLine();
         } catch (IOException e) {
@@ -94,7 +94,7 @@ public class FileHelper {
         return input;
     }
 
-    private void someParser(String input) throws IOException {
+    private void parse(String input) throws IOException {
         StringTokenizer st = new StringTokenizer(input, " ");
         if (st.countTokens() > 2) {
             throw new IOException("Illegal command input."); //????????
