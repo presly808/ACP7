@@ -48,7 +48,6 @@ public class IOUtils {
         BufferedReader bf = new BufferedReader(
                 new InputStreamReader(inputStream));
 
-        String res = "";
         String line = null;
         try {
             while ((line = bf.readLine()) != null) {
@@ -56,6 +55,28 @@ public class IOUtils {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        return sb.toString();
+    }
+
+    public static void sendData(String src, OutputStream os) throws IOException {
+        Writer wr = new BufferedWriter(new OutputStreamWriter(os));
+        wr.write(src);
+        wr.flush();
+    }
+
+    public static void sendDataPure(String src, OutputStream os) throws IOException {
+        os.write(src.getBytes());
+        os.flush();
+    }
+
+    public static String readPure(InputStream is) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int read = 0;
+
+        while ((read = is.read()) != -1){
+            sb.append((char)read);
         }
 
         return sb.toString();
