@@ -1,11 +1,7 @@
-package ua.artcode.week3.remote.server;
-
-import ua.artcode.utils.io.IOUtils;
+package ua.artcode.week3.remote.simple_app;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;

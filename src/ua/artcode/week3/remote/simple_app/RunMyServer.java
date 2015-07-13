@@ -1,4 +1,4 @@
-package ua.artcode.week3.remote.server;
+package ua.artcode.week3.remote.simple_app;
 
 import java.io.IOException;
 
