@@ -27,7 +27,7 @@ public class Cd extends Command {
             setFile(FileUtils.changeLocation(dPath));
 
         } else {
-            throw new IOException("Incorrect params!!!");
+            throw new IOException("Command: "+ NAME +" Get Incorrect params!!!");
         }
     }
 

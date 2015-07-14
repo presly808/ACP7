@@ -9,50 +9,51 @@ import java.util.Scanner;
  * Created by boris on 5/30/15.
  */
 public class FileUtils {
-    public static void showFolderContent(File file, String step){
+    public static void showFolderContent(File file, String step) {
         String result = step + file.getName();
-        if(file.isDirectory())
-            System.out.println(result+"/");
+        if (file.isDirectory())
+            System.out.println(result + "/");
         else
             System.out.println(result);
 
-        if(file.isDirectory()){
-            for(File f: file.listFiles()){
-                showFolderContent(f, step +"----");
+        if (file.isDirectory()) {
+            for (File f : file.listFiles()) {
+                showFolderContent(f, step + "----");
             }
         }
     }
 
-    public static void findByName(File file, String key){
-        if(file.getName().contains(key)){
+    public static void findByName(File file, String key) {
+        if (file.getName().contains(key)) {
             System.out.println(file.getAbsolutePath());
         }
-        if (file.isDirectory()){
-            for(File f: file.listFiles()){
+        if (file.isDirectory()) {
+            for (File f : file.listFiles()) {
                 findByName(f, key);
             }
         }
     }
 
-    public static String findByNameWithReq(File file, String key){
+    public static String findByNameWithReq(File file, String key) {
         String res = "";
-        if(file.getName().contains(key)){
-           res = file.getAbsolutePath() + "\n";
+        if (file.getName().contains(key)) {
+            res = file.getAbsolutePath() + "\n";
         }
-        if (file.isDirectory()){
-            for(File f: file.listFiles()){
+        if (file.isDirectory()) {
+            for (File f : file.listFiles()) {
                 res += findByNameWithReq(f, key);
             }
         }
         return res;
     }
 
-    public static boolean isFile(String filePath){
+    public static boolean isFile(String filePath) {
         File file = new File(filePath);
         return file.isFile();
 
     }
-    public static boolean isDirectory(String filePath){
+
+    public static boolean isDirectory(String filePath) {
         File file = new File(filePath);
         return file.isDirectory();
 
@@ -74,7 +75,7 @@ public class FileUtils {
             }
             input.close();
             output.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
@@ -84,34 +85,35 @@ public class FileUtils {
     public static String getFileContent(String path) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(path));
         StringBuilder sb = new StringBuilder();
-        while(sc.hasNextLine()){
-            sb.append(sc.nextLine()+ "\n");
+        while (sc.hasNextLine()) {
+            sb.append(sc.nextLine() + "\n");
         }
         return sb.toString();
     }
 
-    public static File changeLocation(String path){
-        if(isDirectory(path))
-        return new File(path);
+    public static File changeLocation(String path) {
+        if (isDirectory(path))
+            return new File(path);
         return new File(".");
     }
 
-    public static String getPath(File file){
+    public static String getPath(File file) {
         return file.getPath();
 
     }
-    public static String getAbsolutePath(File file){
+
+    public static String getAbsolutePath(File file) {
         return file.getAbsolutePath();
     }
 
-    public static String showFileContent(File file){
+    public static String showFileContent(File file) {
         InputStream is = null;
-       StringBuilder builder = new StringBuilder();
-        try{
+        StringBuilder builder = new StringBuilder();
+        try {
             is = new FileInputStream(file);
             int ch;
-            while((ch = is.read()) != -1){
-                builder.append((char)ch);
+            while ((ch = is.read()) != -1) {
+                builder.append((char) ch);
             }
 
             System.out.println(builder.toString());
@@ -123,4 +125,27 @@ public class FileUtils {
         return builder.toString();
     }
 
+    public static boolean createDir(String path) throws IOException {
+        File file = new File(path);
+        if (file.exists()) {
+            throw new IOException("Cannot create. File exist");
+        }
+        return file.mkdirs();
+    }
+
+    public static boolean createFile(String path) throws IOException {
+        File file = new File(path);
+        if (file.exists()) {
+            throw new IOException("Cannot create. File exist");
+        }
+        return file.createNewFile();
+    }
+
+    public static boolean deleteFile(String path) throws IOException {
+        File file = new File(path);
+        if (!file.exists()) {
+            throw new IOException("Cannot delete. File doesn't exist");
+        }
+        return file.delete();
+    }
 }
