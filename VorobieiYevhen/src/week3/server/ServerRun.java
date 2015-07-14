@@ -12,9 +12,11 @@ public class ServerRun {
 
     public static void main(String[] args) throws IOException {
 
-        ServerSocket ss = new ServerSocket(9999);
-        System.out.println(ss.getLocalSocketAddress());
-        System.out.println(ss.getInetAddress());
+        
+
+            ServerSocket ss = new ServerSocket(9999);
+            System.out.println(ss.getLocalSocketAddress());
+            System.out.println(ss.getInetAddress());
 
 
             while(true){

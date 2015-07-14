@@ -2,10 +2,7 @@ package week3.socket;
 
 import utils.IOUtils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 
@@ -18,9 +15,12 @@ public class ClientRun {
             PrintWriter pw = null;
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
+            /*String response = IOUtils.readAll(socket.getInputStream()); // we code our server info in writeUTF
+            System.out.println(response);*/                                // and try to read it with BufferedReader
 
-            String response = IOUtils.readAll(socket.getInputStream());
-            System.out.println(response);
+            DataInputStream dis = new DataInputStream(socket.getInputStream()); // instead we should read it with DataInputStream
+            System.out.println(dis.readUTF());
+
 
             try {
             String answer = bufferedReader.readLine();
