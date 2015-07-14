@@ -1,6 +1,6 @@
-package ConsoleCommander.controller;
+package console_commander.controller;
 
-import ConsoleCommander.model.MyNIO;
+import console_commander.model.MyNIO;
 
 import java.io.File;
 
