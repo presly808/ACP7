@@ -1,10 +1,10 @@
 package week2.concole;
 
+import utils.IOUtils;
+
 import java.io.*;
 
-/**
- * Created by Джек on 11.07.2015.
- */
+
 public class MyFileHelper implements FileHelper {
 
     File file;
@@ -19,9 +19,9 @@ public class MyFileHelper implements FileHelper {
        InputStream is = null;
 
         try {
-            is = new FileInputStream("C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\resources\\Commands.txt");
+            is = new FileInputStream("VorobieiYevhen\\resources\\Commands.txt");
 
-            readFullyByBytes(is);
+            IOUtils.readFullyByBytes(is); //read bytes and covert them to char
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,7 +65,7 @@ public class MyFileHelper implements FileHelper {
         if (folderName == null || folderName.equals("")) {
             folderName = "New Folder";
 
-        } /*else if (file.getName().contentEquals(find)){ // TODO if folder exist
+        } /*else if (search(file, folderName)){ // TODO if folder exist
             return  false;
         }*/
             File newFile = new File(file.getAbsolutePath() + "\\" + folderName);
@@ -81,8 +81,6 @@ public class MyFileHelper implements FileHelper {
         System.out.print("Write file name: ");
         String fileName = null;
 
-
-
         try {
             fileName = br.readLine();
         } catch (IOException e) {
@@ -94,14 +92,7 @@ public class MyFileHelper implements FileHelper {
         return false;
     }
 
-    private static void readFullyByBytes (InputStream is) throws IOException {
-        int oneByte;
-        while ((oneByte = is.read()) != -1) {
-            System.out.print((char) oneByte);
-        }
-    }
-
-    private static void catalog (File file) {
+   private static void catalog (File file) {
         if (file.isDirectory()) {
             for (File item : file.listFiles()) {
                 if (item.isDirectory()) {
@@ -141,4 +132,5 @@ public class MyFileHelper implements FileHelper {
         }
         return false;
     }
+
 }
