@@ -1,9 +1,7 @@
 package ua.artcode.week2;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.net.Socket;
 
 /**
  * Created by pikolo on 05.07.15.
@@ -31,4 +29,23 @@ public class IOUtils {
             }
         }
     }
+
+    public static String readAll(InputStream inputStream) {
+        StringBuilder sb = new StringBuilder();
+
+        BufferedReader bf = new BufferedReader ( new InputStreamReader(inputStream));
+
+        String line = null;
+        try {
+            while ((line = bf.readLine()) != null){
+                sb.append(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return sb.toString();
+
+    }
+
 }

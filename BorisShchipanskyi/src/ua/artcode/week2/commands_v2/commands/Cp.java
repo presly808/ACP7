@@ -28,7 +28,7 @@ public class Cp extends Command {
             FileUtils.copy(sPath, dPath);
 
         } else {
-            throw new IOException("Incorrect params!!!");
+            throw new IOException("Command: "+ NAME +" Get Incorrect params!!!");
         }
     }
 
