@@ -1,4 +1,4 @@
-package ua.artcode.week1.hashMap;
+package ua.artcode.week1.hash_map;
 
 /**
  * Created by Daryna on 07-Jul-15.

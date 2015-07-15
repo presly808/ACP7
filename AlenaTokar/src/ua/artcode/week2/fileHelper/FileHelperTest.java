@@ -37,7 +37,8 @@ public class FileHelperTest {
             if (commands[0].equals("find")){
 
                 try {
-                    fileHelper.find(commands[1],ourFile);
+                   String finded=  fileHelper.find(commands[1], ourFile);
+                    System.out.println(finded);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
