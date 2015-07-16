@@ -1,4 +1,4 @@
-package ua.artcode.week1.binaryTree;
+package ua.artcode.week1.binary_tree;
 
 /**
  * Created by Daryna on 27-Jun-15.

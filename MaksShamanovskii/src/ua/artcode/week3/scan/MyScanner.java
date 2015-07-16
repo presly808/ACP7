@@ -2,17 +2,19 @@ package ua.artcode.week3.scan;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class MyScanner implements IScanner {
+    private final static int DEFAULT_CAPACITY = 1024;
     private Reader reader;
     private String buf;
-    private char[] buffer = new char[1024];
+    private char[] buffer = new char[DEFAULT_CAPACITY];
     private int start = 0;
     private int end = 0;
-    private int count = 0;
     private int index = 0;
-    private String delimiter = " ";
+    private boolean closed = false;
+    private char[] delimiter = {' '};
 
 
     public MyScanner(Reader reader) {
@@ -24,6 +26,7 @@ public class MyScanner implements IScanner {
         if (buf == null) {
             try {
                 while (reader.ready()) {
+                    checkCapacity();
                     buffer[index++] = (char) reader.read();
                 }
             } catch (IOException e) {
@@ -31,9 +34,11 @@ public class MyScanner implements IScanner {
             }
         } else {
             char[] temp = buf.toCharArray();
-            for (int i = 0; i < temp.length; i++) {
-                buffer[i] = temp[i];
+            for (; index < temp.length; index++) {
+                checkCapacity();
+                buffer[index] = temp[index];
             }
+            closed = true;
         }
         findStart();
     }
@@ -41,6 +46,13 @@ public class MyScanner implements IScanner {
     public MyScanner(String line) {
         buf = line;
         readInBuffer();
+    }
+
+    private void checkCapacity(){
+        if(index == DEFAULT_CAPACITY){
+            char[] newBuffer = Arrays.copyOf(buffer, buffer.length * 2);
+            buffer = newBuffer;
+        }
     }
 
     @Override
@@ -75,21 +87,52 @@ public class MyScanner implements IScanner {
     }
 
     private void findStart() {
-        for (; start < buffer.length; start++) {
-            if (buffer[start] != ' ') {
+        int i = 0;
+        boolean findDelimiter = true;
+        for (;start < buffer.length; start++) {
+            if (buffer[start] != delimiter[i]) {
                 break;
+            }
+            else{
+                if(findDelimiter = false){
+                    start++;
+                }else {
+                    for (int j = 0; j < delimiter.length; j++) {
+                        if (buffer[start + j] != delimiter[j]) {
+                            findDelimiter = false;
+                            break;
+                        }
+                    }
+                }
+                start += delimiter.length - 1;
             }
         }
     }
 
 
     private void findEnd(int startArr) {
-        for (int i = startArr; i < buffer.length; i++) {
-            if (buffer[i] == ' ' || buffer[i] == '\u0000') {
-                end = i;
+        int k = 0;
+        boolean findDelimiter = true;
+        int i = startArr;
+        for (; i < buffer.length; i++) {
+            if (buffer[i] == '\u0000') {
+                break;
+            }
+            else if(buffer[i] == delimiter[k]){
+                if(findDelimiter = false){
+                    i++;
+                }
+                for (int j = 0; j < delimiter.length; j++) {
+                    if(buffer[i + j] != delimiter[j]){
+                        findDelimiter = false;
+                        break;
+                    }
+                }
                 break;
             }
         }
+        end = i;
+
     }
 
     @Override
@@ -116,7 +159,7 @@ public class MyScanner implements IScanner {
 
     @Override
     public boolean hasNextInt() {
-        if (start == '\u0000') {
+        if (buffer[start] == '\u0000') {
             return false;
         }
         findEnd(start);
@@ -130,15 +173,17 @@ public class MyScanner implements IScanner {
 
     @Override
     public void useDelimiter(String delimiter) {
-        this.delimiter = delimiter;
+        this.delimiter = delimiter.toCharArray();
     }
 
     @Override
     public void close() {
-        try {
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!closed) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

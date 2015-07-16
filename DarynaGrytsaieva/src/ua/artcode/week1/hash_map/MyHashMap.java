@@ -1,4 +1,4 @@
-package ua.artcode.week1.hashMap;
+package ua.artcode.week1.hash_map;
 
 import java.util.*;
 
