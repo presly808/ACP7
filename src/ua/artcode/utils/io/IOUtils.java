@@ -35,9 +35,9 @@ public class IOUtils {
 
         Scanner scanner = new Scanner(inputStream);
 
-        while (scanner.hasNextLine()) {
-            sb.append(scanner.nextLine());
-        }
+
+        sb.append(scanner.nextLine());
+
 
         return sb.toString();
     }
@@ -69,14 +69,15 @@ public class IOUtils {
     public static void sendDataPure(String src, OutputStream os) throws IOException {
         os.write(src.getBytes());
         os.flush();
+        os.close();
     }
 
     public static String readPure(InputStream is) throws IOException {
         StringBuilder sb = new StringBuilder();
         int read = 0;
 
-        while ((read = is.read()) != -1){
-            sb.append((char)read);
+        while ((read = is.read()) != -1) {
+            sb.append((char) read);
         }
 
         return sb.toString();
