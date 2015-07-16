@@ -13,6 +13,7 @@ public class MyScanner implements IScanner {
     private int start = 0;
     private int end = 0;
     private int index = 0;
+    private boolean closed = false;
     private char[] delimiter = {' '};
 
 
@@ -37,6 +38,7 @@ public class MyScanner implements IScanner {
                 checkCapacity();
                 buffer[index] = temp[index];
             }
+            closed = true;
         }
         findStart();
     }
@@ -86,21 +88,51 @@ public class MyScanner implements IScanner {
 
     private void findStart() {
         int i = 0;
+        boolean findDelimiter = true;
         for (;start < buffer.length; start++) {
-            if (buffer[start] != ' ') {         //delimiter!!!
+            if (buffer[start] != delimiter[i]) {
                 break;
+            }
+            else{
+                if(findDelimiter = false){
+                    start++;
+                }else {
+                    for (int j = 0; j < delimiter.length; j++) {
+                        if (buffer[start + j] != delimiter[j]) {
+                            findDelimiter = false;
+                            break;
+                        }
+                    }
+                }
+                start += delimiter.length - 1;
             }
         }
     }
 
 
     private void findEnd(int startArr) {
-        for (int i = startArr; i < buffer.length; i++) {
-            if (buffer[i] == ' ' || buffer[i] == '\u0000') {   //delimiter!!!
-                end = i;
+        int k = 0;
+        boolean findDelimiter = true;
+        int i = startArr;
+        for (; i < buffer.length; i++) {
+            if (buffer[i] == '\u0000') {
+                break;
+            }
+            else if(buffer[i] == delimiter[k]){
+                if(findDelimiter = false){
+                    i++;
+                }
+                for (int j = 0; j < delimiter.length; j++) {
+                    if(buffer[i + j] != delimiter[j]){
+                        findDelimiter = false;
+                        break;
+                    }
+                }
                 break;
             }
         }
+        end = i;
+
     }
 
     @Override
@@ -146,10 +178,12 @@ public class MyScanner implements IScanner {
 
     @Override
     public void close() {
-        try {
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if(!closed) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
