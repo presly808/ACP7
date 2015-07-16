@@ -4,55 +4,20 @@ package week1.my_tree_set;
  * Created by Джек on 27.06.2015.
  */
 public class BinarySearchTee<E> implements ITree<E> {
+
+    //TODO refactoring
+
     private Node root;
     private int size = 0;
 
 
-    private class Node {
+    private static class Node {
         private Object value;
         private Node leftChild;
         private Node rightChild;
         private Node parent;
-        private int balance = 0;
 
-        public void setLeftChild(Node leftChild) {
-            this.leftChild = leftChild;
-        }
-
-        public void setRightChild(Node rightChild) {
-            this.rightChild = rightChild;
-        }
-
-        public void setParent(Node parent) {
-            this.parent = parent;
-        }
-
-        public int getBalance() {
-            return balance;
-        }
-
-        public void setBalance(int balance) {
-            this.balance = balance;
-        }
-
-        public Object getObj() {
-            return value;
-        }
-
-        public Node getLeftChild() {
-            return leftChild;
-        }
-
-        public Node getRightChild() {
-            return rightChild;
-        }
-
-        public Node getParent() {
-            return parent;
-        }
-
-        public Node() {
-        }
+        public Node() {}
 
         public Node(Object value, Node leftChild, Node rightChild, Node parent) {
             this.value = value;
@@ -97,7 +62,6 @@ public class BinarySearchTee<E> implements ITree<E> {
             size++;
             return true;
         } else {
-
             Node iter = root;
             while (iter != null) {
                 int compaRes = forCompare.compareTo(iter.value);
@@ -105,49 +69,6 @@ public class BinarySearchTee<E> implements ITree<E> {
                     if (iter.leftChild == null) {
                         iter.leftChild = new Node(obj, null, null, iter);
                         size++;
-
-                        //iter.setBalance(iter.getBalance() + 1);
-
-                        iter = iter.getLeftChild();
-
-                        do {
-
-                            int child;
-                            if (iter == iter.getParent().getRightChild()) {
-                                child = (-1);
-                            } else {
-                                child = 1;
-                            }
-
-                            iter.getParent().setBalance(iter.getParent().getBalance() + (child * 1));
-
-                            if (iter.getParent().getBalance() == (-2)) {
-                                Node tmp = rotateLeft(iter);
-                                if (iter.getParent() != null) {
-                                    tmp.setParent(iter.getParent());
-                                    iter.getParent().setRightChild(tmp);
-                                } else {
-                                    root = tmp;
-                                }
-
-
-
-                            } else if ( iter.getParent().getBalance()  == 2) {
-
-                                Node tmp = rotateRight(iter);
-                                if (iter.getParent() != null) {
-                                    tmp.setParent(iter.getParent());
-                                    iter.getParent().setLeftChild(tmp);
-                                } else {
-                                    root = tmp;
-                                }
-                            }
-
-                            iter = iter.getParent();
-
-                        }while (iter != null && iter.getParent() != null);
-
-
                         return true;
                     } else {
                         iter = iter.leftChild;
@@ -156,49 +77,7 @@ public class BinarySearchTee<E> implements ITree<E> {
                     if (iter.rightChild == null) {
                         iter.rightChild = new Node(obj, null, null, iter);
                         size++;
-                        //iter.setBalance(iter.getBalance() -1);
-
-                        iter = iter.getRightChild();
-
-                         do {
-
-                            int child;
-                            if (iter == iter.getParent().getRightChild()) {
-                                child = (-1);
-                            } else {
-                                child = 1;
-                            }
-
-                             iter.getParent().setBalance(iter.getParent().getBalance() + (child * 1));
-
-                            if (iter.getParent().getBalance() == (-2)) {
-                                Node tmp = rotateLeft(iter);
-                                if (iter.getParent() != null) {
-                                    tmp.setParent(iter.getParent());
-                                    iter.getParent().setRightChild(tmp);
-                                } else {
-                                    root = tmp;
-                                }
-
-
-
-                            } else if ( iter.getParent().getBalance()  == 2) {
-
-                                Node tmp = rotateRight(iter.getParent());
-                                if (iter.getParent() != null) {
-                                    tmp.setParent(iter.getParent());
-                                    iter.getParent().setLeftChild(tmp);
-                                } else {
-                                    root = tmp;
-                                }
-                            }
-
-                            iter = iter.getParent();
-
-                        }while (iter != null && iter.getParent() != null);
-
                         return true;
-
                     } else {
                         iter = iter.rightChild;
                     }
@@ -206,10 +85,9 @@ public class BinarySearchTee<E> implements ITree<E> {
                     iter.value = obj;
                     return  false;
                 }
-
             }
         }
-            return false;
+        return false;
     }
 
     private void isComparable(Object obj) {
@@ -219,8 +97,57 @@ public class BinarySearchTee<E> implements ITree<E> {
         }
     }
 
-        @Override
+    @Override
     public boolean delete (Object obj) {
+        isComparable(obj);
+        Node remove = binarySearch(obj);
+
+        if (remove != null && remove != root) {
+
+            if (remove.rightChild == null && remove.leftChild == null) {
+                    if (remove.parent.leftChild != null && remove.parent.leftChild.equals(remove)) {
+                        remove.parent.leftChild = null;
+                    } else {
+                        remove.parent.rightChild = null;
+                    }
+            }
+            else if (remove.rightChild == null && remove.leftChild != null) {
+                    if (remove.parent.leftChild != null && remove.parent.leftChild.equals(remove)) {
+                        remove.parent.leftChild = remove.leftChild;
+                    } else {
+                        remove.parent.rightChild = remove.leftChild;
+                    }
+            } else if (remove.rightChild != null && remove.leftChild == null) {
+                    if (remove.parent.rightChild != null && remove.parent.rightChild.equals(remove)) {
+                        remove.parent.rightChild = remove.rightChild;
+                    } else {
+                        remove.parent.leftChild = remove.rightChild;
+                    }
+            } else if (remove.rightChild != null && remove.leftChild != null) {
+                    if (remove.rightChild.leftChild == null) {
+                        remove.rightChild.leftChild = remove.leftChild;
+                    } else {
+                        goLeft(remove).leftChild = remove.leftChild;
+                    }
+                    if (remove.parent.rightChild != null && remove.parent.rightChild.equals(remove)) {
+                        remove.parent.rightChild = remove.rightChild;
+                    }else {
+                        remove.parent.leftChild = remove.rightChild;
+                    }
+            }
+            size--;
+            return true;
+        } else if (remove != null && remove == root) {
+            if (remove.rightChild.leftChild == null) {
+                remove.rightChild.leftChild = remove.leftChild;
+            } else {
+                goLeft(remove).leftChild = remove.leftChild;
+            }
+            root = remove.rightChild;
+            size--;
+            return true;
+        }
+
         return false;
     }
 
@@ -229,24 +156,31 @@ public class BinarySearchTee<E> implements ITree<E> {
 
         isComparable(obj);
 
-        if (root == null) {
-            return  false;
-        }
+        return  binarySearch(obj) != null;
+
+
+    }
+
+    private Node binarySearch(Object obj) {
+
+
 
         Comparable forCompare = (Comparable) obj;
+
         Node iter = root;
 
         while (iter != null) {
             int branch = forCompare.compareTo(iter.value);
             if (branch < 0) {
-                iter = iter.getLeftChild();
+                iter = iter.leftChild;
             } else if (branch > 0) {
-                iter = iter.getRightChild();
+                iter = iter.rightChild;
             } else {
-                return true;
+                return iter;
             }
         }
-        return false;
+
+        return null;
     }
 
     @Override
@@ -256,8 +190,6 @@ public class BinarySearchTee<E> implements ITree<E> {
 
     @Override
     public E findMin() {
-
-
         return (E)(goLeft(root).value);
     }
 
@@ -267,8 +199,8 @@ public class BinarySearchTee<E> implements ITree<E> {
         return node;
         }
 
-        while (node.getLeftChild() != null) {
-            node = node.getLeftChild();
+        while (node.leftChild != null) {
+            node = node.leftChild;
             goLeft(node);
                     }
         return node;
@@ -285,44 +217,10 @@ public class BinarySearchTee<E> implements ITree<E> {
             return node;
         }
 
-        while (node.getRightChild() != null) {
-            node = node.getRightChild();
+        while (node.rightChild != null) {
+            node = node.rightChild;
             goRight(node);
         }
-        return node;
-    }
-
-    @Override
-    public void treeOptimization() {
-
-
-    }
-
-
-    public Node rotateRight(Node node) {
-
-        Node tmp = node.getParent();
-
-        node.setParent(node.getParent().getParent());
-        tmp.setLeftChild(node.getRightChild());
-        node.setRightChild(tmp);
-        node.setBalance(node.getBalance() - 1);
-        node.getRightChild().setBalance(node.getRightChild().getBalance() - 1);
-
-        return node;
-    }
-
-
-    public Node rotateLeft(Node node) {
-
-        Node tmp = node.getParent();
-
-        node.setParent(node.getParent().getParent());
-        tmp.setRightChild(node.getLeftChild());
-        node.setLeftChild(tmp);
-        node.setBalance(node.getBalance() + 1);
-        node.getLeftChild().setBalance(node.getLeftChild().getBalance() + 1);
-
         return node;
     }
 
@@ -332,9 +230,9 @@ public class BinarySearchTee<E> implements ITree<E> {
             return;
         }
 
-        traverse(node.getLeftChild());
-        System.out.println(node.getObj());
-        traverse(node.getRightChild());
+        traverse(node.leftChild);
+        System.out.println(node.value);
+        traverse(node.rightChild);
 
     }
 
