@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class TestScanner {
     public static void main(String[] args) {
-        MyScanner s = new MyScanner("1111  2222       3333");
-        System.out.println(s.nextInt());
-        System.out.println(s.nextInt());
-        System.out.println(s.nextInt());
+        MyScanner s = new MyScanner("11111abc 2222    2abc  3333");
+        System.out.println(s.next());
+        System.out.println(s.next());
+        System.out.println(s.next());
+        System.out.println(s.next());
+
         System.out.println();
 
 
