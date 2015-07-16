@@ -4,15 +4,15 @@ public interface IScanner {
 
     String next();
 
-    int nextInt();
+    int nextInt(int radix);
 
     String nextLine();
 
     boolean hasNext();
 
-    boolean hasNextInt();
+    boolean hasNextInt(int radix);
 
-    void useDelimiter(String);
+    void useDelimiter(String delimeter);
 
     void close();
 }
