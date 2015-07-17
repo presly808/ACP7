@@ -7,11 +7,14 @@ public class BuilderTest {
 
     public static void main(String[] args) {
         IPhoneBuilder builder = new IPhoneBuilder();
+
         builder.setCam("5.0");
         builder.setColor("Golden");
         builder.setModel("6+");
         builder.setHdd(164);
         builder.setRam(3);
+
+        IPhone iPhone = builder.build();
     }
 
 }
@@ -48,6 +51,7 @@ class IPhoneBuilder {
     public IPhoneBuilder() {
     }
 
+    // builder for model
     public IPhoneBuilder appendModel(String model) {
         this.model = model;
         return this;
