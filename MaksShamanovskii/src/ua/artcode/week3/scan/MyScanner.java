@@ -19,10 +19,10 @@ public class MyScanner implements IScanner {
 
     public MyScanner(Reader reader) {
         this.reader = reader;
-        readInBuffer();
+        recordToBuffer();
     }
 
-    private void readInBuffer() {
+    private void recordToBuffer() {
         if (buf == null) {
             try {
                 while (reader.ready()) {
@@ -45,7 +45,7 @@ public class MyScanner implements IScanner {
 
     public MyScanner(String line) {
         buf = line;
-        readInBuffer();
+        recordToBuffer();
     }
 
     private void checkCapacity(){
