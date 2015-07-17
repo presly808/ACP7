@@ -2,6 +2,7 @@ package ua.artcode.week3.remote.simple_app;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
@@ -19,21 +20,24 @@ public class MyServer {
         ServerSocket ss = new ServerSocket(9999);
 
         Socket client = ss.accept();
-        DataOutputStream pw = new DataOutputStream(client.getOutputStream());
+        PrintWriter pw = new PrintWriter(client.getOutputStream());
         Scanner sc =  new Scanner(client.getInputStream());
 
 
         while (true) {
-            String info = String.format("Hello from server\n,Menu\n%s", prepareMenuItems());
+            String info = String.format("Hello from server,Menu%s", prepareMenuItems());
 
-            pw.writeUTF(info);
+
+            System.out.println("start writing");
+            pw.println(info);
             pw.flush();
+            System.out.println("end writing");
             //pw.close();
 
             // register.login=Andrey,pass=1234
             String req = sc.nextLine();
 
-            String[] commandNumAndData = req.trim().split(".");
+            String[] commandNumAndData = req.trim().split("\\.");
             String command = commandNumAndData[0];
             String data = commandNumAndData[1];
 
@@ -48,9 +52,9 @@ public class MyServer {
 
 
                 if (!userSet.add(remoteUser)) {
-                    pw.writeUTF("login already exists");
+                    pw.println("login already exists");
                 } else {
-                    pw.writeUTF("Success registration");
+                    pw.println("Success registration");
                 }
                 pw.flush();
 
@@ -60,7 +64,7 @@ public class MyServer {
                 for (RemoteUser user : userSet) {
                     res += user + "\n";
                 }
-                pw.writeUTF(res);
+                pw.println(res);
                 pw.flush();
             } else {
 
@@ -74,7 +78,7 @@ public class MyServer {
     }
 
     private String prepareMenuItems() {
-        return "1.Register\n2.user-list";
+        return "1.Register2.user-list";
     }
 
 
