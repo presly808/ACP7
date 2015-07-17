@@ -92,7 +92,12 @@ public class MyFileHelper implements FileHelper {
         return false;
     }
 
-   private static void catalog (File file) {
+    @Override
+    public void type() {
+
+    }
+
+    private static void catalog (File file) {
         if (file.isDirectory()) {
             for (File item : file.listFiles()) {
                 if (item.isDirectory()) {

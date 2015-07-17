@@ -11,7 +11,7 @@ public class BinarySearchTee<E> implements ITree<E> {
     private int size = 0;
 
 
-    private static class Node {
+    private static class Node <E> {
         private Object value;
         private Node leftChild;
         private Node rightChild;
@@ -37,7 +37,7 @@ public class BinarySearchTee<E> implements ITree<E> {
             if (getClass() != o.getClass())
                 return false;
 
-            Node node  = (Node) o;
+            Node<E> node  = (Node<E>) o;
 
             if (value != node.value)
                 return false;
@@ -51,7 +51,7 @@ public class BinarySearchTee<E> implements ITree<E> {
 
 
     @Override
-    public boolean add(Object obj) {
+    public boolean add(E obj) {
 
         isComparable(obj);
 
@@ -90,7 +90,7 @@ public class BinarySearchTee<E> implements ITree<E> {
         return false;
     }
 
-    private void isComparable(Object obj) {
+    private void isComparable(E obj) {
         if (!(obj instanceof Comparable)) {
             throw new NotComparableExeption(obj.getClass().getName() + " doesn't implement Comparable");
 
@@ -98,7 +98,7 @@ public class BinarySearchTee<E> implements ITree<E> {
     }
 
     @Override
-    public boolean delete (Object obj) {
+    public boolean delete (E obj) {
         isComparable(obj);
         Node remove = binarySearch(obj);
 
@@ -152,7 +152,7 @@ public class BinarySearchTee<E> implements ITree<E> {
     }
 
     @Override
-    public boolean contains(Object obj) {
+    public boolean contains(E obj) {
 
         isComparable(obj);
 
@@ -161,7 +161,7 @@ public class BinarySearchTee<E> implements ITree<E> {
 
     }
 
-    private Node binarySearch(Object obj) {
+    private Node binarySearch(E obj) {
 
 
 
@@ -193,7 +193,7 @@ public class BinarySearchTee<E> implements ITree<E> {
         return (E)(goLeft(root).value);
     }
 
-    private Node goLeft (Node node) {
+    private Node<E> goLeft (Node<E> node) {
 
         if (node == null) {
         return node;
@@ -211,7 +211,7 @@ public class BinarySearchTee<E> implements ITree<E> {
         return (E)(goRight(root).value);
     }
 
-    private Node goRight (Node node) {
+    private Node<E> goRight (Node<E> node) {
 
         if (node == null) {
             return node;
@@ -224,7 +224,7 @@ public class BinarySearchTee<E> implements ITree<E> {
         return node;
     }
 
-    public  void traverse (Node node) {
+    public  void traverse (Node<E> node) {
 
         if (node == null) {
             return;
