@@ -13,7 +13,7 @@ public interface ITree <E> {
     E findMax();
 
 
-    void treeOptimization();
+   // void treeOptimization();
    // void rotateRight();
    // void rotateLeft();
 

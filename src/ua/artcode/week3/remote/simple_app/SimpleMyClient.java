@@ -19,15 +19,18 @@ public class SimpleMyClient {
         Socket socket = new Socket("127.0.0.1",9999);// 127.0.0.1
         PrintWriter pw = new PrintWriter(socket.getOutputStream());
         InputStream is = socket.getInputStream();
+        Scanner in = new Scanner(is);
 
         while (true){
-            String serverResponse = IOUtils.readAllS(is);
+            System.out.println("start reading");
+            String serverResponse = in.nextLine();
+            System.out.println("end reading");
             System.out.println(serverResponse);
             String command = console.nextLine();
             pw.println(command);
             pw.flush();
 
-            String operationResult = IOUtils.readAllS(is);
+            String operationResult = in.nextLine();
             System.out.println(operationResult);
 
         }

@@ -13,14 +13,14 @@ import java.util.Date;
  */
 public class ServerRun {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
         ServerSocket ss = new ServerSocket(9999);
 
-        while(true){
+        while (true) {
             Socket client = ss.accept();
 
-            String info = String.format("Hello from server, your inet add %s, time %tc\n",
+            String info = String.format("Hello from server, your inet add %s, time %tc",
                     client.getInetAddress().toString(), new Date());
 
             // String input = IOUtils.readAll(client.getInputStream());
@@ -29,9 +29,10 @@ public class ServerRun {
             System.out.println(info);
 
             IOUtils.sendDataPure(info, client.getOutputStream());
+            Thread.sleep(100);
+
 
         }
-
 
 
     }
