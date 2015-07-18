@@ -32,7 +32,7 @@ public class Scanner implements IScanner {
         }
     }
 
-    private boolean isWhitespace(int chr) {
+    private boolean isWhiteSpace(int chr) {
         return delimiter.indexOf((char)chr) >= 0;
     }
 
@@ -82,11 +82,11 @@ public class Scanner implements IScanner {
     public String next(){
         previousNextBuffer.setLength(0);
         try{
-            while (hasNextChar() && isWhitespace(peek())) {
+            while (hasNextChar() && isWhiteSpace(peek())) {
                 previousNextBuffer.append((char) nextChar());
             }
             StringBuffer result = new StringBuffer();
-            while (hasNextChar() && !isWhitespace(peek())) {
+            while (hasNextChar() && !isWhiteSpace(peek())) {
                 char chr = (char) nextChar();
                 result.append(chr);
                 previousNextBuffer.append(chr);
