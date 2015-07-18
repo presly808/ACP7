@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class MyConsol {
     public static String fileOfHelp = "C://Users//Legion//IdeaProjects//ACP7//OlesBovsunivsky//src//Consol//File_Hellp";
-    public String comandWay = "C://";
+    public String comandWay = "C://";//vkatatu if perevirutu na null //Zrobutu odun zagalnuy skaner dlu chutannna z consoli
     File bufferFile;
 
     public String readConsol() throws FileNotFoundException {
@@ -32,7 +32,7 @@ public class MyConsol {
 
         if (s1[0].toLowerCase().equals("copy")) copy();
 
-        if (s1[0].toLowerCase().equals("find")) find(s1[1]);
+        if (s1[0].toLowerCase().equals("find")) find(s1[1]); //cndjhbnb zr cbkre
 
         if (s1[0].toLowerCase().equals("cd")) {
             if (s1.length == 1) {
@@ -56,12 +56,14 @@ public class MyConsol {
         }
         return comandWay;
     }
-
+    /**
+     * Дописати ато завтикав! */
     private void copy() {
         System.out.print("Write name of the file fo copy -> ");
         String nameFile = new Scanner(System.in).nextLine();
         System.out.print("Write extension of new file -> ");
         String extensionFile = new Scanner(System.in).nextLine();
+        File bufferFile = new File(extensionFile);
 
         //    try{
         //       boolean created = newFile.createNewFile();
