@@ -73,7 +73,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
         int position = hash % table.length;
 
         if(table[position] == null){
-            table[position] = new Bucket<>(key,value);
+            table[position] = new Bucket<K, V>(key,value);
         } else {
             Bucket iter = table[position];
             // find last node in bucket
@@ -81,7 +81,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
                 iter = iter.next;
             }
 
-            iter.next = new Bucket<>(key,value);
+            iter.next = new Bucket<K, V>(key,value);
         }
 
         size++;
@@ -106,7 +106,7 @@ public class MyHashMap<K,V> implements Map<K,V> {
 
     @Override
     public Set<K> keySet() {
-        Set<K> keys = new HashSet<>();
+        Set<K> keys = new HashSet<K>();
 
         Iterator<Bucket<K,V>> iterator = new BucketIterator();
         while(iterator.hasNext()){

@@ -2,6 +2,7 @@ package ua.artcode.week2;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  * Created by pikolo on 05.07.15.
@@ -45,6 +46,17 @@ public class IOUtils {
         }
 
         return sb.toString();
+
+    }
+
+     public static void writeAll(OutputStream outputStream) {
+        Scanner sc = new Scanner(System.in);
+
+        while (sc.hasNextLine()){
+
+            String input = sc.nextLine();
+
+        }
 
     }
 
