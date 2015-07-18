@@ -1,5 +1,6 @@
 package week3.scanner;
 
+import java.io.Reader;
 import java.util.Scanner;
 
 /**
@@ -9,9 +10,10 @@ public class ScannerTest {
 
     public static void main(String[] args) {
 
+
         String s = "ddd ffffish 1f11 fish52";
 
-        MyScanner scannerReader = new MyScanner(s);
+       MyScanner scannerReader = new MyScanner(s);
 
 
         System.out.println(scannerReader.next());

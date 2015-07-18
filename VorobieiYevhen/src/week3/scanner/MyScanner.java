@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 
-/**
- * Created by Джек on 14.07.2015.
- */
+
 public class MyScanner implements IScanner {
 
     private Reader reader;

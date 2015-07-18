@@ -1,6 +1,7 @@
-package week2.concole;
+package week3.remote_java_console_commander;
 
 import utils.IOUtils;
+import week2.concole.FileHelper;
 
 import java.io.*;
 
