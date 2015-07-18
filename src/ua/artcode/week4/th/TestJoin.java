@@ -13,10 +13,10 @@ public class TestJoin {
     public static void main(String[] args) throws InterruptedException {
 
         // for collect all reports
-        List<WorkerThread> workers = new LinkedList<>();
+        List<WorkerThread> workers = new LinkedList<WorkerThread>();
 
         // for manipulate threads
-        List<Thread> threads = new LinkedList<>();
+        List<Thread> threads = new LinkedList<Thread>();
 
         int threadSize = 5;
         for (int i = 0; i < threadSize; i++) {
