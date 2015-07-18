@@ -12,7 +12,7 @@ public interface IScanner extends Iterator<String>, Closeable {
     int nextInt();
     String nextLine();
     boolean hasNext();
-    boolean hasNextInt();
+    boolean hasNextInt() throws InputMismatchException;
     void useDelimiter(String delimiter);
     void close() throws IOException;
 
