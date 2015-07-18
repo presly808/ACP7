@@ -1,14 +1,13 @@
-package ua.artcode.week2;
+package ua.artcode.week2.io;
 
 import java.io.*;
-import java.net.Socket;
 
 /**
- * Created by pikolo on 05.07.15.
+ * Created by serhii on 05.07.15.
  */
 public class IOUtils {
 
-    public static void save(String source, String path) throws FileNotFoundException{
+    public static void save(String source, String path) throws FileNotFoundException {
         OutputStream os = null;
         try {
             os = new FileOutputStream(path);
@@ -21,8 +20,8 @@ public class IOUtils {
             e.printStackTrace();
         } finally {
             try {
-                if (os != null){
-                os.close();
+                if(os != null){
+                    os.close();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -30,22 +29,19 @@ public class IOUtils {
         }
     }
 
-    public static String readAll(InputStream inputStream) {
+    public static String readAll(InputStream inputStream){
         StringBuilder sb = new StringBuilder();
-
-        BufferedReader bf = new BufferedReader ( new InputStreamReader(inputStream));
-
+        BufferedReader bf = new BufferedReader(new InputStreamReader(inputStream));
         String line = null;
         try {
-            while ((line = bf.readLine()) != null){
+            while((line = bf.readLine()) != null){
                 sb.append(line);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return sb.toString();
-
     }
+
 
 }
