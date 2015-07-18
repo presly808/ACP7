@@ -6,6 +6,7 @@ public interface FileHelper {
     void dir();//show directoryContent
     boolean mkdir();//create dir
     boolean find();//find file(dir)
+    void type();//show file (content)
 
 
 }
