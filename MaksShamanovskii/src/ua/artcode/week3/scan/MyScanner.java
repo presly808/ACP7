@@ -2,13 +2,13 @@ package ua.artcode.week3.scan;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.io.StringReader;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class MyScanner implements IScanner {
     private final static int DEFAULT_CAPACITY = 1024;
     private Reader reader;
-    private String buf;
     private char[] buffer = new char[DEFAULT_CAPACITY];
     private int start = 0;
     private int end = 0;
@@ -23,36 +23,17 @@ public class MyScanner implements IScanner {
     }
 
     private void recordToBuffer() {
-        if (buf == null) {
-            try {
-                while (reader.ready()) {
-                    checkCapacity();
-                    buffer[index++] = (char) reader.read();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            char[] temp = buf.toCharArray();
-            for (; index < temp.length; index++) {
-                checkCapacity();
-                buffer[index] = temp[index];
-            }
-            closed = true;
+        try {
+            end = reader.read(buffer);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         findStart();
     }
 
     public MyScanner(String line) {
-        buf = line;
+        reader = new StringReader(line);
         recordToBuffer();
-    }
-
-    private void checkCapacity(){
-        if(index == DEFAULT_CAPACITY){
-            char[] newBuffer = Arrays.copyOf(buffer, buffer.length * 2);
-            buffer = newBuffer;
-        }
     }
 
     @Override
@@ -94,7 +75,7 @@ public class MyScanner implements IScanner {
                 break;
             }
             else{
-                if(findDelimiter = false){
+                if(!findDelimiter){
                     start++;
                 }else {
                     for (int j = 0; j < delimiter.length; j++) {
@@ -119,7 +100,7 @@ public class MyScanner implements IScanner {
                 break;
             }
             else if(buffer[i] == delimiter[k]){
-                if(findDelimiter = false){
+                if(!findDelimiter){
                     i++;
                 }
                 for (int j = 0; j < delimiter.length; j++) {
