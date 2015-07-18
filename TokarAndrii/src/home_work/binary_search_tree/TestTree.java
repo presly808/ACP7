@@ -1,4 +1,4 @@
-package homeWork.BinarySearchTree;
+package home_work.binary_search_tree;
 
 public class TestTree {
 

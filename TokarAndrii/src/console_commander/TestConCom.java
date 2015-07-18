@@ -1,6 +1,6 @@
-package ConsoleCommander;
+package console_commander;
 
-import ConsoleCommander.view.ClientView;
+import console_commander.view.ClientView;
 
 /**
  * Created by Пользователь on 06.07.15.
