@@ -1,16 +1,24 @@
-package week2.concole;
+package week3.remote_java_console_commander;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import week2.concole.MyFileHelper;
+
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 
 public class Console {
     private static String PATH = "C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\resources\\";
     private String currentPath = PATH;
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    ServerSocket server;
 
+
+
+    public Console(ServerSocket server) {
+
+        this.server = server;
+    }
 
     public Console() {
 
@@ -19,24 +27,29 @@ public class Console {
 
 
 
-    public void window() {
+    public void window() throws IOException {
+        Socket client = server.accept();
+
+        DataOutputStream pw = new DataOutputStream(client.getOutputStream());
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
 
         while (true) {
             MyFileHelper fileHelper = new MyFileHelper(new File(currentPath));
-            System.out.println("\nEnter menu (\"help\") operation (Press \"Enter\" to exit).");
-            System.out.print(currentPath + " > ");
+            pw.writeUTF("\nEnter menu (\"help\") operation (Press \"Enter\" to exit).\n" + currentPath + " > ");
+            pw.flush();
 
             String select = null;
 
                 try {
-                    select = br.readLine();
+                    select = bufferedReader.readLine();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 if (select.isEmpty()) {
                     break;
                 }
+
 
             switch (select.toLowerCase()) {
                 case "cd":
