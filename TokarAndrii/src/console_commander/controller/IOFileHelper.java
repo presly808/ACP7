@@ -1,4 +1,4 @@
-package ConsoleCommander.controller;
+package console_commander.controller;
 
 import java.io.File;
 

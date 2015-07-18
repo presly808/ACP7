@@ -1,6 +1,6 @@
-package ConsoleCommander.view;
+package console_commander.view;
 
-import ConsoleCommander.controller.FileHelper;
+import console_commander.controller.FileHelper;
 
 import java.io.File;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package ConsoleCommander.model;
+package console_commander.model;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
