@@ -13,7 +13,7 @@ public class BankSynch {
         List<Thread> threadList = new ArrayList<>();
 
         BankAccount bankAccount = new BankAccount(0);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             Thread thread = new Thread(new ProducerThread(bankAccount));
             threadList.add(thread);
             thread.start();
@@ -22,6 +22,7 @@ public class BankSynch {
         for (Thread thread : threadList) {
             thread.join();
         }
+
 
         System.out.println("Money putted");
         System.out.println(bankAccount.getCurrent());
@@ -32,7 +33,11 @@ public class BankSynch {
             thread.start();
         }
 
-        System.out.println("Money taken");
+        for (Thread thread : threadList) {
+            thread.join();
+        }
+
+        System.out.println("Money after withdrawals");
         System.out.println(bankAccount.getCurrent());
     }
 
@@ -52,7 +57,7 @@ class TakerThread implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i <COUNT; i++) {
-            account.takeMoney(2);
+            account.takeMoney(200);
         }
 
     }
@@ -71,7 +76,7 @@ class ProducerThread implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < COUNT; i++) {
-            account.putMoney(1);
+            account.putMoney(100);
         }
     }
 }
@@ -87,7 +92,16 @@ class BankAccount {
 
     public void putMoney(int cash){
         synchronized (monitor){
+            if (money > 0){
+                try {
+                    monitor.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
             money = money + cash; // read -> + -> write
+            monitor.notifyAll();
         }
     }
 
@@ -96,9 +110,20 @@ class BankAccount {
     }
 
     public void takeMoney(int cash) {
+
         synchronized (monitor){
+            if (money < cash) {
+                try {
+                    monitor.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
             money = money - cash;
+            monitor.notifyAll();
         }
+
     }
 
 }
