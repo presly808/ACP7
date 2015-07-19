@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Scanner implements IScanner {
 
-    private static int endOfInput = -1;           
+    private static int endOfInput = -1;
     private static String delimiter = " \t\f\r\n";
     private static String badInputExceptionMessage ="bad input ";
 
@@ -32,7 +32,7 @@ public class Scanner implements IScanner {
         }
     }
 
-    private boolean _isWhitespace(int chr) {
+    private boolean isWhiteSpace(int chr) {
         return delimiter.indexOf((char)chr) >= 0;
     }
 
@@ -82,11 +82,11 @@ public class Scanner implements IScanner {
     public String next(){
         previousNextBuffer.setLength(0);
         try{
-            while (hasNextChar() && _isWhitespace(peek())) {
+            while (hasNextChar() && isWhiteSpace(peek())) {
                 previousNextBuffer.append((char) nextChar());
             }
             StringBuffer result = new StringBuffer();
-            while (hasNextChar() && !_isWhitespace(peek())) {
+            while (hasNextChar() && !isWhiteSpace(peek())) {
                 char chr = (char) nextChar();
                 result.append(chr);
                 previousNextBuffer.append(chr);

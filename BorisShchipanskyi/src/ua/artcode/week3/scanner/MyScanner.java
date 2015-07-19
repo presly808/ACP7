@@ -82,10 +82,18 @@ public class MyScanner implements IScanner {
     }
 
     @Override
-    public boolean hasNextInt() {
-
+    public boolean hasNextInt() throws InputMismatchException {
+        next = (next == null )? readBeforeDelimiter(scannerDelimiter): next;
+        if(next != null){
+            nextInt = toInt(next);
+            return true;
+        }
         return false;
     }
+    private int toInt(String str) throws InputMismatchException {
+        return Integer.valueOf(str);
+    }
+
 
     @Override
     public void useDelimiter(String delimiter) {
@@ -96,5 +104,6 @@ public class MyScanner implements IScanner {
     public void close() throws IOException {
         reader.close();
     }
+
 
 }

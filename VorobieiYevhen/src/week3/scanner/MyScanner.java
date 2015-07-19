@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 
-/**
- * Created by Джек on 14.07.2015.
- */
+
 public class MyScanner implements IScanner {
 
     private Reader reader;
@@ -68,12 +66,11 @@ public class MyScanner implements IScanner {
     @Override
     public String next() {
         if (hasNext()) {
-        String next = clipboard[position];
+            String next = clipboard[position];
             position++;
 
-        return next;
-        }
-        else {
+            return next;
+        } else {
             throw new NoSuchElementException();
         }
     }
