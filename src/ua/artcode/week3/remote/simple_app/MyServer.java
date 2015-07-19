@@ -1,5 +1,7 @@
 package ua.artcode.week3.remote.simple_app;
 
+import ua.artcode.week23.remote.simple_app.RemoteUser;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
