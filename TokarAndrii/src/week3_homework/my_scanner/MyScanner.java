@@ -6,6 +6,13 @@ import java.io.Reader;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/* String next() - чтение одного слова в строке
+   int nextInt() - чтение целого числа из строки или InputMismatchException
+   String nextLine() - чтение всей строки
+   boolean hasNext() - определение наличия в потоке данных
+   boolean hasNextInt() - определение наличия в потоке целого int числа
+   useDelimiter(String) - использует разделитель
+   close() - закрытие сканнера, теперь нельзя использовать и NoSuchElementException*/
 public final class MyScanner implements Iterator, Closeable {
 
     private Reader reader;
@@ -16,6 +23,8 @@ public final class MyScanner implements Iterator, Closeable {
 
     public MyScanner(Reader reader) {
         this.reader = reader;
+
+        start();
 
     }
 
@@ -44,7 +53,7 @@ public final class MyScanner implements Iterator, Closeable {
 
         read();
 
-        if (scannerBuffer[indexScannerBuffer] == '\u0000') {
+        if (scannerBuffer[indexScannerBuffer] != '\u0000') {
             return true;
         }
 
@@ -56,13 +65,10 @@ public final class MyScanner implements Iterator, Closeable {
         try {
             while (reader.ready() == true)
                 scannerBuffer[indexScannerBuffer] = (char) reader.read();
-            indexScannerBuffer++;
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        indexScannerBuffer++;
 
         return scannerBuffer;
     }
