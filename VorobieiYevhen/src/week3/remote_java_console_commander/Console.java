@@ -52,11 +52,11 @@ public class Console {
 
 
             switch (select.toLowerCase()) {
-                case "cd":
+                /*case "cd":
                     String newPath = fileHelper.cd();
                     currentPath = newPath != null ? newPath : PATH;
 
-                    break;
+                    break;*/
                 case "help":
                     fileHelper.help();
                     break;
@@ -78,9 +78,9 @@ public class Console {
                 case "find":
                     fileHelper.find();
                     break;
-                case "type":
+                /*case "type":
                     fileHelper.type();
-                    break;
+                    break;*/
                 default:
                     System.out.println("No such command. View \"Help menu\" - \"help\"");
                     break;

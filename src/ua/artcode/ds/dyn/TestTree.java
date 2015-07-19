@@ -9,7 +9,7 @@ import java.util.List;
 public class TestTree {
 
     public static void main(String[] args) {
-        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        BinarySearchTree<Integer> tree = new BinarySearchTree<Integer>();
 
         tree.add(100);
         tree.add(50);
