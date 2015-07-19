@@ -12,6 +12,7 @@ public interface FileHelper {
    void type();//show file (content)
    boolean del();//delete file
    boolean rd();//delete directory
+    boolean copy();//copy file
 
 
 

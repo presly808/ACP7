@@ -271,6 +271,43 @@ public class MyFileHelper implements FileHelper {
 
     }
 
+    @Override
+    public boolean copy() {
+        String fileFrom = null;
+        String fileTo = null;
+
+        FileOutputStream out = null;
+        FileInputStream in = null;
+
+        try {
+            in = new FileInputStream(fileFrom);
+            out = new FileOutputStream(fileTo);
+            return  IOUtils.copy(in, out);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+                try {
+                    if (in != null){
+                        in.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            try {
+                if (out != null){
+                    out.flush();
+                    out.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
+        return false;
+    }
+
     private String getFilePath() {
         System.out.print("Write filename: ");
         String filePath = null;
