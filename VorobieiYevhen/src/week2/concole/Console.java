@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 
 public class Console {
-    private static String PATH = "C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\resources\\";
+    private static String PATH = "C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\";
     private String currentPath = PATH;
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -61,6 +61,9 @@ public class Console {
                     break;
                 case "del":
                     fileHelper.del();
+                    break;
+                case "rd":
+                    fileHelper.rd();
                     break;
                 case "find":
                     fileHelper.find();

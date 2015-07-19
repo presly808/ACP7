@@ -23,10 +23,14 @@ public class IOUtils {
         }
         return sb.toString();
     }
-    public static void readFullyByBytes (InputStream is) throws IOException {
+    public static void readFullyByBytes (InputStream is) {
         int oneByte;
-        while ((oneByte = is.read()) != -1) {
-            System.out.print((char) oneByte);
+        try {
+            while ((oneByte = is.read()) != -1) {
+                System.out.print((char) oneByte);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

@@ -217,12 +217,12 @@ public class MyHashMap<K,V> implements Map<K,V> {
     private Bucket<K,V> findInBucket(Object key, int position){
         Bucket<K,V> iter = table[position];
         // find last node in bucket
-        while(iter.next != null){
+        do{
             if(iter.key.equals(key)){
                 return iter;
             }
             iter = iter.next;
-        }
+        }while(iter.next != null);
 
         return null;
     }

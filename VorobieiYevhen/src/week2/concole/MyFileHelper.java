@@ -6,9 +6,10 @@ import java.io.*;
 
 
 public class MyFileHelper implements FileHelper {
-    private  String PATH = "C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\resources\\";
     File file;
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    String branch = "       ";
+
 
     public MyFileHelper(File file) {
         this.file = file;
@@ -16,22 +17,21 @@ public class MyFileHelper implements FileHelper {
 
     @Override
     public String cd() {
-        System.out.println("Enter directory:  ");
 
+        String newConsolePath =  searchFileDir(file,getNewFolderName());
 
-        String newPath = null;
-
-        try {
-            newPath =  br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (newConsolePath == null) {
+            return  null;
         }
-        File newConsolePath =  new File(search(new File(PATH),newPath));
+        if (!new File(newConsolePath).isDirectory()) {
+            System.out.println("This is not a directory!");
+            newConsolePath = null;
+        }
 
 
 
-        return newConsolePath != null ? newConsolePath.getAbsolutePath() : PATH;
-    } //TODO
+        return new File(newConsolePath) != null ? new File(newConsolePath).getAbsolutePath() : file.getAbsolutePath();
+    }
 
     @Override
     public void help() {
@@ -39,32 +39,19 @@ public class MyFileHelper implements FileHelper {
         readTxtFile("VorobieiYevhen\\resources\\Commands.txt");
     }
 
+    private void readTxtFile(String path) {
+        try {
+            IOUtils.readFullyByBytes(new FileInputStream(path)); //read bytes and covert them to char
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void tree() {
 
-        catalog(file);
+        catalog(file, branch);
 
-    }
-
-    private void readTxtFile(String path) {
-        InputStream is = null;
-
-        try {
-            is = new FileInputStream(path);
-
-            IOUtils.readFullyByBytes(is); //read bytes and covert them to char
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                if (is != null)
-                    is.close();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @Override
@@ -92,31 +79,33 @@ public class MyFileHelper implements FileHelper {
         if (notAllowedName(folderName)) return false;
 
         if (folderName == null || folderName.equals("")) {
+            System.out.println("Folder without name hasn't been created!");
             return  false;
         }
-        if (search(file, folderName)!= null){
-            System.out.println("Folder with current name already exist");
+        if (searchFileDir(file, folderName)!= null){
+            System.out.println("Folder with current has name already exist");
             return  false;
         }
-            File newFile = new File(file.getAbsolutePath() + "\\" + folderName);
-            newFile.mkdir();
-            System.out.println("Directory " + newFile.getName() + " has been created.");
-            return true;
+        return createDir(folderName);
 
 
     }
 
+    private boolean createDir(String folderName) {
+        File newDir = new File(file.getAbsolutePath() + "\\" + folderName);
+        newDir.mkdir();
+        System.out.println("Directory " + newDir.getName() + " has been created.");
+        return true;
+    }
+
     private String getNewFolderName() {
         System.out.print("Write new directory name: ");
-        String folderName = null;
-
-
         try {
-            folderName = br.readLine();
+            return br.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return folderName;
+        return null;
     }
 
     @Override
@@ -133,8 +122,8 @@ public class MyFileHelper implements FileHelper {
         }
         fileName = setFileFormat(fileName);
 
-        if (search(file, fileName) != null){
-            System.out.println("File with current name already exist");
+        if (searchFileDir(file, fileName) != null){
+            System.out.println("File with current name has already exist");
             return  false;
         }
         return createFile(fileName);
@@ -155,9 +144,7 @@ public class MyFileHelper implements FileHelper {
 
     private String setFileFormat(String fileName) {
         System.out.print("Write new file format: ");
-        String fileFormat = null;
-
-
+        String fileFormat = "";
         try {
             fileFormat = br.readLine();
         } catch (IOException e) {
@@ -169,16 +156,12 @@ public class MyFileHelper implements FileHelper {
 
     private String getNewFileName() {
         System.out.print("Write new file name: ");
-
-        String fileName = null;
-
-
         try {
-            fileName = br.readLine();
+            return br.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return fileName;
+        return null;
     }
 
     private boolean notAllowedName(String fileName) {
@@ -193,124 +176,162 @@ public class MyFileHelper implements FileHelper {
     }
 
     @Override
-    public String find() {
-        System.out.print("Write file name: ");
-        String filePath = null;
-
+    public void find() {
+        System.out.print("Write file/directory name: ");
         try {
-            filePath = search(file, br.readLine());
-            if (filePath != null) {
-                return filePath;
-            }
+           search(file, br.readLine());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("File not found");
-        return filePath;
     }
 
     @Override
     public void type() {
-        String filePath = find();
-        if (filePath.endsWith(".txt")) {
-            readTxtFile(filePath);
-        } else {
+        String filePath = getFilePath();
+        try {
+            if (!new File(filePath).isFile()) {
+                System.out.println("Can't read, this is not a file!");
+            } else if (filePath.endsWith(".txt")) {
+                readTxtFile(filePath);
+            } else {
+                System.out.println("Can't read this file! (Unreadable format)");
+            }
+        } catch (NullPointerException e) {
             System.out.println("Can't read this file! (Unreadable format)");
         }
-
 
     }
 
     @Override
     public boolean del() {
-        File remove = new File(find());
-        System.out.println("Doy really want to delete this file? (y/n): ");
+        String filePath = getFilePath();
 
-        try {
-            if (br.readLine().equalsIgnoreCase("y")) {
-                remove.delete();
-                System.out.println("File deleted");
-                return true;
-            } else{
-            return false;
+            if (filePath == null || !new File(filePath).isFile()) {
+                System.out.println("This file doesn't exist!");
+                return false;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+
+
+        String answer = "";
+
+        while (!answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n")) {
+            System.out.println("Do you really want to delete this file? (y/n): ");
+            try {
+                answer = br.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+                if (answer.equalsIgnoreCase("y")) {
+                    new File(filePath).delete();
+                    System.out.println("File deleted");
+                    return true;
+                } else if (answer.equalsIgnoreCase("n")){
+                    return false;
+                }
+
         }
         return false;
     }
 
-    private static void catalog (File file) {
-        if (file.isDirectory()) {
-            for (File item : file.listFiles()) {
-                if (item.isDirectory()) {
+    @Override
+    public boolean rd() {
+                String filePath = getFilePath();
 
-                    System.out.println("Directory:  "  + item.getAbsolutePath());
-
-                    catalog(item);
-
-                } else {
-                    System.out.println("\t\t\t" + "File: " + item.getName());
+                if (filePath == null || !new File(filePath).isDirectory()) {
+                    System.out.println("This directory doesn't exist!");
+                    return false;
                 }
-            }
-        }
+                String answer = "";
+
+                while (!answer.equalsIgnoreCase("y") || !answer.equalsIgnoreCase("n")) {
+                    System.out.println("All files will be lost!\nDo you really want to delete this directory? (y/n): ");
+                    try {
+                        answer = br.readLine();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if (answer.equalsIgnoreCase("y")) {
+                        if (new File(filePath).listFiles().length == 0) {
+                            new File(filePath).delete();
+                        } else {
+                            delAllFiles(new File(filePath));
+                            new File(filePath).delete();
+                        }
+                        System.out.println("Directory deleted");
+                        return true;
+                    } else if (answer.equalsIgnoreCase("n")){
+                        return false;
+                    }
+
+                }
+                return  false;
+
+
+
 
     }
 
-    private  String search (File file, String fileName) {
-
-       if (file.isDirectory()) {
-            for (File item : file.listFiles()) {
-                if (item.isDirectory() && item.getName().equalsIgnoreCase(fileName)) {
-
-                    System.out.println("Directory " + fileName + " location is:  " + item.getAbsolutePath());
-                    search(item, fileName);// TODO deep search
-                    return item.getAbsolutePath();
-                } else if (item.isFile() && item.getName().equalsIgnoreCase(fileName)){
-
-                    System.out.println("File " + fileName + " location is:  " + item.getAbsolutePath());
-                    return  item.getAbsolutePath();
-
-                } else {
-                    search(item, fileName);
-                }
-
-            }
-       }
-        return null; //todo
-    }
-
-    private String findFile (){
-        System.out.print("Write file name: ");
-        String fileName = null;
-
+    private String getFilePath() {
+        System.out.print("Write filename: ");
+        String filePath = null;
         try {
-            fileName = br.readLine();
+            filePath = searchFileDir(file, br.readLine());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return searchFile(file, fileName);
+        return filePath;
     }
 
-    private static String searchFile (File file, String fileName) {
-
+    private static void catalog (File file, String branch) {
+        branch += branch;
         if (file.isDirectory()) {
             for (File item : file.listFiles()) {
                 if (item.isDirectory()) {
-                    searchFile(item, fileName);
-                } if (item.isFile() && item.getName().toLowerCase().contains(fileName.toLowerCase())){
-                    System.out.println("File " + fileName + " location is:  " + item.getAbsolutePath());
-                    return  item.getAbsolutePath();
+                    System.out.println(branch + "|----------" + item.getAbsolutePath());
+                    catalog(item, branch);
                 }
             }
         }
+    }
+
+    private  void search (File file, String fileName) {
+        for (File item : file.listFiles()) {
+             if (item.isDirectory() && item.getName().contains(fileName)) {
+                  search(item, fileName);
+                  System.out.println("Directory " + fileName + " location is:  " + item.getAbsolutePath());
+             } else if (item.isFile() && item.getName().contains(fileName)){
+                  System.out.println("File " + fileName + " location is:  " + item.getAbsolutePath());
+             } else if (item.isDirectory()) {
+                  search(item, fileName);
+             }
+        }
+    }
+
+    private  String searchFileDir (File file, String fileName) {
+
+            for (File item : file.listFiles()) {
+                if (item.isDirectory() && item.getName().equals(fileName)) {
+                    return item.getAbsolutePath();
+                } else if (item.isFile() && item.getName().equals(fileName)){
+                    return  item.getAbsolutePath();
+                }
+            }
         return null;
     }
 
+    private  void delAllFiles (File file) {
 
+        for (File item : file.listFiles()) {
 
+            if (item.isDirectory()) {
+               delAllFiles(item);
+                item.delete();
 
+            }else {
+                item.delete();
+            }
+        }
+    }
 
 
 }

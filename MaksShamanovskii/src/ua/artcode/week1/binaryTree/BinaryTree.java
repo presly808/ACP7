@@ -1,5 +1,7 @@
 package ua.artcode.week1.binaryTree;
 
+import java.util.Iterator;
+
 public class BinaryTree<E extends Comparable> implements IBinaryTree<E> {
     private Node<E> root;
     private int size;
@@ -129,6 +131,38 @@ public class BinaryTree<E extends Comparable> implements IBinaryTree<E> {
         return foundNode;
     }
 
+    public Iterator getIterator(){
+        return new TreeIterator();
+    }
+
+
+    private class TreeIterator implements Iterator<Node<E>>{
+        Node<E> curr = findMin(root);
+
+
+        @Override
+        public boolean hasNext() {
+            return curr != null;
+        }
+
+        @Override
+        public Node<E> next() {
+            Node<E> iter = curr;
+            if(curr.rightChild != null){
+                curr = findMin(curr.rightChild);
+            }else{
+                if(curr.parent.leftChild == curr){
+                    curr = curr.parent;
+                }else if(curr.parent.rightChild == curr){
+                    while(curr.parent != null && curr == curr.parent.rightChild){
+                        curr = curr.parent;
+                    }
+                    curr = curr.parent;
+                }
+            }
+            return iter;
+        }
+    }
 
     private static class Node<E> {
         E value;
