@@ -6,9 +6,9 @@ import java.io.*;
 
 
 public class MyFileHelper implements FileHelper {
-    File file;
+    private File file;
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    String branch = "       ";
+    private String branch = "       ";
 
 
     public MyFileHelper(File file) {
@@ -23,14 +23,15 @@ public class MyFileHelper implements FileHelper {
         if (newConsolePath == null) {
             return  null;
         }
-        if (!new File(newConsolePath).isDirectory()) {
+        File file = new File(newConsolePath);
+        if (!((File) file).isDirectory()) {
             System.out.println("This is not a directory!");
             newConsolePath = null;
         }
 
 
 
-        return new File(newConsolePath) != null ? new File(newConsolePath).getAbsolutePath() : file.getAbsolutePath();
+        return file != null ?  file.getAbsolutePath() : this.file.getAbsolutePath();
     }
 
     @Override

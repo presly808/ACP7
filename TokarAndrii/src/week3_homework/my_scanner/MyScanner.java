@@ -6,13 +6,13 @@ import java.io.Reader;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* String next() - чтение одного слова в строке
-   int nextInt() - чтение целого числа из строки или InputMismatchException
-   String nextLine() - чтение всей строки
-   boolean hasNext() - определение наличия в потоке данных
-   boolean hasNextInt() - определение наличия в потоке целого int числа
-   useDelimiter(String) - использует разделитель
-   close() - закрытие сканнера, теперь нельзя использовать и NoSuchElementException*/
+/* String next() - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+   int nextInt() - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ InputMismatchException
+   String nextLine() - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+   boolean hasNext() - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+   boolean hasNextInt() - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ int пїЅпїЅпїЅпїЅпїЅ
+   useDelimiter(String) - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+   close() - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ NoSuchElementException*/
 public final class MyScanner implements Iterator, Closeable {
 
     private Reader reader;
@@ -36,7 +36,7 @@ public final class MyScanner implements Iterator, Closeable {
     public void start() {
 
         try {
-            if (hasNext() == true) ;
+            if (hasNext()) ;
 
             next();
 
@@ -63,7 +63,7 @@ public final class MyScanner implements Iterator, Closeable {
 
     public char[] read() {
         try {
-            while (reader.ready() == true)
+            while (reader.ready())
                 scannerBuffer[indexScannerBuffer] = (char) reader.read();
         } catch (IOException e) {
             e.printStackTrace();
