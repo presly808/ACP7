@@ -1,11 +1,15 @@
-package ua.artcode.week4.th;
+package ua.artcode.week4.th.concurr;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-
-public class BankSynch {
+/**
+ * Created by serhii on 19.07.15.
+ */
+class BankSynchLock {
 
     public static void main(String[] args) throws InterruptedException {
         List<Thread> threadList = new ArrayList<>();
@@ -68,25 +72,27 @@ class ProducerThread implements Runnable {
 class BankAccount {
 
     private int money;
-    private final Object monitor = new Object();
+    private final Lock monitor = new ReentrantLock();
+    private final Condition writeCondition = monitor.newCondition();
+    private final Condition readCondition = monitor.newCondition();
 
     public BankAccount(int money) {
         this.money = money;
     }
 
     public void putMoney(int cash) {
-        synchronized (monitor) {
+        monitor.lock();
             while(money > 0){
                 try {
-                    monitor.wait();
+                    writeCondition.await();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
 
             money = money + cash; // read -> + -> write
-            monitor.notifyAll();
-        }
+            readCondition.signalAll();
+        monitor.unlock();
     }
 
     public int getCurrent() {
@@ -95,18 +101,17 @@ class BankAccount {
 
     // monitor this
     public void withdrawMoney(int cash) {
-        synchronized (monitor) {
+        monitor.lock();
             while(money < cash){
                 try {
-                    monitor.wait();
+                    readCondition.await();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
 
             money = money - cash;
-            monitor.notifyAll();
-        }
-
+            writeCondition.signalAll();
+        monitor.unlock();
     }
 }
