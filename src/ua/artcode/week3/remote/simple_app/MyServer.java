@@ -15,7 +15,7 @@ import java.util.*;
 public class MyServer {
 
 
-    private Set<RemoteUser> userSet = new TreeSet<>();
+    private Set<RemoteUser> userSet = new TreeSet<RemoteUser>();
 
 
     public void start() throws IOException {
