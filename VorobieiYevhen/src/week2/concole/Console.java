@@ -71,6 +71,16 @@ public class Console {
                 case "type":
                     fileHelper.type();
                     break;
+                case "copy":
+                    fileHelper.copy();
+                    break;
+                case "fc":
+                    if (fileHelper.fc()) {
+                        System.out.println("Files have the same content");
+                    } else {
+                        System.out.println("Files have different content");
+                    }
+                    break;
                 default:
                     System.out.println("No such command. View \"Help menu\" - \"help\"");
                     break;

@@ -1,10 +1,12 @@
-package ua.artcode.week4.th;
+package ua.artcode.week4;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
-
+/**
+ * Created by pikolo on 19.07.15.
+ */
 public class BankSynch {
 
     public static void main(String[] args) throws InterruptedException {
@@ -12,40 +14,54 @@ public class BankSynch {
 
         BankAccount bankAccount = new BankAccount(0);
         for (int i = 0; i < 5; i++) {
-            Thread producer = new Thread(new ProducerThread(bankAccount));
-            Thread consumer = new Thread(new ConsumerThread(bankAccount));
-            threadList.add(producer);
-            threadList.add(consumer);
-
-            producer.start();
-            consumer.start();
+            Thread thread = new Thread(new ProducerThread(bankAccount));
+            threadList.add(thread);
+            thread.start();
         }
 
         for (Thread thread : threadList) {
             thread.join();
         }
 
+
+        System.out.println("Money putted");
+        System.out.println(bankAccount.getCurrent());
+
+        for (int i = 0; i < 5; i++) {
+            Thread thread = new Thread(new TakerThread(bankAccount));
+            threadList.add(thread);
+            thread.start();
+        }
+
+        for (Thread thread : threadList) {
+            thread.join();
+        }
+
+        System.out.println("Money after withdrawals");
         System.out.println(bankAccount.getCurrent());
     }
 
-
 }
 
-class ConsumerThread implements Runnable {
+
+
+class TakerThread implements Runnable {
 
     private static final int COUNT = 10000;
     private BankAccount account;
 
-    public ConsumerThread(BankAccount account) {
+    public TakerThread(BankAccount account) {
         this.account = account;
     }
 
     @Override
     public void run() {
-        for (int i = 0; i < COUNT; i++) {
-            account.withdrawMoney(100);
+        for (int i = 0; i <COUNT; i++) {
+            account.takeMoney(200);
         }
+
     }
+
 }
 
 class ProducerThread implements Runnable {
@@ -74,9 +90,9 @@ class BankAccount {
         this.money = money;
     }
 
-    public void putMoney(int cash) {
-        synchronized (monitor) {
-            while(money > 0){
+    public void putMoney(int cash){
+        synchronized (monitor){
+            if (money > 0){
                 try {
                     monitor.wait();
                 } catch (InterruptedException e) {
@@ -89,14 +105,14 @@ class BankAccount {
         }
     }
 
-    public int getCurrent() {
+    public int getCurrent(){
         return money;
     }
 
-    // monitor this
-    public void withdrawMoney(int cash) {
-        synchronized (monitor) {
-            while(money < cash){
+    public void takeMoney(int cash) {
+
+        synchronized (monitor){
+            if (money < cash) {
                 try {
                     monitor.wait();
                 } catch (InterruptedException e) {
@@ -109,4 +125,6 @@ class BankAccount {
         }
 
     }
+
 }
+
