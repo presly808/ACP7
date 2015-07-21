@@ -11,8 +11,8 @@ public class MyScanner implements IScanner {
 
     private Reader reader;
     private String string;
-    private ArrayList<Character> readerList;
-    private String[] clipboard;
+    private ArrayList<Character> readerBuffer;
+    private String[] buffer;
     private String delimiter = " ";
     private int position = 0;
 
@@ -26,7 +26,7 @@ public class MyScanner implements IScanner {
     public MyScanner(String string) {
         this.string = string;
 
-        clipboard = string.split(delimiter);
+        buffer = string.split(delimiter);
 
     }
 
@@ -40,13 +40,13 @@ public class MyScanner implements IScanner {
 
         charListToString();
 
-        clipboard = string.split(delimiter);
+        buffer = string.split(delimiter);
     }
 
     private void readerToCharList(Reader reader) {
         try {
             while (reader.ready()) {
-                readerList.add((char)reader.read());
+                readerBuffer.add((char) reader.read());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -56,8 +56,8 @@ public class MyScanner implements IScanner {
     private void charListToString() {
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < readerList.size(); i++) {
-            sb.append(readerList.get(i));  //.toString
+        for (int i = 0; i < readerBuffer.size(); i++) {
+            sb.append(readerBuffer.get(i));  //.toString
         }
         string = sb.toString();
     }
@@ -66,7 +66,7 @@ public class MyScanner implements IScanner {
     @Override
     public String next() {
         if (hasNext()) {
-            String next = clipboard[position];
+            String next = buffer[position];
             position++;
 
             return next;
@@ -79,7 +79,7 @@ public class MyScanner implements IScanner {
     public int nextInt() {
         if (hasNext()) {
             if (hasNextInt()) {
-            int number = Integer.parseInt(clipboard[position]);
+            int number = Integer.parseInt(buffer[position]);
             position++;
             return number;
             } else {
@@ -98,7 +98,7 @@ public class MyScanner implements IScanner {
             if (position != 0) {
                 sb.append(delimiter);
             }
-            while(position < clipboard.length - 1) {
+            while(position < buffer.length - 1) {
 
                 sb.append(next() + delimiter);
 
@@ -113,9 +113,9 @@ public class MyScanner implements IScanner {
 
     @Override
     public boolean hasNext() {
-        if (clipboard == null) {
+        if (buffer == null) {
             return false;
-        } else if (position < clipboard.length) {
+        } else if (position < buffer.length) {
             return true;
         } else {
             return false;
@@ -147,13 +147,13 @@ public class MyScanner implements IScanner {
     public void useDelimiter(String newDelimiter) {
 
         StringBuilder sb = new StringBuilder();
-        while (position < clipboard.length) {
-            sb.append(delimiter + clipboard[position]);
+        while (position < buffer.length) {
+            sb.append(delimiter + buffer[position]);
             position++;
         }
         string = sb.toString();
         setDelimiter(newDelimiter);
-        clipboard = string.split(delimiter);
+        buffer = string.split(delimiter);
         position = 0;
     }
 
@@ -161,14 +161,14 @@ public class MyScanner implements IScanner {
     public void close() {
         if (reader != null) {
             try {
-                readerList = null;
-                clipboard = null;
+                readerBuffer = null;
+                buffer = null;
                 reader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else{
-            clipboard = null;
+            buffer = null;
             string = null;
         }
     }
