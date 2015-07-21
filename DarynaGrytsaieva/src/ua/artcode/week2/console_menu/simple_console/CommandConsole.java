@@ -1,5 +1,6 @@
-package ua.artcode.week2.console_menu;
+package ua.artcode.week2.console_menu.simple_console;
 
+import art_code.console_menu.InvalidCommandException;
 import art_code.console_menu.commands.*;
 
 import java.io.FileNotFoundException;

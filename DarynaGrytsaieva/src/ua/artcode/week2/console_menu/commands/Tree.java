@@ -1,7 +1,7 @@
 package ua.artcode.week2.console_menu.commands;
 
-import ua.artcode.week2.console_menu.CommandUtils;
-import ua.artcode.week2.console_menu.InvalidCommandException;
+import art_code.console_menu.CommandUtils;
+import art_code.console_menu.InvalidCommandException;
 
 import java.io.File;
 import java.util.ArrayList;

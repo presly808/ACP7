@@ -1,7 +1,7 @@
 package ua.artcode.week2.console_menu.commands;
 
-import art_code.console_menu.CommandConsole;
 import art_code.console_menu.InvalidCommandException;
+import art_code.console_menu.simple_console.CommandConsole;
 
 /**
  * Created by Daryna on 13-Jul-15.

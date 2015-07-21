@@ -1,4 +1,4 @@
-package ua.artcode.week2.console_menu;
+package ua.artcode.week2.console_menu.simple_console;
 
 /**
  * Created by Daryna on 13-Jul-15.
