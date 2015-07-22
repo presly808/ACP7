@@ -25,8 +25,6 @@ public class ConsumerThread  implements Runnable {
 
 
 
-}
-
 
     public static void main(String[] args) throws InterruptedException {
         List<Thread> threadList = new ArrayList<>();
@@ -43,7 +41,7 @@ public class ConsumerThread  implements Runnable {
         }
 
         System.out.println(bankAccount.getCurrent());
-    }
+    }}
 
 
 
