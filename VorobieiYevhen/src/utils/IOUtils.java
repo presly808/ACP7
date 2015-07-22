@@ -54,22 +54,26 @@ public class IOUtils {
             try {
                 out.flush();
             } catch (IOException e) {
-                e.printStackTrace();
+               e.printStackTrace();
+
             }
             try {
                 out.close();
             } catch (IOException e) {
                 e.printStackTrace();
+
             }
         }
     }
-
     public static void closeIn(InputStream in) {
         if (in != null) {
             try {
                 in.close();
+                System.err.println("Stream closed");
+                System.exit(-1);
             } catch (IOException e) {
-                e.printStackTrace();
+               e.printStackTrace();
+
             }
         }
     }
