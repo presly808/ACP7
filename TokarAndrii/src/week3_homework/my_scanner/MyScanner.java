@@ -3,84 +3,72 @@ package week3_homework.my_scanner;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.Reader;
+import java.io.StringReader;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
-/* String next() - ������ ������ ����� � ������
-   int nextInt() - ������ ������ ����� �� ������ ��� InputMismatchException
-   String nextLine() - ������ ���� ������
-   boolean hasNext() - ����������� ������� � ������ ������
-   boolean hasNextInt() - ����������� ������� � ������ ������ int �����
-   useDelimiter(String) - ���������� �����������
-   close() - �������� ��������, ������ ������ ������������ � NoSuchElementException*/
 public final class MyScanner implements Iterator, Closeable {
 
-    private Reader reader;
+    private Reader in;
     private String ScannerString;
-    private char[] scannerBuffer;
-    private int indexScannerBuffer;
+    private char[] scannerBuffer = new char[500];
+    private int indexStart = 0;
+    private int indexEnd = 0;
 
 
-    public MyScanner(Reader reader) {
-        this.reader = reader;
-
-        start();
-
+    public MyScanner(String source) {
+        in = new StringReader(source);
     }
 
-    public MyScanner(String scannerString) {
-        ScannerString = scannerString;
+    public MyScanner(Reader input) {
+        this.in = input;
     }
-
-
-    public void start() {
-
-        try {
-            if (hasNext()) ;
-
-            next();
-
-
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        }
-
-    }
-
 
     @Override
     public boolean hasNext() {
 
-        read();
+        int curr = indexStart;
 
-        if (scannerBuffer[indexScannerBuffer] != '\u0000') {
-            return true;
+        if (curr == ' ') {
+            return false;
         }
 
-        return false;
-    }
+        if (indexStart >= indexEnd) {
+            readInBuffer();
 
-
-    public char[] read() {
-        try {
-            while (reader.ready())
-                scannerBuffer[indexScannerBuffer] = (char) reader.read();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-        indexScannerBuffer++;
+        String next = "";
 
-        return scannerBuffer;
+        while (curr < indexEnd && scannerBuffer[curr] != ' ') {
+            if (indexStart == scannerBuffer.length) {
+                readInBuffer();
+                indexStart = 0;
+            }
+
+            next += scannerBuffer[curr];
+            curr++;
+
+
+        }
+        indexStart = curr + 1;
+
+        return next.isEmpty() ? false : true;
+
     }
 
     @Override
-    public String next() {
-        scannerBuffer = read();
-        String buff = scannerBuffer.toString();
-        String[] buffMas = buff.split(" ");
+    public Object next() {
+        return null;
+    }
 
 
-        return buffMas[0];
+    public void readInBuffer() {
+        try {
+            indexEnd = in.read(scannerBuffer);
+            scannerBuffer.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
