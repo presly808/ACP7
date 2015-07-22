@@ -1,17 +1,17 @@
-package ua.artcode.week2.console_menu.commands;
+package ua.artcode.week3.console_menu.commands;
 
 import art_code.console_menu.CommandUtils;
 import art_code.console_menu.InvalidCommandException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.PrintWriter;
 
 /**
  * Created by Daryna on 14-Jul-15.
  */
-public class Type implements Command {
-    private final String COMMAND_NAME = "type";
+public class Del implements Command {
+    private final String COMMAND_NAME = "del";
 
     @Override
     public String getCommandName() {
@@ -19,17 +19,15 @@ public class Type implements Command {
     }
 
     @Override
-    public String run(String currentDir, String commandArgument) throws FileNotFoundException {
+    public String run(String currentDir, String commandArgument, PrintWriter out) throws FileNotFoundException {
         String newDir = getNewDir(currentDir, commandArgument);
 
-        if(CommandUtils.fileExists(newDir)){
-            File f = new File(newDir);
-            Scanner scan = new Scanner(f);
-            StringBuilder sb = new StringBuilder();
-            while(scan.hasNextLine()){
-                sb.append(scan.nextLine()+"\n");
-            }
-            System.out.println(sb.toString());
+        if (CommandUtils.fileExists(newDir)) {
+            File file = new File(newDir);
+            file.delete();
+            CommandUtils.sendToClient(out, "File " + file.getName() + " deleted." + "\n");
+
+
         }
 
         return currentDir;
@@ -41,7 +39,7 @@ public class Type implements Command {
             throw new InvalidCommandException("Invalid argument.");
 
         } else {
-            return (currentDir + "/" + commandArgument);
+            return (currentDir + "\\" + commandArgument);
         }
     }
 

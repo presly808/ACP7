@@ -1,4 +1,4 @@
-package ua.artcode.week2.console_menu.remote_console;
+package ua.artcode.week3.console_menu.remote_console;
 /*
  * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
  *

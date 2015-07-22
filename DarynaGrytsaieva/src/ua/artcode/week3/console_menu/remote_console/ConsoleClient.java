@@ -1,4 +1,4 @@
-package ua.artcode.week2.console_menu.remote_console;
+package ua.artcode.week3.console_menu.remote_console;
 
 import java.io.*;
 import java.net.Socket;

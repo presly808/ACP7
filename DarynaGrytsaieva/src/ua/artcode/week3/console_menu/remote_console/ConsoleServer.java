@@ -1,4 +1,4 @@
-package ua.artcode.week2.console_menu.remote_console;
+package ua.artcode.week3.console_menu.remote_console;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,7 +37,6 @@ public class ConsoleServer {
             String command = commandNumAndData[0];
 
 
-
             if ("register".equalsIgnoreCase(command)) {
                 String data = commandNumAndData[1];
                 String[] loginAndPass = data.split(",");
@@ -62,10 +61,10 @@ public class ConsoleServer {
                 sendToClient(out, res);
             } else if ("command-list".equalsIgnoreCase(command)) {
                 RemoteCommandConsole remoteCommandConsole = new RemoteCommandConsole(client);
+
             }
 
         }
-
 
     }
 
@@ -77,4 +76,6 @@ public class ConsoleServer {
 
         return "1.register\n2.user-list\n3.command-list";
     }
+
+
 }

@@ -1,15 +1,16 @@
-package ua.artcode.week2.console_menu.remote_console;
+package ua.artcode.week3.console_menu.remote_console;
 
 import java.io.IOException;
 
 /**
  * Created by Daryna on 20-Jul-15.
  */
-public class RunClient {
+public class RunServer {
     public static void main(String[] args) {
-        ConsoleClient cc = new ConsoleClient();
+
+        ConsoleServer cs = new ConsoleServer();
         try {
-            cc.start();
+            cs.start();
         } catch (IOException e) {
             e.printStackTrace();
         }

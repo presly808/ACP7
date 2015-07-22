@@ -1,6 +1,8 @@
-package ua.artcode.week2.console_menu.commands;
+package ua.artcode.week3.console_menu.commands;
 
 import art_code.console_menu.InvalidCommandException;
+
+import java.io.PrintWriter;
 
 /**
  * Created by Daryna on 14-Jul-15.
@@ -13,7 +15,7 @@ public class Exit implements Command {
         return COMMAND_NAME;
     }
     @Override
-    public String run(String currentDir, String commandArgument) {
+    public String run(String currentDir, String commandArgument, PrintWriter out) {
         if(commandArgument.equals("")){
             System.exit(0);
 

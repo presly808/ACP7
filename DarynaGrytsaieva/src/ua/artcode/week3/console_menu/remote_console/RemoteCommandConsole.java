@@ -1,21 +1,24 @@
-package ua.artcode.week2.console_menu.simple_console;
+package ua.artcode.week3.console_menu.remote_console;
 
 import art_code.console_menu.InvalidCommandException;
 import art_code.console_menu.commands.*;
 
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * Created by Daryna on 13-Jul-15.
  */
-public class CommandConsole {
+public class RemoteCommandConsole {
 
-    Scanner scan = new Scanner(System.in);
     private String currentDir = "c:\\Users\\Daryna";
     private static final String ROOT_DIR = "c:\\Users\\Daryna";
+    public static final String END_OF_FILE = "EOF";
+
+    private PrintWriter out;
+    private BufferedReader in;
 
     public static String getRootDir() {
         return ROOT_DIR;
@@ -23,9 +26,12 @@ public class CommandConsole {
 
     private List<Command> commandList = new ArrayList<>();
 
-    public CommandConsole() {
+    public RemoteCommandConsole(Socket client) throws IOException {
+        out = new PrintWriter(client.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(client.getInputStream()));
         initCommandConsole();
         launchCommandConsole();
+
     }
 
     private void initCommandConsole() {
@@ -45,12 +51,16 @@ public class CommandConsole {
 
     }
 
-    private void launchCommandConsole() {
-        printAllCommands();
+
+    private void launchCommandConsole() throws IOException {
+
+
+        sendToClient(out, getAllCommands() + "\n" + currentDir + "\n" + "&");
+
         while (true) {
-            System.out.print(currentDir + "\n" + "&");
+            // sendToClient(out, currentDir + "\n" + "&");
             try {
-                parseAndRunCommand(scan.nextLine());
+                parseAndRunCommand(in.readLine());
             } catch (InvalidCommandException e) {
                 e.printStackTrace();
             } catch (FileNotFoundException e) {
@@ -83,7 +93,7 @@ public class CommandConsole {
             throw new InvalidCommandException("Invalid command.");
         }
 
-        currentDir = command.run(currentDir, argument);
+        currentDir = command.run(currentDir, argument, out);
     }
 
     private static String[] commandNames = {"Show all available commands - help",
@@ -100,10 +110,16 @@ public class CommandConsole {
             "Exit - exit"};
 
 
-    public static void printAllCommands() {
+    public static String getAllCommands() {
+        StringBuilder sb = new StringBuilder();
         for (String m : commandNames)
-            System.out.println(m);
-
+            sb.append(m + "\n");
+        return sb.toString();
     }
+
+    private void sendToClient(PrintWriter out, String response) {
+        out.println(response + "\nEOF");
+    }
+
 
 }

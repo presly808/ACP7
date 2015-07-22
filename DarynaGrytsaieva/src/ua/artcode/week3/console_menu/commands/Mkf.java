@@ -1,16 +1,18 @@
-package ua.artcode.week2.console_menu.commands;
+package ua.artcode.week3.console_menu.commands;
 
 import art_code.console_menu.CommandUtils;
 import art_code.console_menu.InvalidCommandException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by Daryna on 14-Jul-15.
  */
-public class Del implements Command {
-    private final String COMMAND_NAME = "del";
+public class Mkf implements Command {
+    private final String COMMAND_NAME = "mkf";
 
     @Override
     public String getCommandName() {
@@ -18,16 +20,23 @@ public class Del implements Command {
     }
 
     @Override
-    public String run(String currentDir, String commandArgument) throws FileNotFoundException {
+    public String run(String currentDir, String commandArgument, PrintWriter out) throws FileNotFoundException {
         String newDir = getNewDir(currentDir, commandArgument);
 
         if (CommandUtils.fileExists(newDir)) {
-            File file = new File(newDir);
-            file.delete();
-            System.out.println("File "+ file.getName()+" deleted."+"\n");
-        }
+            CommandUtils.sendToClient(out, "File already exists.");
 
+        } else {
+            File file = new File(newDir);
+            try {
+                file.createNewFile();
+                CommandUtils.sendToClient(out, "File " + file.getName() + " created.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return currentDir;
+
     }
 
     private String getNewDir(String currentDir, String commandArgument) {
@@ -36,7 +45,7 @@ public class Del implements Command {
             throw new InvalidCommandException("Invalid argument.");
 
         } else {
-            return (currentDir + "\\" + commandArgument);
+            return (currentDir + "/" + commandArgument);
         }
     }
 

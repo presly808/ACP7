@@ -1,9 +1,11 @@
-package ua.artcode.week2.console_menu.commands;
+package ua.artcode.week3.console_menu.commands;
 
+import art_code.console_menu.CommandUtils;
 import art_code.console_menu.InvalidCommandException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -19,11 +21,12 @@ public class Find implements Command {
     }
 
     @Override
-    public String run(String currentDir, String commandArgument) throws FileNotFoundException {
+    public String run(String currentDir, String commandArgument, PrintWriter out) throws FileNotFoundException {
         String searchDir = getSearchDir(currentDir, commandArgument);
         File rootFile = new File(searchDir);
 
-        System.out.println("---" + find(rootFile, commandArgument));
+        CommandUtils.sendToClient(out,"---" + find(rootFile, commandArgument) );
+
 
         return currentDir;
 

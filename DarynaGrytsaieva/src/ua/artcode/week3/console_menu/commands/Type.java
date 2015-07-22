@@ -1,16 +1,18 @@
-package ua.artcode.week2.console_menu.commands;
+package ua.artcode.week3.console_menu.commands;
 
 import art_code.console_menu.CommandUtils;
 import art_code.console_menu.InvalidCommandException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  * Created by Daryna on 14-Jul-15.
  */
-public class Mkdir implements Command {
-    private final String COMMAND_NAME = "mkdir";
+public class Type implements Command {
+    private final String COMMAND_NAME = "type";
 
     @Override
     public String getCommandName() {
@@ -18,17 +20,20 @@ public class Mkdir implements Command {
     }
 
     @Override
-    public String run(String currentDir, String commandArgument) throws FileNotFoundException {
+    public String run(String currentDir, String commandArgument, PrintWriter out) throws FileNotFoundException {
         String newDir = getNewDir(currentDir, commandArgument);
-        if (CommandUtils.dirExists(newDir)) {
-            System.out.println("Directory already exists.");
-            return currentDir;
-        } else {
-            File dir = new File(newDir);
-            dir.mkdir();
-            return newDir;
+
+        if (CommandUtils.fileExists(newDir)) {
+            File f = new File(newDir);
+            Scanner scan = new Scanner(f);
+            StringBuilder sb = new StringBuilder();
+            while (scan.hasNextLine()) {
+                sb.append(scan.nextLine() + "\n");
+            }
+            CommandUtils.sendToClient(out, sb.toString());
         }
 
+        return currentDir;
     }
 
     private String getNewDir(String currentDir, String commandArgument) {
@@ -40,6 +45,5 @@ public class Mkdir implements Command {
             return (currentDir + "/" + commandArgument);
         }
     }
-
 
 }

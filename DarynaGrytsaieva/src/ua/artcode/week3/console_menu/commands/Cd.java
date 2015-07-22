@@ -1,7 +1,9 @@
-package ua.artcode.week2.console_menu.commands;
+package ua.artcode.week3.console_menu.commands;
 
 import art_code.console_menu.CommandUtils;
 import art_code.console_menu.InvalidCommandException;
+
+import java.io.PrintWriter;
 
 /**
  * Created by Daryna on 13-Jul-15.
@@ -9,12 +11,13 @@ import art_code.console_menu.InvalidCommandException;
 public class Cd implements Command {
     private final String COMMAND_NAME = "cd";
 
+
     public String getCommandName() {
         return COMMAND_NAME;
     }
 
     @Override
-    public String run(String currentDir, String commandArgument) {
+    public String run(String currentDir, String commandArgument, PrintWriter out) {
         String newDir = getNewDir(currentDir, commandArgument);
 
 
