@@ -7,20 +7,32 @@ package homeWork_week3;
 public class TestMyScanner {
 
     public static void main(String[] args) {
-        IScanner scanner = new MyScanner(" 1 2 3   4 5  ");
+        IScanner scanner = new MyScanner(" 1 2 3   4 5  \n" +
+                "dfdfdf \n" +
+                "------");
 
         while (scanner.hasNext()){
-            System.out.println(scanner.next());
+            System.out.println(scanner.nextLine());
         }
 
+        /*String s = "ldjgfldkgfj1111k;lk;lk333s here";
 
-/*        System.out.println(scanner.hasNext());
+        StringBuilder sb = new StringBuilder();
+        int elem = 0;
+        // перебор символов
+        for (int i = 0; i < s.length(); i++) {
 
-        System.out.println(scanner.next());
-        System.out.println(scanner.next());
-        System.out.println(scanner.next());
-        System.out.println(scanner.next());
-        System.out.println(scanner.next());
-        System.out.println(scanner.next());*/
+            // проверка на принадлежность к цифрам
+            if (Character.isDigit(s.charAt(i))) {
+
+                // парсинг символа в int переменную
+                elem = Character.digit(s.charAt(i), 10);
+
+                // добавление цифры в строку-список найденных цифр
+                sb.append(elem + ", ");
+
+            }
+        }
+        System.out.println(sb);*/
     }
 }
