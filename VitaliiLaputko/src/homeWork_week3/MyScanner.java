@@ -3,9 +3,10 @@ package homeWork_week3;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.InputMismatchException;
 
 /**
- * Created by ViTaLES on 18.07.2015.
+ * Віталій Лапутько джавва класс
  */
 public class MyScanner implements IScanner {
 
@@ -90,7 +91,22 @@ public class MyScanner implements IScanner {
 
     @Override
     public int nextInt() {
-        return 0;
+        String next = next();
+        if(isInteger(next)){
+            return Integer.parseInt(next);
+        }
+
+        throw new InputMismatchException(next + " is not a number");
+    }
+
+    private boolean isInteger(String next) {
+        for (int i = 0; i < next.length(); i++) {
+            if(!Character.isDigit(next.charAt(0))){
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Override
