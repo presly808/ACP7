@@ -2,9 +2,7 @@ package ua.artcode.week4.th.homework.search;
 
 import java.io.File;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 import java.io.FileNotFoundException;
 
@@ -25,16 +23,18 @@ public class SearchWithoutRecurtion {
         if (!root.isDirectory()){
             throw new IllegalArgumentException("Cannot list content of " + root.getPath() + ": Not a directory");
         }
-        Queue<File> queue = new LinkedList<>();
+        ArrayList<String> results = new ArrayList();
+        Queue<File> queue = new PriorityQueue<>();
         queue.add(root);
         while(!queue.isEmpty()){
-            File dir = queue.poll();
-            for(File file : dir.listFiles()){
+            File firstDir = queue.poll();
+            for(File file : firstDir.listFiles()){
                 if(file.isDirectory()) {
-                    queue.addAll(Arrays.asList(file.listFiles()));
-                } else{
-                    if (file.getName().equals(name))
-                        file.getAbsolutePath();
+                    queue.add(file);
+                } else {
+                    if (file.getName().equals(name)){
+                        results.add(file.getAbsolutePath());
+                    }
                 }
             }
         }
