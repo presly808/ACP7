@@ -1,7 +1,7 @@
 package ua.artcode.week3.console_menu.commands;
 
-import art_code.console_menu.CommandUtils;
-import art_code.console_menu.InvalidCommandException;
+import ua.artcode.week3.console_menu.CommandUtils;
+import ua.artcode.week3.console_menu.InvalidCommandException;
 
 import java.io.PrintWriter;
 
@@ -22,10 +22,12 @@ public class Cd implements Command {
 
 
         if (CommandUtils.dirExists(newDir)) {
+            CommandUtils.sendToClient(out,newDir);
             return newDir;
         }
 
         int index = newDir.lastIndexOf("\\");
+        CommandUtils.sendToClient(out,newDir.substring(0, index));
         return newDir.substring(0, index);
 
 

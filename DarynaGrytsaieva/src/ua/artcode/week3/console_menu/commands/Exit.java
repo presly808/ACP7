@@ -1,6 +1,7 @@
 package ua.artcode.week3.console_menu.commands;
 
-import art_code.console_menu.InvalidCommandException;
+import ua.artcode.week3.console_menu.CommandUtils;
+import ua.artcode.week3.console_menu.InvalidCommandException;
 
 import java.io.PrintWriter;
 
