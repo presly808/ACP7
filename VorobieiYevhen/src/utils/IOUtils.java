@@ -69,8 +69,8 @@ public class IOUtils {
         if (in != null) {
             try {
                 in.close();
-                System.err.println("Stream closed");
-                System.exit(-1);
+                System.out.println("Stream closed");
+                //System.exit(-1);
             } catch (IOException e) {
                e.printStackTrace();
 

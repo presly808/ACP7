@@ -12,7 +12,7 @@ public class ConsumerThread implements Runnable{
     @Override
     public void run() {
         try {
-            producer.compareFiles(producer.getDirectories(), producer.getStart());
+            producer.compareFiles();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

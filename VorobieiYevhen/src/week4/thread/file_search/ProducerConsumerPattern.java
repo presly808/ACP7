@@ -3,16 +3,17 @@ package week4.thread.file_search;
 import java.io.File;
 import java.io.PrintWriter;
 import java.util.Date;
-import java.util.PriorityQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class ProducerConsumerPattern {
 
-    String fileName;
-    String path;
-    PrintWriter out;
-    PriorityBlockingQueue<File> directories = new PriorityBlockingQueue<>(); //creates new each time???
-    long start = new Date().getTime();
+    private String fileName;
+    private String path;
+    private PrintWriter out;
+    private PriorityBlockingQueue<File> directories = new PriorityBlockingQueue<>(1); //creates new each time???
+    private long start = new Date().getTime();
+    private int count = 0;
+    boolean state = true;
 
     public ProducerConsumerPattern(String fileName, String path, PrintWriter out) {
         this.fileName = fileName;
@@ -20,66 +21,40 @@ public class ProducerConsumerPattern {
         this.out = out;
         out.println("\n\t\t\t***Producer Consumer Pattern Search File Algorithm***\n");
         directories.add(new File(path));
-
     }
-
-    public PriorityBlockingQueue<File> getDirectories() {
-        return directories;
+    public void iterFiles () throws InterruptedException {
+        search(new File(path));
+        state = false;
     }
-
-   public long getStart() {
-        return start;
-    }
-
-    public synchronized void iterFiles (PriorityBlockingQueue<File> directories) throws InterruptedException {
+    public void compareFiles () throws InterruptedException {
         File files;
-        while ((files = directories.peek()) != null) {
-
-            if (files.isDirectory()) {
-                for (File file : files.listFiles()) {
-                    directories.add(file);
-
-                }
-                if (directories.size() >= 1) {
-                    notifyAll();
-                    wait();
-                }
-
-            } else {
-                if (directories.size() >= 1) {
-                    notifyAll();
-                    wait();
-                }
-
-            }
-        }
-    }
-    public synchronized void compareFiles (PriorityBlockingQueue<File> directories, long start) throws InterruptedException {
-        File files;
-        while ((files = directories.poll()) != null) {
+        while (state | directories.peek() != null) {
+            files = directories.take();
+            System.out.println("poll " + files.getAbsolutePath());
+            System.out.println(directories.size());
              if (files.getName().endsWith(fileName)) {
+                 count++;
                  out.println(files.getAbsolutePath());
                  out.flush();
-                 notifyAll();
-                 if (directories.size() > 0) {
-                    wait(); //if iterThread alive
-                 }
-
-             } else {
-                 notifyAll();
-                 if (directories.size() > 0) {
-                   wait();//if iterThread alive
-                 }
              }
         }
-
-
         long finish = new Date().getTime();
         long timePassed = finish - start;
         String time = "Operation took " + timePassed + " ms";
-        System.out.println(time);
-        out.println(time);
+        String filesFound = count + " files found";
+        System.out.println(time + "\n" + filesFound);
+        out.println(time + "\n" + filesFound);
         out.flush();
-
+    }
+    private  void search (File file) {
+        for (File item : file.listFiles()) {
+            if (item.isDirectory()) {
+                search(item);
+            } else {
+                System.out.println("add " + item.getAbsolutePath());
+                System.out.println(directories.size());
+                 directories.add(item);
+            }
+        }
     }
 }

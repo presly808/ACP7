@@ -9,7 +9,7 @@ import java.util.Map;
  * Created by Vorobiei on 24.07.2015.
  */
 public class FIleLoader {
-    private static final String PATH = "C:\\Users\\Джек\\GIT_SIMPLE\\ACP7\\VorobieiYevhen\\resources\\downloads\\";
+    private static final String PATH = "D:\\Новая папка (2)\\";
     private static final String SITE ="http://www.ex.ua";
     private HashMap<String, String> linksOnFiles;
 
@@ -43,6 +43,7 @@ public class FIleLoader {
     }
 
     private void loadFile(Map.Entry<String, String> entry) throws IOException {
+        long start = System.currentTimeMillis();
         System.out.println("Loading... " + entry.getValue());
         URL url = new URL(SITE + entry.getKey());
         //URLConnection connection = url.openConnection(); difference?
@@ -55,6 +56,8 @@ public class FIleLoader {
             fileOutputStream.write(buff, 0, count);
 
         }
+        long finish = System.currentTimeMillis();
+        System.out.println("File " + entry.getValue() + " loading complete!\nFile size - " + new File(PATH + entry.getValue()).length()/1024 + " Kb." + " Time passed - " + (finish - start)/1000.0 + " sec.");
         fileOutputStream.close();
         in.close();
     }

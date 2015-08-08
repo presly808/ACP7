@@ -10,7 +10,7 @@ public class ProducerThread implements Runnable{
     @Override
     public void run() {
         try {
-            producer.iterFiles(producer.getDirectories());
+            producer.iterFiles();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

@@ -11,9 +11,10 @@ import java.util.Timer;
  * Created by Джек on 21.07.2015.
  */
 public class QueueSearch {
-    String fileName;
-    String path;
-    PrintWriter out;
+    private String fileName;
+    private String path;
+    private PrintWriter out;
+    private int count = 0;
 
     public QueueSearch(String fileName, String path, PrintWriter out) {
         this.fileName = fileName;
@@ -35,15 +36,18 @@ public class QueueSearch {
                 }
                 if (file.getName().endsWith(fileName)) {
                     out.println(file.getAbsolutePath());
+                    count++;
                 }
             }
         }
         long finish = new Date().getTime();
         long timePassed = finish - start;
         String time = "Operation took " + timePassed + " ms";
-        System.out.println(time);
-        out.println(time);
+        String filesFound = count + " files found";
+        System.out.println(time + "\n" + filesFound);
+        out.println(time + "\n" + filesFound);
         out.flush();
+
        // out.close();
     }
 }

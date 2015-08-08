@@ -20,13 +20,6 @@ public class FileSearchTest {
         producer.start();
         consumer.start();
         consumer.join();
-        ProducerConsumerPatternTwoQueue producerConsumerPatternTwoQueue = new ProducerConsumerPatternTwoQueue(fileName, path, os);
-        Thread producer2 = new Thread(new ProducerThreadTwoQueue(producerConsumerPatternTwoQueue));
-        Thread consumer2 = new Thread(new ConsumerThreadTwoQueue(producerConsumerPatternTwoQueue));
-        producer2.start();
-        consumer2.start();
-        consumer2.join();
-        os.close();
 
 
     }
