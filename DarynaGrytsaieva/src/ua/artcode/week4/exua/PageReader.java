@@ -1,4 +1,4 @@
-package ua.artcode.week4.ua;
+package ua.artcode.week4.exua;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by Daryna on 22-Jul-15.
@@ -29,12 +30,11 @@ public class PageReader {
     }
 
     public String readPageContent() throws IOException {
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(connection.getInputStream()));
+        BufferedReader in =new BufferedReader(new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8));
         String pageContent = "";
         String currentLine;
         while ((currentLine = in.readLine()) != null) {
-            pageContent += currentLine+"\n";
+            pageContent += currentLine + "\n";
         }
         return pageContent;
     }

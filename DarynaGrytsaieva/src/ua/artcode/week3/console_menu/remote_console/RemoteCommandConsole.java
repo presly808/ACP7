@@ -1,7 +1,8 @@
 package ua.artcode.week3.console_menu.remote_console;
 
-import art_code.console_menu.InvalidCommandException;
-import art_code.console_menu.commands.*;
+import ua.artcode.week3.console_menu.commands.*;
+import ua.artcode.week3.console_menu.InvalidCommandException;
+import ua.artcode.week3.console_menu.commands.Tree;
 
 import java.io.*;
 import java.net.Socket;

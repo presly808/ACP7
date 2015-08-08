@@ -85,6 +85,7 @@ class BankAccount {
 
     private int money;
     private final Object monitor = new Object();
+    private final Object monitor2 = new Object();
 
     public BankAccount(int money) {
         this.money = money;
@@ -111,17 +112,17 @@ class BankAccount {
 
     public void takeMoney(int cash) {
 
-        synchronized (monitor){
+        synchronized (monitor2){
             if (money < cash) {
                 try {
-                    monitor.wait();
+                    monitor2.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
 
             money = money - cash;
-            monitor.notifyAll();
+            monitor2.notifyAll();
         }
 
     }
