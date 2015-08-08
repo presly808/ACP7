@@ -14,8 +14,13 @@ public class ChatServer {
     public static void main(String[] args) {
         int port=8888;
         try {
+            // он умеет заставлять программу ждать подключений от клиентов.
+            // Когда вы его создаете, нужно указывать порт, с которым он будет работать, и вызвать его метод accept().
             ServerSocket serverSocket = new ServerSocket(port);
             System.out.println("Waiting for a client");
+
+            //Этот метод заставляет программу ждать подключений по указанному порту.
+            // Исполнение программы зависает в этом месте, пока клиент не подключится.
             Socket socket =serverSocket.accept(); //Listens for a connection to be made to this socket and accepts it.blocks!
             System.out.println("Got client...");
             System.out.println();
