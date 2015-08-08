@@ -47,7 +47,7 @@ public class ProducerConsumerPattern {
         out.flush();
     }
     private  void search (File file) {
-        for (File item : file.listFiles()) {
+         for (File item : file.listFiles()) {
             if (item.isDirectory()) {
                 search(item);
             } else {
