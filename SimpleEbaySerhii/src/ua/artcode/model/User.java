@@ -3,9 +3,6 @@ package ua.artcode.model;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by serhii on 09.08.15.
- */
 public class User {
 
     private long id;
