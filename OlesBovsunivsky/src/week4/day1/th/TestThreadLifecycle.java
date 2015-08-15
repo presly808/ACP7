@@ -12,9 +12,9 @@ public class TestThreadLifecycle {
 class BankAccount{
     public int money;
 
-    public void setMoney(){
+    public void setMoney(int cash){
         synchronized (this){
-            int cash;
+
             money = money-cash;
         }
     }
