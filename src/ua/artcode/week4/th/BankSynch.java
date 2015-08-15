@@ -11,10 +11,14 @@ public class BankSynch {
         List<Thread> threadList = new ArrayList<>();
 
         BankAccount bankAccount = new BankAccount(0);
-        for (int i = 0; i < 10; i++) {
-            Thread thread = new Thread(new ProducerThread(bankAccount));
-            threadList.add(thread);
-            thread.start();
+        for (int i = 0; i < 5; i++) {
+            Thread producer = new Thread(new ProducerThread(bankAccount));
+            Thread consumer = new Thread(new ConsumerThread(bankAccount));
+            threadList.add(producer);
+            threadList.add(consumer);
+
+            producer.start();
+            consumer.start();
         }
 
         for (Thread thread : threadList) {
@@ -25,6 +29,23 @@ public class BankSynch {
     }
 
 
+}
+
+class ConsumerThread implements Runnable {
+
+    private static final int COUNT = 10000;
+    private BankAccount account;
+
+    public ConsumerThread(BankAccount account) {
+        this.account = account;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < COUNT; i++) {
+            account.withdrawMoney(100);
+        }
+    }
 }
 
 class ProducerThread implements Runnable {
@@ -39,7 +60,7 @@ class ProducerThread implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < COUNT; i++) {
-            account.putMoney(1);
+            account.putMoney(100);
         }
     }
 }
@@ -53,14 +74,39 @@ class BankAccount {
         this.money = money;
     }
 
-    public void putMoney(int cash){
-        synchronized (monitor){
+    public void putMoney(int cash) {
+        synchronized (monitor) {
+            while(money > 0){
+                try {
+                    monitor.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
             money = money + cash; // read -> + -> write
+            monitor.notifyAll();
         }
     }
 
-    public int getCurrent(){
+    public int getCurrent() {
         return money;
     }
 
+    // monitor this
+    public void withdrawMoney(int cash) {
+        synchronized (monitor) {
+            while(money < cash){
+                try {
+                    monitor.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            money = money - cash;
+            monitor.notifyAll();
+        }
+
+    }
 }

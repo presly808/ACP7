@@ -272,6 +272,71 @@ public class MyFileHelper implements FileHelper {
 
     }
 
+    @Override
+    public boolean copy() {
+
+        String fileTo;
+
+        String fileFrom = getFilePath();
+        try {
+            if (!new File(fileFrom).isFile()) {
+                System.out.println("Can't read, this is not a file!");
+            } else  {
+
+                String[] fileToArray = fileFrom.split("\\.");
+                fileTo = fileToArray[0] + "(copy)." + fileToArray[1];
+                FileOutputStream out = null;
+                FileInputStream in = null;
+
+                try {
+                    in = new FileInputStream(fileFrom);
+                    out = new FileOutputStream(fileTo);
+                    OutputStream file = IOUtils.copy(in, out);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } finally {
+                    IOUtils.closeIn(in);
+                    IOUtils.closeOut(out);
+                }
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Can't read this file! (Unreadable format)");
+        }
+
+        return file != null ? true :false;
+    }
+
+    @Override
+    public boolean fc() {
+        FileInputStream fileOne = null;
+        FileInputStream fileTwo = null;
+        try {
+            String filePathOne = getFilePath();
+            if (!new File(filePathOne).isFile()) {
+                System.out.println("It's not a file");
+                return false;
+            }
+            String filePathTwo = getFilePath();
+            if (!new File(filePathTwo).isFile()) {
+                System.out.println("It's not a file");
+                return false;
+            }
+            fileOne = new FileInputStream(filePathOne);
+            fileTwo = new FileInputStream(filePathTwo);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("File Not Found!");
+            return false;
+        }catch (NullPointerException e) {
+            System.out.println("Can't read this file!");
+            return false;
+        }
+        String fileOneString = IOUtils.fileInBytes(fileOne);
+        String fileTwoString = IOUtils.fileInBytes(fileTwo);
+
+        return fileOneString.equals(fileTwoString) ? true : false;
+    }
+
     private String getFilePath() {
         System.out.print("Write filename: ");
         String filePath = null;
