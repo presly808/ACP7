@@ -1,4 +1,4 @@
-package ua.artcode.week4.ua;
+package ua.artcode.week4.exua;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ public class Main {
         PageReader pageReader = new PageReader(EX_UA_PAGE);
         String pageContent = pageReader.readPageContent();
 
-        HashMap<String, String> linksAndNames = new Parser(FOLDER).getFileLinksAndNames(pageContent);
+        HashMap<String, String> linksAndNames = new Parser().getFileLinksAndNames(pageContent);
 
         FileDownloader fileDownloader = new FileDownloader();
 

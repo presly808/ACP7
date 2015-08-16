@@ -1,4 +1,4 @@
-package ua.artcode.week4.ua;
+package ua.artcode.week4.exua;
 
 import java.io.*;
 import java.net.URL;

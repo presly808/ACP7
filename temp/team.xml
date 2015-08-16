@@ -1,0 +1,23 @@
+<?xml version="1.0"?> <!-- Node-->
+<team> <!-- root -->
+    <worker id="1"> <!-- Element-->
+        <name>Valeriy</name>
+        <age>26</age>
+        <salary>1600</salary>
+        <address>
+            <city>Kiev</city>
+            <street>Ush</street>
+            <houseNum>3</houseNum>
+        </address>
+    </worker>
+    <worker id="2">
+        <name>Yuriy</name>
+        <age>24</age>
+        <salary>2222</salary>
+        <address>
+            <city>Kharkiv</city>
+            <street>Lenina</street>
+            <houseNum>31</houseNum>
+        </address>
+    </worker>
+</team>
