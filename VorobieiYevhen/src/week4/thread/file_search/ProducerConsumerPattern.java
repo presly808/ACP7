@@ -10,7 +10,7 @@ public class ProducerConsumerPattern {
     private String fileName;
     private String path;
     private PrintWriter out;
-    private PriorityBlockingQueue<File> directories = new PriorityBlockingQueue<>(1); //creates new each time???
+    private PriorityBlockingQueue<File> directories = new PriorityBlockingQueue<>(1);
     private long start = new Date().getTime();
     private int count = 0;
     boolean state = true;
@@ -47,7 +47,7 @@ public class ProducerConsumerPattern {
         out.flush();
     }
     private  void search (File file) {
-        for (File item : file.listFiles()) {
+         for (File item : file.listFiles()) {
             if (item.isDirectory()) {
                 search(item);
             } else {
