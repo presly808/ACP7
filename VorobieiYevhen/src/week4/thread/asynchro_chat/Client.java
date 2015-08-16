@@ -23,12 +23,12 @@ public class Client {
     public Client() {
     }
     public void start() throws IOException {
-        try {
+        //try {
             client = new Socket(IP, PORT);
-        } catch (IOException e) {
-            System.err.println("Can't connect to the port");
-            System.exit(-1);
-        }
+       // } catch (IOException e) {
+          //  System.err.println("Can't connect to the port");
+          //  System.exit(-1);
+      //  }
         System.out.println("Connected to the server!");
         try {
             Thread receiveMessage = new Thread(new Runnable() {
