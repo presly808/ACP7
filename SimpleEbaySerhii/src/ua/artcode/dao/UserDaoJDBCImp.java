@@ -7,9 +7,6 @@ import ua.artcode.util.ConnectionFactory;
 import java.sql.*;
 import java.util.List;
 
-/**
- * Created by serhii on 15.08.15.
- */
 public class UserDaoJDBCImp implements UserDao {
     @Override
     public User create(User user) {
