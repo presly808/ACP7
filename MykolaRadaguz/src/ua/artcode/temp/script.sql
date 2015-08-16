@@ -56,6 +56,10 @@ SELECT * FROM users AS u INNER JOIN department AS d ON u.dep_id=d.id;
 
 SELECT * FROM users u LEFT JOIN department d ON u.dep_id=d.id;
 
-SELECT u.name,u.contact,u.age,d.name FROM users u INNER JOIN department d ON u.dep_id=d.id WHERE u.age > 24 AND u.contact LIKE '093%' ORDER BY u.name DESC;
-
-
+SELECT u.name,u.contact,u.age,d.name
+FROM users u
+INNER JOIN department d
+ON u.dep_id=d.id
+WHERE u.age > 24 AND u.contact
+LIKE '093%'
+ORDER BY u.name DESC;
