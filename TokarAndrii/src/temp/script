@@ -1,0 +1,28 @@
+
+CREATE TABLE users(
+name VARCHAR(255),
+contact VARCHAR(10),
+age INT
+);
+
+CREATE TABLE addresses(
+city VARCHAR (20),
+street VARCHAR (50),
+num int,
+user_contact VARCHAR(20),
+FOREIGN KEY (user_contact) REFERENCES users(contact)
+);
+
+
+ALTER TABLE users ADD PRIMARY KEY (contact);
+
+
+ALTER TABLE users ADD COLUMN departmment_id;
+
+
+CREATE TABLE department(
+name_department VARCHAR (20),
+user VARCHAR (20)
+);
+
+

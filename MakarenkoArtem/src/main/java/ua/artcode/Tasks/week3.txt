@@ -1,0 +1,33 @@
+1.
+
+    java.io.*;
+
+    class File
+    absolute and relative paths (differences)
+
+    byte Stream (InputStream, OutputStream)
+    char streams (Reader, Writer)
+
+    !!! always close OutputStream and Writer
+
+    design patterns (Decorator, Adapter)
+
+    protocols IP, UDP, TCP
+    classes (Socket, ServerSocket)
+
+2. Написать собственную реализацию класса Scanner, работающую с символьными потоками.
+                   Создать два конструктора в один передается объект по ссылке Reader, во второй String.
+
+                   Реализовать методы:
+
+   String next() - чтение одного слова в строке
+   int nextInt() - чтение целого числа из строки или InputMismatchException
+   String nextLine() - чтение всей строки
+   boolean hasNext() - определение наличия в потоке данных
+   boolean hasNextInt() - определение наличия в потоке целого int числа
+   useDelimiter(String) - использует разделитель
+   close() - закрытие сканнера, теперь нельзя использовать и NoSuchElementException
+
+3. Do Remote Java Console Commander
+    using class Socket and ServerSocket
+
