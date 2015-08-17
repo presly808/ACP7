@@ -58,6 +58,11 @@ public class MyScanner implements IScanner {
     }
 
     @Override
+    public void remove() {
+
+    }
+
+    @Override
     public int nextInt() {
         return 0;
     }

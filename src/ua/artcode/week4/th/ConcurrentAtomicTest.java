@@ -12,7 +12,7 @@ public class ConcurrentAtomicTest {
 
     public static void main(String[] args) throws InterruptedException {
 
-        AtomicLong atomicLong = new AtomicLong(2300);
+        final AtomicLong atomicLong = new AtomicLong(2300);
 
         Thread t1 = new Thread(new Runnable() {
             @Override
