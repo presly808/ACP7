@@ -1,0 +1,91 @@
+Многопоточность
+    Жизненный цикл потоков
+    синхронизированные блоки и методы
+    потоков синхронизации (ждать, разбудить, разбудитьВсе)
+    http://docs.oracle.com/javase/tutorial/essential/concurrency/
+    http://www.periodicooficial.oaxaca.gob.mx/files/2011/05/EXT02-2011-05-19.pdf
+
+    вся информация учиться на практике, писать заметки и рисовать все шаги
+    Design Pattern----------Паттерн наблюдатель
+
+    Рекомендуемый материал
+    видео Головач http://habrahabr.ru/company/golovachcourses/blog/256883/
+    книга http://www.researchgate.net/publication/220689547_Java_Concurrency_in_Practice
+
+ 2. Написать собственный планировщик задач
+    Это помогает периодически запускать некоторые задачи
+
+ 3. Осуществлять поиск в файловой системе без рекурсии (очереди использование)
+
+ 4. Осуществлять поиск в файловой системе, используя (Темы): ThreadPool -> ExecutorService + Callable
+
+ 5. Реализация многопоточности поиска в файловой системе, используя производитель-потребитель модель
+
+     3,4,5 - (пути к файлам, которые были найдены, сохранить в один файл results.txt)
+
+ 6. Написать синхронный чат между двумя машинами (использование ServerSocket и Socket)
+
+ 7. Написать универсальный загрузчик от ex.ua (Это помогает нам загрузить все файлы из страницы)
+               1. Во-первых вход гиперссылка адрес страницы
+               2. Затем разобрать страницу и найти адреса как "/ нагрузки / {} idOfFile" отл. HREF = "/ нагрузки / 124701188"
+               3. Возьмите URL и скачать файл с помощью класса URL
+
+ 8 *. Реализация асинхронного чат, который позволяет связь с двумя и более пользователями
+         Должен иметь
+         - (Экономия историю сообщений в файл)
+         - Читать установки соединений (порт, максимальный размер пользователи, список забаненных пользователей)
+             от server_settings.properties (см Свойства класса)
+         - Отправить сообщение с помощью сериализации (ObjectOutputStream, ObjectInputStream)
+         - Для лучшего архитектуры приложения см шаблона наблюдателя
+         - * Интерфейс записи на основе свинга
+
+
+
+1. Multithreading
+
+        Lifecycle of threads
+        synchronized blocks and methods
+        Threads synchronization(wait, notify, notifyAll)
+
+        http://docs.oracle.com/javase/tutorial/essential/concurrency/
+        http://www.periodicooficial.oaxaca.gob.mx/files/2011/05/EXT02-2011-05-19.pdf
+
+
+    all information learn by doing, write notes and draw all steps
+
+    Design Pattern
+        pattern Observer
+
+   Recommended material
+   video Golovach  http://habrahabr.ru/company/golovachcourses/blog/256883/
+   book http://www.researchgate.net/publication/220689547_Java_Concurrency_in_Practice
+
+2. Write own scheduler task
+   That helps to run some task periodically
+
+3. Implement search in file system without recursion (use queue)
+
+4. Implement search in file system using (Threads): ThreadPool -> ExecutorService + Callable
+
+5. Implement multithreading search in file system using Producer-Consumer pattern
+
+    3,4,5 - (file paths which have been found, save into one file results.txt)
+
+
+
+6. Write synchronous chat between two machines (use ServerSocket and Socket)
+
+7. Write universal downloader from ex.ua (That helps us download all files from page)
+              1. First input url address of page
+              2. then parse page and find urls like "/load/{idOfFile}" ex. href="/load/124701188"
+              3. Take url and download file using URL class
+
+8*. Implement asynchronous chat that allows communication with two and more users
+        Must have
+        - (saving history of messages into the file)
+        - read connections setting(port, max users size, list of banned users)
+            from server_settings.properties (see class Properties)
+        - send message using Serialization (ObjectOutputStream, ObjectInputStream)
+        - for better architecture of application see pattern Observer
+        - * write UI based on Swing
+
