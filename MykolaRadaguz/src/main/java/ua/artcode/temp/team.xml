@@ -1,0 +1,25 @@
+<?xml version = "1.0"?>
+<team>
+    <!-- comment -->
+    <!-- team is a root -->
+    <worker id = "1">
+        <name>Valera</name>
+        <age>26</age>
+        <salary>10000</salary>
+        <address>
+            <city>Kyiv</city>
+            <street>Baz</street>
+            <houseNum>3</houseNum>
+        </address>
+    </worker>
+    <worker id = "2">
+        <name>Rolia</name>
+        <age>267</age>
+        <salary>100</salary>
+        <address>
+            <city>Kharkiv</city>
+            <street>Uri</street>
+            <houseNum>321</houseNum>
+        </address>
+    </worker>
+</team>

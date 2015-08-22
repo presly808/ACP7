@@ -75,6 +75,10 @@ public class BinarySearchTree<E> implements ITree<E> {
 
     }
 
+    public TreeNode max(TreeNode root){
+        return root.rChild !=  null ? max(root.rChild) : root;
+    }
+
     private boolean linkChildWithParent(TreeNode parent, TreeNode child, boolean right){
         if(right){
             parent.rChild = child;
@@ -130,7 +134,7 @@ public class BinarySearchTree<E> implements ITree<E> {
 
 
     // inner or nested
-    private static class TreeNode {
+    public static class TreeNode {
         TreeNode parent;
         Object value;
         TreeNode lChild;

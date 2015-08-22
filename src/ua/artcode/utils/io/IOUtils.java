@@ -8,6 +8,26 @@ import java.util.Scanner;
  */
 public class IOUtils {
 
+    public static String findByNameWithRes(File file, String keyWord){
+
+        String res = "";
+
+        if(file.getName().contains(keyWord)){
+            res += file.getAbsolutePath() + "\n";
+        }
+
+        if(file.isDirectory()){
+            for (File child : file.listFiles()) {
+                String childReturnedRes = findByNameWithRes(child, keyWord);
+                res += childReturnedRes;
+            }
+        }
+
+        return res;
+
+    }
+
+
     public static void save(String source, String path) throws FileNotFoundException {
         OutputStream os = null;
         try {
