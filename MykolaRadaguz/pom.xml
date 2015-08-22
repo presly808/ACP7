@@ -4,20 +4,72 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+
     <groupId>ua.artcode</groupId>
     <artifactId>MykolaRadaguz</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
+<!--
+    <modules>
+        <module>OlesBovsunivsky</module>
+        <module>DarynaGrytsaieva</module>
+        <module>SerhiiBilobrov</module>
+        <module>VorobieiYevhen</module>
+        <module>AlenaTokar</module>
+        <module>MykolaRadaguz</module>
+        <module>VitaliiLaputko</module>
+        <module>MakarenkoArtem</module>
+    </modules>
+-->
+
+    <parent>
+        <groupId>ua.artcode</groupId>
+        <artifactId>ACP7</artifactId>
+        <version>1.0</version>
+    </parent>
 
     <properties>
         <mysql-version>5.1.6</mysql-version>
+        <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
+        <hibernate-core.version>4.2.1.Final</hibernate-core.version>
     </properties>
 
     <dependencies>
+        <!-- MySQL -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-version}</version>
         </dependency>
+
+        <!-- Hibernate main -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.0.0.Final</version>
+        </dependency>
+
+        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.0.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>${hibernate-jpa-2.0-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-core.version}</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
