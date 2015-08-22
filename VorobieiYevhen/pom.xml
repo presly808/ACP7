@@ -7,6 +7,7 @@
     <groupId>groupId</groupId>
     <artifactId>VorobieiYevhen</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <mysql-version>5.1.36</mysql-version>
