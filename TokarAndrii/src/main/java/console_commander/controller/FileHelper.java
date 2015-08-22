@@ -5,9 +5,6 @@ import console_commander.model.MyNIO;
 import java.io.File;
 
 
-/**
- * Created by Пользователь on 06.07.15.
- */
 public class FileHelper implements IOFileHelper {
 
 

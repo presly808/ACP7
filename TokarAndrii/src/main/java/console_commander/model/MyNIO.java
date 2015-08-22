@@ -7,9 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-/**
- * Created by Пользователь on 10.07.15.
- */
+
 public class MyNIO extends IOException {
 
     int count;
@@ -20,10 +18,10 @@ public class MyNIO extends IOException {
 
 
     public void run(String fileName) {
-        filePath = Paths.get(fileName);//получаем обьект пути
+        filePath = Paths.get(fileName);//
 
 
-        SeekableByteChannel fChan = null;// канал к файлу
+        SeekableByteChannel fChan = null;//
         try {
             fChan = Files.newByteChannel(filePath);
         } catch (IOException e) {
@@ -31,26 +29,24 @@ public class MyNIO extends IOException {
         }
 
 
-        ByteBuffer mBuff = ByteBuffer.allocate(128);//резерв буфера
-
-        do {
+        ByteBuffer mBuff = ByteBuffer.allocate(128);//
+        //  do {
             try {
-                count = fChan.read(mBuff);//читаем в буфер
+                count = fChan.read(mBuff);//
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
 
             if (count != -1) {
-                mBuff.rewind();//готовим буфер для чтения
+                mBuff.rewind();//
                 for (int i = 0; i < count; i++) {
-                    System.out.println((char) mBuff.get());//читаем байты в буфер и
-                    // отображаем их как символы
+                    System.out.println((char) mBuff.get());//                   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 }
             }
         }
-        while (count != -1);
-        System.out.println();
+      /*  while (count != -1);
+        System.out.println();*/
     }
 
 

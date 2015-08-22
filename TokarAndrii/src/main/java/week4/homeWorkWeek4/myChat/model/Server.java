@@ -9,9 +9,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.concurrent.*;
 
-/**
- * Created by Пользователь on 22.07.15.
- */
+
 public class Server {
 
     private MessageMy message;

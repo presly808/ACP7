@@ -5,9 +5,7 @@ import client_socket.IOUtils;
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by Пользователь on 12.07.15.
- */
+
 public class Client_Two {
     public static void main(String[] args) throws IOException {
 

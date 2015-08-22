@@ -2,9 +2,6 @@ package console_commander.controller;
 
 import java.io.File;
 
-/**
- * Created by Пользователь on 06.07.15.
- */
 public interface IOFileHelper  {
 
     public void help();//show all available commands

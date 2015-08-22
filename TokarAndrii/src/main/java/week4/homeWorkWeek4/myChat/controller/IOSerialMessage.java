@@ -4,9 +4,6 @@ import week4.homeWorkWeek4.myChat.model.MessageMy;
 
 import java.io.*;
 
-/**
- * Created by Пользователь on 07.08.15.
- */
 public class IOSerialMessage implements IOHelper {
 
     @Override
