@@ -21,6 +21,12 @@
         </dependency>
     </dependencies>
 
+    <parent>
+        <groupId>ua.artcode</groupId>
+        <artifactId>ACP7</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <build>
         <plugins>
             <plugin>
