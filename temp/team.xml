@@ -1,9 +1,21 @@
 <?xml version="1.0"?> <!-- Node-->
+<!--<!DOCTYPE team [<!ELEMENT team (worker)>
+        <!ELEMENT worker (name,age,salary,address)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+        <!ELEMENT salary (#PCDATA)>
+        <!ELEMENT address (city,street,houseNum)>
+        <!ELEMENT city (#PCDATA)>
+        <!ELEMENT street (#PCDATA)>
+        <!ELEMENT houseNum (#PCDATA)>
+        ]>-->
 <team> <!-- root -->
+
     <worker id="1"> <!-- Element-->
         <name>Valeriy</name>
         <age>26</age>
         <salary>1600</salary>
+
         <address>
             <city>Kiev</city>
             <street>Ush</street>

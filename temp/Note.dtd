@@ -1,0 +1,6 @@
+<!DOCTYPE team [<!ELEMENT team (worker)>
+        <!ELEMENT worker (name,age,salary)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+        <!ELEMENT salary (#PCDATA)>
+        ]>
