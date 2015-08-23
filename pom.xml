@@ -18,7 +18,8 @@
         <module>MykolaRadaguz</module>
         <module>VitaliiLaputko</module>
         <module>MakarenkoArtem</module>
-    </modules>
+        <module>SimpleEbaySerhii</module>
+     </modules>
 
     <properties>
         <mysql-version>5.1.36</mysql-version>
