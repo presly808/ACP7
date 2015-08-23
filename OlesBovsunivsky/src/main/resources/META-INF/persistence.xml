@@ -6,7 +6,7 @@
 
     <persistence-unit name="my-unit">
         <description>My Persistence Unit</description>
-        <provider>org.hibernate.jpa.HibernatePersistence</provider>
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
