@@ -8,7 +8,7 @@ import java.util.List;
 public class BankSynch {
 
     public static void main(String[] args) throws InterruptedException {
-        List<Thread> threadList = new ArrayList<>();
+        List<Thread> threadList = new ArrayList<Thread>();
 
         BankAccount bankAccount = new BankAccount(0);
         for (int i = 0; i < 5; i++) {

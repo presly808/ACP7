@@ -78,7 +78,7 @@ class TreeUtils {
 class Node {
 
     int val;
-    List<Node> nodeList = new LinkedList<>();
+    List<Node> nodeList = new LinkedList<Node>();
 
     public Node(int val) {
         this.val = val;

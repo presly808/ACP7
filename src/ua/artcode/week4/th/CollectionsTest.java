@@ -10,7 +10,7 @@ import java.util.List;
 public class CollectionsTest {
 
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<String>();
         Collections.addAll(list,"Vova","Anrey","Ivan");
 
         List<String> synchList = Collections.synchronizedList(list);
