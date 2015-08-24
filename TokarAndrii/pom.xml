@@ -13,7 +13,7 @@
         <module>OlesBovsunivsky</module>
         <module>DarynaGrytsaieva</module>
         <module>SerhiiBilobrov</module>
-        <module>VorobieiYevhen</module>
+
         <module>AlenaTokar</module>
         <module>MykolaRadaguz</module>
         <module>VitaliiLaputko</module>
@@ -34,11 +34,6 @@
             <version>${mysql-version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>groupId</groupId>
-            <artifactId>VorobieiYevhen</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
