@@ -25,10 +25,6 @@
             <artifactId>spring-core</artifactId>
             <version>${spring-core.version}</version>
         </dependency>
-        <dependency>
-            <groupId>springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
     </dependencies>
 
 
