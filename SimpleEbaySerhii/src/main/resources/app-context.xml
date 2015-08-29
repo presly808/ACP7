@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:db.properties"/>
+
+    <context:annotation-config/>
+    <context:component-scan base-package="ua.artcode"/>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="jdbc:mysql://${db.host}:${db.port}/${db.name}"/>
+        <property name="driverClassName" value="${db.driver}"/>
+        <property name="username" value="${db.user}"/>
+        <property name="password" value="${db.pass}"/>
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"/>
+        <property name="persistenceUnitName" value="my-unit"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaDialect" >
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+        </property>
+    </bean>
+
+
+    <!--<bean class="ua.artcode.dao.UserDaoJpaImpl">
+        <constructor-arg name="factory" ref="entityManagerFactory"/>
+    </bean>
+-->
+    <!--beans in context-->
+    <!--
+    <bean id="user" class="ua.artcode.model.User" scope="prototype">
+        <constructor-arg name="fullname" value="Kolia"/>
+        <constructor-arg name="email" value="mail"/>
+        <constructor-arg name="phone" value="+32323"/>
+        <constructor-arg name="pass" value="1234"/>
+    </bean>
+
+    <bean id="product" class="ua.artcode.model.Product">
+        <property name="title" value="phone"/>
+        <property name="description" value="samsung"/>
+        <property name="price" value="123.2"/>
+        <property name="owner" ref="user"/>
+    </bean>-->
+
+
+
+
+</beans>
