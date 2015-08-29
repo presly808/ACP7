@@ -1,4 +1,4 @@
-package ua.artcode;
+package ua.artcode.examples;
 
 import javax.persistence.Persistence;
 
