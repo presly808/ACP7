@@ -5,7 +5,6 @@ import Consol.MyFileClass;
 
 import java.io.*;
 import java.util.Iterator;
-import java.util.Scanner;
 
 /**
  * Created by Legion on 13.07.2015.
