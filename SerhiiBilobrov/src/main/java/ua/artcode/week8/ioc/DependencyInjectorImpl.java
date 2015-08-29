@@ -1,9 +1,8 @@
 package ua.artcode.week8.ioc;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by serhii on 29.08.15.
@@ -13,8 +12,26 @@ public class DependencyInjectorImpl implements DependencyInjector {
     private Map<String, Object> context = new HashMap<>();
 
     public DependencyInjectorImpl() {
-        // load prop file and inti context
-        context.put("ua.artcode.week8.ioc.IService", new IServiceAImpl());
+        Properties prop = new Properties();
+        try {
+            //                                        // classpath
+            prop.load(DependencyInjector.class.getResourceAsStream("/ioc/context.properties"));
+            Set<String> names = prop.stringPropertyNames();
+            for (String name : names) {
+                String className = prop.getProperty(name);
+                Class cl = Class.forName(className);
+                Object instance = cl.newInstance();
+                context.put(name,instance);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -26,15 +43,18 @@ public class DependencyInjectorImpl implements DependencyInjector {
         for (Field field : fields) {
             field.setAccessible(true);
             //if has annotation
-            String key = field.getType().getName();
-            Object forInject = context.get(key);
-            if(forInject != null){
-                try {
-                    field.set(obj, forInject);
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
+            if(field.isAnnotationPresent(ForInject.class)){
+                String key = field.getType().getName();
+                Object forInject = context.get(key);
+                if (forInject != null) {
+                    try {
+                        field.set(obj, forInject);
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
+
         }
 
 
