@@ -1,5 +1,7 @@
 package ua.artcode.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ua.artcode.exception.NoUserException;
 import ua.artcode.model.User;
 
@@ -9,12 +11,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.util.List;
 
-/**
- * Created by serhii on 23.08.15.
- */
+@Component("jpaUserDao")
 public class UserDaoJpaImpl implements UserDao {
 
+    @Autowired
     private EntityManagerFactory factory;
+
+    public UserDaoJpaImpl() {
+    }
 
     public UserDaoJpaImpl(EntityManagerFactory factory) {
         this.factory = factory;
