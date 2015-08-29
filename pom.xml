@@ -35,10 +35,7 @@
             <version>${mysql-version}</version>
         </dependency>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3e18f87f58a4c3b9685dca654d9160fa56af174d
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>
