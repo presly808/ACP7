@@ -1,16 +1,29 @@
 package ua.artcode.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.LinkedList;
 import java.util.List;
 
-public class User {
+@Entity
+@Table(name = "users")
+public class User extends IdEntity{
 
-    private long id;
+    @Column
     private String fullname;
+
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
     private String pass;
+
     private String phone;
-    private List<Product> list = new LinkedList<>();
+
+    // relations between classes
+    @OneToMany(mappedBy = "owner")
+    private List<Product> products = new LinkedList<>();
 
     public User() {
     }
@@ -29,24 +42,17 @@ public class User {
     }
 
     public void addProduct(Product product){
-        list.add(product);
+        products.add(product);
     }
 
     public List<Product> getList() {
-        return list;
+        return products;
     }
 
-    public void setList(List<Product> list) {
-        this.list = list;
+    public void setList(List<Product> products) {
+        this.products = products;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFullname() {
         return fullname;
@@ -83,7 +89,7 @@ public class User {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("User{");
-        sb.append("id=").append(id);
+        sb.append("id=").append(getId());
         sb.append(", fullname='").append(fullname).append('\'');
         sb.append(", email='").append(email).append('\'');
         sb.append(", phone='").append(phone).append('\'');
