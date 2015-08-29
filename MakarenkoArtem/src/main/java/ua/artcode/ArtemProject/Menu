@@ -1,0 +1,36 @@
+HEader menu:
+1) Registation
+2) Log in
+3) See products
+4) Add products
+5) delete products
+6) exit
+
+Menu 1.1
+1) enter name 		-
+2) enter pasword 	-
+3) enter email 		-
+(auto exit)
+
+Menu 2.1
+1) enter name	-
+2) enter pasword-
+(auto exit)
+
+Menu 3.1
+1) See all products
+2) see some factors
+3) back
+
+Menu 4.1
+1) enter Vurobnuk
+2) enter Model
+3) enter Processor
+4) enter Memory
+(auto exit)
+
+Menu 5.1
+1) See all products
+2) Enter id -
+(auto exit)
+
