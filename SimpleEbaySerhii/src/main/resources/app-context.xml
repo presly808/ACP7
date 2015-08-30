@@ -2,10 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                             http://www.springframework.org/schema/beans/spring-beans.xsd
                             http://www.springframework.org/schema/context
-                            http://www.springframework.org/schema/context/spring-context.xsd">
+                            http://www.springframework.org/schema/context/spring-context.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                            http://www.springframework.org/schema/tx
+                            http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <aop:aspectj-autoproxy/>
 
     <context:property-placeholder location="classpath:db.properties"/>
 
@@ -31,18 +39,19 @@
         </property>
     </bean>
 
+    <bean class="ua.artcode.dao.UserDaoJDBCImp"/>
 
     <!--<bean class="ua.artcode.dao.UserDaoJpaImpl">
+
         <constructor-arg name="factory" ref="entityManagerFactory"/>
     </bean>
 -->
     <!--beans in context-->
-    <!--
-    <bean id="user" class="ua.artcode.model.User" scope="prototype">
+   <!-- <bean id="user" class="ua.artcode.model.User" scope="prototype">
         <constructor-arg name="fullname" value="Kolia"/>
         <constructor-arg name="email" value="mail"/>
         <constructor-arg name="phone" value="+32323"/>
-        <constructor-arg name="pass" value="1234"/>
+        <constructor-arg name="pass" value="werwe"/>
     </bean>
 
     <bean id="product" class="ua.artcode.model.Product">
@@ -52,6 +61,8 @@
         <property name="owner" ref="user"/>
     </bean>-->
 
+
+    <bean class="ua.artcode.aspect.UserDaoAspect"/>
 
 
 
