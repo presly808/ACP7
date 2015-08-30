@@ -1,0 +1,1051 @@
+<log4j:event logger="ua.artcode.week8.logging.TestLog4J" timestamp="1440930574803" level="INFO" thread="main">
+<log4j:message><![CDATA[In system]]></log4j:message>
+</log4j:event>
+
+0 [main] INFO ua.artcode.week8.logging.TestLog4J  - In system
+2015-08-30 13:53:09 DEBUG PathMatchingResourcePatternResolver:187 - Found Equinox FileLocator for OSGi bundle URL resolution
+2015-08-30 13:53:09 DEBUG StandardEnvironment:109 - Adding [systemProperties] PropertySource with lowest search precedence
+2015-08-30 13:53:09 DEBUG StandardEnvironment:109 - Adding [systemEnvironment] PropertySource with lowest search precedence
+2015-08-30 13:53:09 DEBUG StandardEnvironment:126 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2015-08-30 13:53:09 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun Aug 30 13:53:09 EEST 2015]; root of context hierarchy
+2015-08-30 13:53:09 DEBUG StandardEnvironment:109 - Adding [systemProperties] PropertySource with lowest search precedence
+2015-08-30 13:53:09 DEBUG StandardEnvironment:109 - Adding [systemEnvironment] PropertySource with lowest search precedence
+2015-08-30 13:53:09 DEBUG StandardEnvironment:126 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2015-08-30 13:53:09 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-08-30 13:53:09 DEBUG DefaultDocumentLoader:73 - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+2015-08-30 13:53:09 TRACE PluggableSchemaResolver:106 - Trying to resolve XML entity with public id [null] and system id [http://www.springframework.org/schema/beans/spring-beans.xsd]
+2015-08-30 13:53:09 DEBUG PluggableSchemaResolver:141 - Loading schema mappings from [META-INF/spring.schemas]
+2015-08-30 13:53:09 DEBUG PluggableSchemaResolver:147 - Loaded schema mappings: {http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/cache/spring-cache-4.2.xsd=org/springframework/cache/config/spring-cache-4.2.xsd, http://www.springframework.org/schema/aop/spring-aop-4.1.xsd=org/springframework/aop/config/spring-aop-4.1.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd=org/springframework/jdbc/config/spring-jdbc-4.1.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-4.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.2.xsd=org/springframework/aop/config/spring-aop-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-4.1.xsd=org/springframework/scripting/config/spring-lang-4.1.xsd, http://www.springframework.org/schema/context/spring-context-4.0.xsd=org/springframework/context/config/spring-context-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans-4.2.xsd=org/springframework/beans/factory/xml/spring-beans-4.2.xsd, http://www.springframework.org/schema/tool/spring-tool-4.1.xsd=org/springframework/beans/factory/xml/spring-tool-4.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.2.xsd=org/springframework/scripting/config/spring-lang-3.2.xsd, http://www.springframework.org/schema/cache/spring-cache-3.2.xsd=org/springframework/cache/config/spring-cache-3.2.xsd, http://www.springframework.org/schema/jee/spring-jee-4.1.xsd=org/springframework/ejb/config/spring-jee-4.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/task/spring-task-4.2.xsd=org/springframework/scheduling/config/spring-task-4.2.xsd, http://www.springframework.org/schema/tool/spring-tool-3.2.xsd=org/springframework/beans/factory/xml/spring-tool-3.2.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-4.2.xsd, http://www.springframework.org/schema/cache/spring-cache-4.1.xsd=org/springframework/cache/config/spring-cache-4.1.xsd, http://www.springframework.org/schema/aop/spring-aop-4.0.xsd=org/springframework/aop/config/spring-aop-4.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.2.xsd=org/springframework/ejb/config/spring-jee-3.2.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd=org/springframework/jdbc/config/spring-jdbc-4.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans-3.2.xsd=org/springframework/beans/factory/xml/spring-beans-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-4.0.xsd=org/springframework/scripting/config/spring-lang-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans-4.1.xsd=org/springframework/beans/factory/xml/spring-beans-4.1.xsd, http://www.springframework.org/schema/tool/spring-tool-4.0.xsd=org/springframework/beans/factory/xml/spring-tool-4.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.2.xsd=org/springframework/transaction/config/spring-tx-3.2.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-4.0.xsd=org/springframework/ejb/config/spring-jee-4.0.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/task/spring-task-4.1.xsd=org/springframework/scheduling/config/spring-task-4.1.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-4.2.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-4.1.xsd=org/springframework/transaction/config/spring-tx-4.1.xsd, http://www.springframework.org/schema/cache/spring-cache-4.0.xsd=org/springframework/cache/config/spring-cache-4.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/util/spring-util-4.2.xsd=org/springframework/beans/factory/xml/spring-util-4.2.xsd, http://www.springframework.org/schema/task/spring-task-3.2.xsd=org/springframework/scheduling/config/spring-task-3.2.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-4.2.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/beans/spring-beans-4.0.xsd=org/springframework/beans/factory/xml/spring-beans-4.0.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-4.2.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/task/spring-task-4.0.xsd=org/springframework/scheduling/config/spring-task-4.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-4.0.xsd=org/springframework/transaction/config/spring-tx-4.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/util/spring-util-4.1.xsd=org/springframework/beans/factory/xml/spring-util-4.1.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-4.2.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/util/spring-util-3.2.xsd=org/springframework/beans/factory/xml/spring-util-3.2.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-4.2.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/context/spring-context-4.2.xsd=org/springframework/context/config/spring-context-4.2.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/util/spring-util-4.0.xsd=org/springframework/beans/factory/xml/spring-util-4.0.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-4.2.xsd, http://www.springframework.org/schema/context/spring-context-3.2.xsd=org/springframework/context/config/spring-context-3.2.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd=org/springframework/jdbc/config/spring-jdbc-4.2.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-4.2.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-4.1.xsd, http://www.springframework.org/schema/lang/spring-lang-4.2.xsd=org/springframework/scripting/config/spring-lang-4.2.xsd, http://www.springframework.org/schema/context/spring-context-4.1.xsd=org/springframework/context/config/spring-context-4.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd, http://www.springframework.org/schema/tool/spring-tool-4.2.xsd=org/springframework/beans/factory/xml/spring-tool-4.2.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/jee/spring-jee-4.2.xsd=org/springframework/ejb/config/spring-jee-4.2.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd=org/springframework/jdbc/config/spring-jdbc-3.2.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-4.1.xsd}
+2015-08-30 13:53:09 DEBUG PluggableSchemaResolver:119 - Found XML schema [http://www.springframework.org/schema/beans/spring-beans.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-4.2.xsd
+2015-08-30 13:53:10 TRACE PluggableSchemaResolver:106 - Trying to resolve XML entity with public id [null] and system id [http://www.springframework.org/schema/aop/spring-aop-4.0.xsd]
+2015-08-30 13:53:10 DEBUG PluggableSchemaResolver:119 - Found XML schema [http://www.springframework.org/schema/aop/spring-aop-4.0.xsd] in classpath: org/springframework/aop/config/spring-aop-4.0.xsd
+2015-08-30 13:53:10 TRACE PluggableSchemaResolver:106 - Trying to resolve XML entity with public id [null] and system id [http://www.springframework.org/schema/tool/spring-tool-4.0.xsd]
+2015-08-30 13:53:10 DEBUG PluggableSchemaResolver:119 - Found XML schema [http://www.springframework.org/schema/tool/spring-tool-4.0.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-4.0.xsd
+2015-08-30 13:53:10 TRACE PluggableSchemaResolver:106 - Trying to resolve XML entity with public id [null] and system id [http://www.springframework.org/schema/context/spring-context.xsd]
+2015-08-30 13:53:10 DEBUG PluggableSchemaResolver:119 - Found XML schema [http://www.springframework.org/schema/context/spring-context.xsd] in classpath: org/springframework/context/config/spring-context-4.2.xsd
+2015-08-30 13:53:10 DEBUG DefaultBeanDefinitionDocumentReader:92 - Loading bean definitions
+2015-08-30 13:53:10 DEBUG DefaultNamespaceHandlerResolver:157 - Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+2015-08-30 13:53:10 DEBUG StandardEnvironment:109 - Adding [systemProperties] PropertySource with lowest search precedence
+2015-08-30 13:53:10 DEBUG StandardEnvironment:109 - Adding [systemEnvironment] PropertySource with lowest search precedence
+2015-08-30 13:53:10 DEBUG StandardEnvironment:126 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:631 - Looking for matching resources in directory tree [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/aspect] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/validation] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/view] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:693 - Searching directory [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception] for files matching pattern [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/**/*.class]
+2015-08-30 13:53:10 DEBUG PathMatchingResourcePatternResolver:424 - Resolved location pattern [classpath*:ua/artcode/**/*.class] to resources [file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/RunServerRmi.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/InitJpaFactory.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/InitSpringContext.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/GetResourceTest.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/aspect/UserDaoAspect.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/ProductService.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/UserService.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/UserServiceImpl.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util/ConnectionFactory.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util/StringUtils.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/Product.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/IdEntity.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/User.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/ProductDao.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDaoJpaImpl.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDaoJDBCImp.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDao.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/validation/Validator.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/view/ConsoleMenu.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/Run.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/WrongUserCredentialException.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/ValidationException.class], file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/NoUserException.class]]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/RunServerRmi.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/RunServerRmi.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/InitJpaFactory.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/InitJpaFactory.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/InitSpringContext.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/InitSpringContext.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/GetResourceTest.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/examples/GetResourceTest.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/aspect/UserDaoAspect.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/aspect/UserDaoAspect.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/ProductService.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/ProductService.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/UserService.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/UserService.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/UserServiceImpl.class]
+2015-08-30 13:53:10 DEBUG ClassPathBeanDefinitionScanner:286 - Identified candidate component class: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/service/UserServiceImpl.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util/ConnectionFactory.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util/ConnectionFactory.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util/StringUtils.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/util/StringUtils.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/Product.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/Product.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/IdEntity.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/IdEntity.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/User.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/model/User.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/ProductDao.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/ProductDao.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDaoJpaImpl.class]
+2015-08-30 13:53:10 DEBUG ClassPathBeanDefinitionScanner:286 - Identified candidate component class: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDaoJpaImpl.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDaoJDBCImp.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDaoJDBCImp.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDao.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/dao/UserDao.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/validation/Validator.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/validation/Validator.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/view/ConsoleMenu.class]
+2015-08-30 13:53:10 DEBUG ClassPathBeanDefinitionScanner:286 - Identified candidate component class: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/view/ConsoleMenu.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/Run.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/Run.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/WrongUserCredentialException.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/WrongUserCredentialException.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/ValidationException.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/ValidationException.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:275 - Scanning file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/NoUserException.class]
+2015-08-30 13:53:10 TRACE ClassPathBeanDefinitionScanner:298 - Ignored because not matching any filter: file [/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes/ua/artcode/exception/NoUserException.class]
+2015-08-30 13:53:10 DEBUG BeanDefinitionParserDelegate:481 - Neither XML 'id' nor 'name' specified - using generated bean name [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#32d2fa64]
+2015-08-30 13:53:10 DEBUG BeanDefinitionParserDelegate:481 - Neither XML 'id' nor 'name' specified - using generated bean name [org.springframework.orm.jpa.vendor.HibernateJpaDialect#9a7504c]
+2015-08-30 13:53:10 DEBUG BeanDefinitionParserDelegate:481 - Neither XML 'id' nor 'name' specified - using generated bean name [ua.artcode.dao.UserDaoJDBCImp#0]
+2015-08-30 13:53:10 DEBUG BeanDefinitionParserDelegate:481 - Neither XML 'id' nor 'name' specified - using generated bean name [ua.artcode.aspect.UserDaoAspect#0]
+2015-08-30 13:53:10 DEBUG XmlBeanDefinitionReader:224 - Loaded 16 bean definitions from location pattern [app-context.xml]
+2015-08-30 13:53:10 DEBUG ClassPathXmlApplicationContext:607 - Bean factory for org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: org.springframework.beans.factory.support.DefaultListableBeanFactory@58c1670b: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,userServiceImpl,jpaUserDao,consoleMenu,dataSource,entityManagerFactory,ua.artcode.dao.UserDaoJDBCImp#0,ua.artcode.aspect.UserDaoAspect#0]; root of factory hierarchy
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0' to allow for resolving potential circular references
+2015-08-30 13:53:10 TRACE SpringFactoriesLoader:87 - Loaded [org.springframework.beans.BeanInfoFactory] names: [org.springframework.beans.ExtendedBeanInfoFactory]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.context.support.PropertySourcesPlaceholderConfigurer]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.context.support.PropertySourcesPlaceholderConfigurer]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'appliedPropertySources' of type [org.springframework.core.env.PropertySources]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'beanFactory' of type [org.springframework.beans.factory.BeanFactory]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'beanName' of type [java.lang.String]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'environment' of type [org.springframework.core.env.Environment]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'fileEncoding' of type [java.lang.String]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'ignoreResourceNotFound' of type [boolean]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'ignoreUnresolvablePlaceholders' of type [boolean]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'localOverride' of type [boolean]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'location' of type [org.springframework.core.io.Resource]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'locations' of type [[Lorg.springframework.core.io.Resource;]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'nullValue' of type [java.lang.String]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'order' of type [int]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'placeholderPrefix' of type [java.lang.String]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'placeholderSuffix' of type [java.lang.String]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'properties' of type [java.util.Properties]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'propertiesArray' of type [[Ljava.util.Properties;]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'propertiesPersister' of type [org.springframework.util.PropertiesPersister]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'propertySources' of type [org.springframework.core.env.PropertySources]
+2015-08-30 13:53:10 TRACE CachedIntrospectionResults:297 - Found bean property 'valueSeparator' of type [java.lang.String]
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+2015-08-30 13:53:10 DEBUG MutablePropertySources:109 - Adding [environmentProperties] PropertySource with lowest search precedence
+2015-08-30 13:53:10 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-08-30 13:53:10 DEBUG MutablePropertySources:109 - Adding [localProperties] PropertySource with lowest search precedence
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.host", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.host' in [environmentProperties]
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.host", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.host' in [systemProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.host' in [systemEnvironment]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'db.host' in any property source. Returning [null]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.host' in [localProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:90 - Found key 'db.host' in [localProperties] with type [String] and value '127.0.0.1'
+2015-08-30 13:53:10 TRACE PropertyPlaceholderHelper:165 - Resolved placeholder 'db.host'
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.port", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.port' in [environmentProperties]
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.port", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.port' in [systemProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.port' in [systemEnvironment]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'db.port' in any property source. Returning [null]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.port' in [localProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:90 - Found key 'db.port' in [localProperties] with type [String] and value '3306'
+2015-08-30 13:53:10 TRACE PropertyPlaceholderHelper:165 - Resolved placeholder 'db.port'
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.name", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.name' in [environmentProperties]
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.name", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.name' in [systemProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.name' in [systemEnvironment]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'db.name' in any property source. Returning [null]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.name' in [localProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:90 - Found key 'db.name' in [localProperties] with type [String] and value 'EbayDB'
+2015-08-30 13:53:10 TRACE PropertyPlaceholderHelper:165 - Resolved placeholder 'db.name'
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.driver", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.driver' in [environmentProperties]
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.driver", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.driver' in [systemProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.driver' in [systemEnvironment]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'db.driver' in any property source. Returning [null]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.driver' in [localProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:90 - Found key 'db.driver' in [localProperties] with type [String] and value 'com.mysql.jdbc.Driver'
+2015-08-30 13:53:10 TRACE PropertyPlaceholderHelper:165 - Resolved placeholder 'db.driver'
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.user", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.user' in [environmentProperties]
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.user", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.user' in [systemProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.user' in [systemEnvironment]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'db.user' in any property source. Returning [null]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.user' in [localProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:90 - Found key 'db.user' in [localProperties] with type [String] and value 'root'
+2015-08-30 13:53:10 TRACE PropertyPlaceholderHelper:165 - Resolved placeholder 'db.user'
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.pass", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.pass' in [environmentProperties]
+2015-08-30 13:53:10 TRACE PropertySourcesPropertyResolver:76 - getProperty("db.pass", String)
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.pass' in [systemProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.pass' in [systemEnvironment]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'db.pass' in any property source. Returning [null]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'db.pass' in [localProperties]
+2015-08-30 13:53:10 DEBUG PropertySourcesPropertyResolver:90 - Found key 'db.pass' in [localProperties] with type [String] and value 'root'
+2015-08-30 13:53:10 TRACE PropertyPlaceholderHelper:165 - Resolved placeholder 'db.pass'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2015-08-30 13:53:10 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.aop.config.internalAutoProxyCreator' to allow for resolving potential circular references
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'advisorAdapterRegistry' of type [org.springframework.aop.framework.adapter.AdvisorAdapterRegistry]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'applyCommonInterceptorsFirst' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'aspectJAdvisorFactory' of type [org.springframework.aop.aspectj.annotation.AspectJAdvisorFactory]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'beanClassLoader' of type [java.lang.ClassLoader]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'beanFactory' of type [org.springframework.beans.factory.BeanFactory]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'customTargetSourceCreators' of type [[Lorg.springframework.aop.framework.autoproxy.TargetSourceCreator;]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'exposeProxy' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'frozen' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'includePatterns' of type [java.util.List]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'interceptorNames' of type [[Ljava.lang.String;]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'opaque' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'optimize' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'order' of type [int]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'proxyClassLoader' of type [java.lang.ClassLoader]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'proxyTargetClass' of type [boolean]
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2015-08-30 13:53:11 DEBUG ClassPathXmlApplicationContext:713 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@2cbb3d47]
+2015-08-30 13:53:11 DEBUG ClassPathXmlApplicationContext:737 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@1d76aeea]
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'entityManagerFactory'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'entityManagerFactory'
+2015-08-30 13:53:11 DEBUG ReflectiveAspectJAdvisorFactory:221 - Found AspectJ method: public void ua.artcode.aspect.UserDaoAspect.loggingAdvice()
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'entityManagerFactory' to allow for resolving potential circular references
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'beanClassLoader' of type [java.lang.ClassLoader]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'beanFactory' of type [org.springframework.beans.factory.BeanFactory]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'beanName' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'dataSource' of type [javax.sql.DataSource]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'entityManagerFactoryInterface' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'entityManagerInterface' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jpaDialect' of type [org.springframework.orm.jpa.JpaDialect]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jpaProperties' of type [java.util.Properties]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jpaPropertyMap' of type [java.util.Map]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jpaVendorAdapter' of type [org.springframework.orm.jpa.JpaVendorAdapter]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jtaDataSource' of type [javax.sql.DataSource]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'loadTimeWeaver' of type [org.springframework.instrument.classloading.LoadTimeWeaver]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'mappingResources' of type [[Ljava.lang.String;]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'nativeEntityManagerFactory' of type [javax.persistence.EntityManagerFactory]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'object' of type [javax.persistence.EntityManagerFactory]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'objectType' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'packagesToScan' of type [[Ljava.lang.String;]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceProvider' of type [javax.persistence.spi.PersistenceProvider]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceProviderClass' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceUnitInfo' of type [javax.persistence.spi.PersistenceUnitInfo]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceUnitManager' of type [org.springframework.orm.jpa.persistenceunit.PersistenceUnitManager]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceUnitName' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceUnitPostProcessors' of type [[Lorg.springframework.orm.jpa.persistenceunit.PersistenceUnitPostProcessor;]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceXmlLocation' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'resourceLoader' of type [org.springframework.core.io.ResourceLoader]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'sharedCacheMode' of type [javax.persistence.SharedCacheMode]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'singleton' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'validationMode' of type [javax.persistence.ValidationMode]
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#32d2fa64'
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'database' of type [org.springframework.orm.jpa.vendor.Database]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'databasePlatform' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'entityManagerFactoryInterface' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'entityManagerInterface' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'generateDdl' of type [boolean]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jpaDialect' of type [org.springframework.orm.jpa.vendor.HibernateJpaDialect]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'jpaPropertyMap' of type [java.util.Map]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceProvider' of type [javax.persistence.spi.PersistenceProvider]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'persistenceProviderRootPackage' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'showSql' of type [boolean]
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter#32d2fa64'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'dataSource'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'dataSource'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'dataSource' to allow for resolving potential circular references
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.jdbc.datasource.DriverManagerDataSource]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.jdbc.datasource.DriverManagerDataSource]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'connection' of type [java.sql.Connection]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'connectionProperties' of type [java.util.Properties]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'driverClassName' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'logWriter' of type [java.io.PrintWriter]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'loginTimeout' of type [int]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'parentLogger' of type [java.util.logging.Logger]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'password' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'url' of type [java.lang.String]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'username' of type [java.lang.String]
+2015-08-30 13:53:11 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'dataSource'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.orm.jpa.vendor.HibernateJpaDialect#9a7504c'
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.orm.jpa.vendor.HibernateJpaDialect]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.orm.jpa.vendor.HibernateJpaDialect]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:11 TRACE CachedIntrospectionResults:297 - Found bean property 'prepareConnection' of type [boolean]
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.orm.jpa.vendor.HibernateJpaDialect#9a7504c'
+2015-08-30 13:53:11 DEBUG DefaultListableBeanFactory:1620 - Invoking afterPropertiesSet() on bean with name 'entityManagerFactory'
+2015-08-30 13:53:11 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-08-30 13:53:11 DEBUG logging:143 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@49912c99
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@49912c99
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@49912c99
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@5f9b2141
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@6d3a388c
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration yes_no -> org.hibernate.type.YesNoType@57af006c
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@212b5695
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@212b5695
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@212b5695
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration character -> org.hibernate.type.CharacterType@37654521
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration char -> org.hibernate.type.CharacterType@37654521
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@37654521
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@3059cbc
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@3059cbc
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@3059cbc
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration integer -> org.hibernate.type.IntegerType@ea6147e
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration int -> org.hibernate.type.IntegerType@ea6147e
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@ea6147e
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@4bb33f74
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@4bb33f74
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@4bb33f74
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@3e84448c
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@3e84448c
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3e84448c
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@28f3b248
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@28f3b248
+2015-08-30 13:53:11 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@28f3b248
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@fba92d3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@fba92d3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@16a0ee18
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@16a0ee18
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration string -> org.hibernate.type.StringType@bd4dc25
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.String -> org.hibernate.type.StringType@bd4dc25
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@71def8f8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@32ee6fee
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration url -> org.hibernate.type.UrlType@47faa49c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@47faa49c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration date -> org.hibernate.type.DateType@2fb3536e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@2fb3536e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration time -> org.hibernate.type.TimeType@3b6ddd1d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3b6ddd1d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration timestamp -> org.hibernate.type.TimestampType@1a18644
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@1a18644
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@1a18644
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6cd28fa7
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration calendar -> org.hibernate.type.CalendarType@1af2d44a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@1af2d44a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@1af2d44a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@58695725
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration locale -> org.hibernate.type.LocaleType@25fb8912
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@25fb8912
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration currency -> org.hibernate.type.CurrencyType@5ba3f27a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@5ba3f27a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@52af26ee
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@52af26ee
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration class -> org.hibernate.type.ClassType@e15b7e8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@e15b7e8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@485966cc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@485966cc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@593aaf41
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@37d4349f
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration binary -> org.hibernate.type.BinaryType@2ea41516
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration byte[] -> org.hibernate.type.BinaryType@2ea41516
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [B -> org.hibernate.type.BinaryType@2ea41516
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@f0da945
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@f0da945
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@f0da945
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration image -> org.hibernate.type.ImageType@6404f418
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration characters -> org.hibernate.type.CharArrayType@957e06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration char[] -> org.hibernate.type.CharArrayType@957e06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [C -> org.hibernate.type.CharArrayType@957e06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@550dbc7a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@550dbc7a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@550dbc7a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration text -> org.hibernate.type.TextType@23c30a20
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration ntext -> org.hibernate.type.NTextType@67f639d3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration blob -> org.hibernate.type.BlobType@29215f06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@29215f06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@6bd61f98
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration clob -> org.hibernate.type.ClobType@60bd273d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@60bd273d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration nclob -> org.hibernate.type.NClobType@5677323c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@5677323c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@4d154ccd
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@1e0b4072
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration serializable -> org.hibernate.type.SerializableType@e350b40
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration object -> org.hibernate.type.ObjectType@368247b9
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@368247b9
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@55a147cc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@71ba6d4e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@738dc9b
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@3c77d488
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@63376bed
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@4145bad8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@d86a6f
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@2892d68
+2015-08-30 13:53:12 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-08-30 13:53:12 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-08-30 13:53:12 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-08-30 13:53:12 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@49912c99
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration boolean -> org.hibernate.type.BooleanType@49912c99
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@49912c99
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@5f9b2141
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@6d3a388c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration yes_no -> org.hibernate.type.YesNoType@57af006c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@212b5695
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration byte -> org.hibernate.type.ByteType@212b5695
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@212b5695
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration character -> org.hibernate.type.CharacterType@37654521
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration char -> org.hibernate.type.CharacterType@37654521
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@37654521
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@3059cbc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration short -> org.hibernate.type.ShortType@3059cbc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@3059cbc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration integer -> org.hibernate.type.IntegerType@ea6147e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration int -> org.hibernate.type.IntegerType@ea6147e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@ea6147e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@4bb33f74
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration long -> org.hibernate.type.LongType@4bb33f74
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@4bb33f74
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@3e84448c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration float -> org.hibernate.type.FloatType@3e84448c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3e84448c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@28f3b248
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration double -> org.hibernate.type.DoubleType@28f3b248
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@28f3b248
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@fba92d3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@fba92d3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@16a0ee18
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@16a0ee18
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration string -> org.hibernate.type.StringType@bd4dc25
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.String -> org.hibernate.type.StringType@bd4dc25
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@71def8f8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@32ee6fee
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration url -> org.hibernate.type.UrlType@47faa49c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@47faa49c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration date -> org.hibernate.type.DateType@2fb3536e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@2fb3536e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration time -> org.hibernate.type.TimeType@3b6ddd1d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@3b6ddd1d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration timestamp -> org.hibernate.type.TimestampType@1a18644
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@1a18644
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@1a18644
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@6cd28fa7
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration calendar -> org.hibernate.type.CalendarType@1af2d44a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@1af2d44a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@1af2d44a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@58695725
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration locale -> org.hibernate.type.LocaleType@25fb8912
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@25fb8912
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration currency -> org.hibernate.type.CurrencyType@5ba3f27a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@5ba3f27a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@52af26ee
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@52af26ee
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration class -> org.hibernate.type.ClassType@e15b7e8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@e15b7e8
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@485966cc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@485966cc
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@593aaf41
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@37d4349f
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration binary -> org.hibernate.type.BinaryType@2ea41516
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration byte[] -> org.hibernate.type.BinaryType@2ea41516
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [B -> org.hibernate.type.BinaryType@2ea41516
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@f0da945
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@f0da945
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@f0da945
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration image -> org.hibernate.type.ImageType@6404f418
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration characters -> org.hibernate.type.CharArrayType@957e06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration char[] -> org.hibernate.type.CharArrayType@957e06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [C -> org.hibernate.type.CharArrayType@957e06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@550dbc7a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@550dbc7a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@550dbc7a
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration text -> org.hibernate.type.TextType@23c30a20
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration ntext -> org.hibernate.type.NTextType@67f639d3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration blob -> org.hibernate.type.BlobType@29215f06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@29215f06
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@6bd61f98
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration clob -> org.hibernate.type.ClobType@60bd273d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@60bd273d
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration nclob -> org.hibernate.type.NClobType@5677323c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@5677323c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@4d154ccd
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@1e0b4072
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration serializable -> org.hibernate.type.SerializableType@e350b40
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration object -> org.hibernate.type.ObjectType@368247b9
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@368247b9
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@4d0d9fe7
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@c430e6c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@312aa7c
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@536f2a7e
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@72bc6553
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@66982506
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@70cf32e3
+2015-08-30 13:53:12 DEBUG BasicTypeRegistry:148 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@5a59ca5e
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2015-08-30 13:53:12 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2015-08-30 13:53:12 DEBUG Ejb3Configuration:527 - Processing PersistenceUnitInfo [
+	name: my-unit
+	persistence provider classname: org.hibernate.ejb.HibernatePersistence
+	classloader: sun.misc.Launcher$AppClassLoader@5451c3a8
+	Temporary classloader: org.springframework.instrument.classloading.SimpleThrowawayClassLoader@71075444
+	excludeUnlistedClasses: false
+	JTA datasource: null
+	Non JTA datasource: org.springframework.jdbc.datasource.DriverManagerDataSource@4f32a3ad
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		ua.artcode.model.Product
+		ua.artcode.model.User]
+	Mapping files names []
+	Properties [
+		hibernate.dialect: org.hibernate.dialect.MySQLDialect
+		hibernate.show_sql: true
+		hibernate.hbm2ddl.auto: update]
+2015-08-30 13:53:12 DEBUG Ejb3Configuration:850 - Detect class: true; detect hbm: true
+2015-08-30 13:53:12 DEBUG Ejb3Configuration:850 - Detect class: true; detect hbm: true
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:126 - Searching mapped entities in jar/par: file:/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.RunServerRmi
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.examples.InitJpaFactory
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.examples.InitSpringContext
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.examples.GetResourceTest
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.aspect.UserDaoAspect
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.service.ProductService
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.service.UserService
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.service.UserServiceImpl
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.util.ConnectionFactory
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.util.StringUtils
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.model.Product
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:223 - Java element filter matched for ua.artcode.model.Product
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.model.IdEntity
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:223 - Java element filter matched for ua.artcode.model.IdEntity
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.model.User
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:223 - Java element filter matched for ua.artcode.model.User
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.dao.ProductDao
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.dao.UserDaoJpaImpl
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.dao.UserDaoJDBCImp
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.dao.UserDao
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.validation.Validator
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.view.ConsoleMenu
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.Run
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.exception.WrongUserCredentialException
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.exception.ValidationException
+2015-08-30 13:53:12 DEBUG AbstractJarVisitor:172 - Filtering: ua.artcode.exception.NoUserException
+2015-08-30 13:53:12 DEBUG IntegratorServiceImpl:59 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2015-08-30 13:53:12 DEBUG IntegratorServiceImpl:59 - Adding Integrator [org.hibernate.ejb.event.JpaIntegrator].
+2015-08-30 13:53:12 DEBUG NamingHelper:50 - No JNDI name configured for binding Ejb3Configuration
+2015-08-30 13:53:12 DEBUG Configuration:1745 - Preparing to build session factory with filters : {}
+2015-08-30 13:53:12 TRACE Configuration:1313 - Starting secondPassCompile() processing
+2015-08-30 13:53:12 DEBUG Configuration:3426 - Processing hbm.xml files
+2015-08-30 13:53:12 DEBUG Configuration:3456 - Process annotated classes
+2015-08-30 13:53:12 DEBUG AnnotationBinder:532 - Binding entity from annotated class: ua.artcode.model.Product
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2015-08-30 13:53:12 DEBUG EntityBinder:394 - Import with entity name Product
+2015-08-30 13:53:12 DEBUG EntityBinder:564 - Bind entity ua.artcode.model.Product on table products
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.Product.id
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(products), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property id with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for id
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property id
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading id with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:2156 - Bind @Id on id
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.Product.description
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(products), mappingColumn=description, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property description with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for description
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property description
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading description with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.Product.owner
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='user_id', referencedColumn='id', mappedBy=''}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(products), mappingColumn=owner, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property owner
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading owner with none
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.Product.price
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(products), mappingColumn=price, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property price with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for price
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property price
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading price with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.Product.title
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(products), mappingColumn=title, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property title with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for title
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property title
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading title with null
+2015-08-30 13:53:12 DEBUG AnnotationBinder:532 - Binding entity from annotated class: ua.artcode.model.User
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2015-08-30 13:53:12 DEBUG EntityBinder:394 - Import with entity name User
+2015-08-30 13:53:12 DEBUG EntityBinder:564 - Bind entity ua.artcode.model.User on table users
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.User.id
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property id with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for id
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property id
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading id with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:2156 - Bind @Id on id
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.User.email
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=email, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property email with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for email
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property email
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading email with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.User.fullname
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=fullname, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property fullname with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for fullname
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property fullname
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading fullname with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.User.pass
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=pass, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property pass with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for pass
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property pass
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading pass with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.User.phone
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=phone, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG PropertyBinder:179 - MetadataSourceProcessor property phone with lazy=false
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:331 - building SimpleValue for phone
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property phone
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading phone with null
+2015-08-30 13:53:12 TRACE AnnotationBinder:1476 - Processing annotations of ua.artcode.model.User.products
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='owner'}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=products, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=null, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=element, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(users), mappingColumn=products_KEY, insertable=true, updatable=true, unique=false}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='products_KEY', referencedColumn='null', mappedBy='null'}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='owner'}
+2015-08-30 13:53:12 DEBUG Ejb3Column:196 - Binding column: Ejb3JoinColumn{logicalColumnName='null', referencedColumn='null', mappedBy='owner'}
+2015-08-30 13:53:12 DEBUG CollectionBinder:400 - Collection role: ua.artcode.model.User.products
+2015-08-30 13:53:12 DEBUG PropertyBinder:260 - Building property products
+2015-08-30 13:53:12 TRACE PropertyBinder:337 - Cascading products with none
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for id
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for description
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for price
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for title
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for id
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for email
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for fullname
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for pass
+2015-08-30 13:53:12 DEBUG SimpleValueBinder:369 - Setting SimpleValue typeName for phone
+2015-08-30 13:53:12 DEBUG Configuration:1416 - Processing fk mappings (*ToOne and JoinedSubclass)
+2015-08-30 13:53:12 DEBUG Configuration:1595 - Processing extends queue
+2015-08-30 13:53:12 DEBUG Configuration:1653 - Processing extends queue
+2015-08-30 13:53:12 DEBUG Configuration:1598 - Processing collection mappings
+2015-08-30 13:53:12 DEBUG CollectionSecondPass:66 - Second pass for collection: ua.artcode.model.User.products
+2015-08-30 13:53:12 DEBUG CollectionBinder:761 - Binding a OneToMany: ua.artcode.model.User.products through a foreign key
+2015-08-30 13:53:12 DEBUG CollectionBinder:790 - Mapping collection: ua.artcode.model.User.products -> products
+2015-08-30 13:53:12 DEBUG TableBinder:332 - Retrieving property ua.artcode.model.Product.owner
+2015-08-30 13:53:12 DEBUG CollectionSecondPass:83 - Mapped collection key: user_id, one-to-many: ua.artcode.model.Product
+2015-08-30 13:53:12 DEBUG Configuration:1608 - Processing native query and ResultSetMapping mappings
+2015-08-30 13:53:12 DEBUG Configuration:1616 - Processing association property references
+2015-08-30 13:53:12 DEBUG Configuration:1638 - Creating tables' unique integer identifiers
+2015-08-30 13:53:12 DEBUG Configuration:1639 - Processing foreign key constraints
+2015-08-30 13:53:12 DEBUG Configuration:1710 - Resolving reference to class: ua.artcode.model.User
+2015-08-30 13:53:12 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.engine.jdbc.spi.JdbcServices]
+2015-08-30 13:53:12 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.jdbc.connections.spi.ConnectionProvider]
+2015-08-30 13:53:12 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-08-30 13:53:12 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.jndi.spi.JndiService]
+2015-08-30 13:53:12 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.jdbc.dialect.spi.DialectFactory]
+2015-08-30 13:53:12 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.jdbc.dialect.spi.DialectResolver]
+2015-08-30 13:53:12 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://127.0.0.1:3306/EbayDB]
+2015-08-30 13:53:13 DEBUG JdbcServicesImpl:121 - Database ->
+       name : MySQL
+    version : 5.6.19-0ubuntu0.14.04.1
+      major : 5
+      minor : 6
+2015-08-30 13:53:13 DEBUG JdbcServicesImpl:127 - Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.36 ( Revision: 4fc1f969f740409a4e03750316df2c0e429f3dc8 )
+      major : 5
+      minor : 1
+2015-08-30 13:53:13 DEBUG JdbcServicesImpl:133 - JDBC version : 4.0
+2015-08-30 13:53:13 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.jta.platform.spi.JtaPlatform]
+2015-08-30 13:53:13 DEBUG SettingsFactory:114 - Automatic flush during beforeCompletion(): disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:120 - Automatic session close at end of transaction: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:131 - JDBC batch size: 15
+2015-08-30 13:53:13 DEBUG SettingsFactory:137 - JDBC batch updates for versioned data: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:147 - Scrollable result sets: enabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:153 - Wrap result sets: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:159 - JDBC3 getGeneratedKeys(): enabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:171 - multi-tenancy strategy : NONE
+2015-08-30 13:53:13 DEBUG SettingsFactory:177 - Connection release mode: auto
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.engine.transaction.spi.TransactionFactory]
+2015-08-30 13:53:13 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-08-30 13:53:13 TRACE BatchFetchStyle:67 - Interpreting BatchFetchStyle from setting : null
+2015-08-30 13:53:13 DEBUG SettingsFactory:199 - Using BatchFetchStyle : LEGACY
+2015-08-30 13:53:13 DEBUG SettingsFactory:218 - Maximum outer join fetch depth: 2
+2015-08-30 13:53:13 DEBUG SettingsFactory:224 - Default batch fetch size: 1
+2015-08-30 13:53:13 DEBUG SettingsFactory:230 - Generate SQL with comments: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:236 - Order SQL updates by primary key: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:242 - Order SQL inserts for batching: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:250 - Default null ordering: none
+2015-08-30 13:53:13 DEBUG SettingsFactory:541 - Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+2015-08-30 13:53:13 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-08-30 13:53:13 DEBUG SettingsFactory:260 - Query language substitutions: {}
+2015-08-30 13:53:13 DEBUG SettingsFactory:266 - JPA-QL strict compliance: enabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:274 - Second-level cache: enabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:280 - Query cache: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:481 - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2015-08-30 13:53:13 DEBUG SettingsFactory:491 - org.hibernate.cache.internal.NoCachingRegionFactory did not provide constructor accepting java.util.Properties; attempting no-arg constructor.
+2015-08-30 13:53:13 DEBUG SettingsFactory:295 - Optimize cache for minimal puts: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:310 - Structured second-level cache entries: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:320 - Second-level cache direct-reference entries: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:328 - Statistics: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:334 - Deleted entity synthetic identifier rollback: disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:358 - Default entity-mode: pojo
+2015-08-30 13:53:13 DEBUG SettingsFactory:364 - Named query checking : enabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:370 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:388 - Allow initialization of lazy state outside session : : disabled
+2015-08-30 13:53:13 DEBUG SettingsFactory:398 - JTA Track by Thread: enabled
+2015-08-30 13:53:13 DEBUG SessionFactoryImpl:225 - Building session factory
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.spi.SessionFactoryServiceRegistryFactory]
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.engine.spi.CacheImplementor]
+2015-08-30 13:53:13 TRACE TypeFactory:72 - Scoping types to session factory org.hibernate.internal.SessionFactoryImpl@640f11a1
+2015-08-30 13:53:13 DEBUG SessionFactoryImpl:277 - Session factory constructed with filter configurations : {}
+2015-08-30 13:53:13 DEBUG SessionFactoryImpl:278 - Instantiating session factory with properties: {java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=/home/serhii/dev/jdk1.8.0_45/jre/lib/amd64, java.vm.version=25.45-b02, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=:, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, idea.launcher.port=7534, user.country=US, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=unknown, java.vm.specification.name=Java Virtual Machine Specification, user.dir=/home/serhii/dev/IdeaProjects/ACP7, javax.persistence.sharedCache.mode=UNSPECIFIED, java.runtime.version=1.8.0_45-b14, hibernate.ejb.discard_pc_on_close=false, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, java.endorsed.dirs=/home/serhii/dev/jdk1.8.0_45/jre/lib/endorsed, os.arch=amd64, hibernate.connection.autocommit=true, java.io.tmpdir=/tmp, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, os.name=Linux, sun.jnu.encoding=UTF-8, java.library.path=./dev/idea-IU-141.1532.4/bin::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib, hibernate.connection.datasource=org.springframework.jdbc.datasource.DriverManagerDataSource@4f32a3ad, java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, hibernate.transaction.factory_class=org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory, os.version=3.16.0-34-generic, user.home=/home/serhii, user.timezone=Europe/Kiev, java.awt.printerjob=sun.print.PSPrinterJob, hibernate.connection.release_mode=auto, java.specification.version=1.8, idea.launcher.bin.path=/home/serhii/dev/idea-IU-141.1532.4/bin, file.encoding=UTF-8, user.name=serhii, java.class.path=/home/serhii/dev/jdk1.8.0_45/jre/lib/deploy.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jsse.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/charsets.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/rt.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/javaws.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jfxswt.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/plugin.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jfr.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/management-agent.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jce.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/resources.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/dnsns.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/jfxrt.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/nashorn.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/cldrdata.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/sunec.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/localedata.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/sunjce_provider.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/zipfs.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/ext/sunpkcs11.jar:/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/target/classes:/home/serhii/dev/libs/mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar:/home/serhii/.m2/repository/mysql/mysql-connector-java/5.1.36/mysql-connector-java-5.1.36.jar:/home/serhii/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar:/home/serhii/.m2/repository/org/hibernate/hibernate-entitymanager/4.2.1.Final/hibernate-entitymanager-4.2.1.Final.jar:/home/serhii/.m2/repository/org/jboss/logging/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar:/home/serhii/.m2/repository/org/hibernate/hibernate-core/4.2.1.Final/hibernate-core-4.2.1.Final.jar:/home/serhii/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/serhii/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/serhii/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.1.Final/jboss-transaction-api_1.1_spec-1.0.1.Final.jar:/home/serhii/.m2/repository/org/javassist/javassist/3.15.0-GA/javassist-3.15.0-GA.jar:/home/serhii/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.1.Final/hibernate-commons-annotations-4.0.1.Final.jar:/home/serhii/.m2/repository/org/springframework/spring-core/4.2.0.RELEASE/spring-core-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/serhii/.m2/repository/org/springframework/spring-context/4.2.0.RELEASE/spring-context-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/org/springframework/spring-aop/4.2.0.RELEASE/spring-aop-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/home/serhii/.m2/repository/org/springframework/spring-expression/4.2.0.RELEASE/spring-expression-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/org/springframework/spring-beans/4.2.0.RELEASE/spring-beans-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/org/springframework/spring-orm/4.2.0.RELEASE/spring-orm-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/org/springframework/spring-jdbc/4.2.0.RELEASE/spring-jdbc-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/org/springframework/spring-tx/4.2.0.RELEASE/spring-tx-4.2.0.RELEASE.jar:/home/serhii/.m2/repository/org/aspectj/aspectjrt/1.7.4/aspectjrt-1.7.4.jar:/home/serhii/.m2/repository/org/aspectj/aspectjtools/1.7.4/aspectjtools-1.7.4.jar:/home/serhii/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/home/serhii/dev/idea-IU-141.1532.4/lib/idea_rt.jar, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, hibernate.use_identifier_rollback=false, javax.persistence.validation.mode=AUTO, java.vm.specification.version=1.8, sun.arch.data.model=64, java.home=/home/serhii/dev/jdk1.8.0_45/jre, sun.java.command=com.intellij.rt.execution.application.AppMain ua.artcode.Run, hibernate.dialect=org.hibernate.dialect.MySQLDialect, java.specification.vendor=Oracle Corporation, user.language=en, awt.toolkit=sun.awt.X11.XToolkit, java.vm.info=mixed mode, java.version=1.8.0_45, hibernate.transaction.flush_before_completion=false, java.ext.dirs=/home/serhii/dev/jdk1.8.0_45/jre/lib/ext:/usr/java/packages/lib/ext, sun.boot.class.path=/home/serhii/dev/jdk1.8.0_45/jre/lib/resources.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/rt.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/sunrsasign.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jsse.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jce.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/charsets.jar:/home/serhii/dev/jdk1.8.0_45/jre/lib/jfr.jar:/home/serhii/dev/jdk1.8.0_45/jre/classes, java.vendor=Oracle Corporation, file.separator=/, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, hibernate.connection.provider_class=org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider, hibernate.hbm2ddl.auto=update, sun.cpu.endian=little, sun.io.unicode.encoding=UnicodeLittle, hibernate.query.jpaql_strict_compliance=true, sun.desktop=gnome, sun.cpu.isalist=}
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.event.service.spi.EventListenerRegistry]
+2015-08-30 13:53:13 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+2015-08-30 13:53:13 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.persister.spi.PersisterFactory]
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.persister.spi.PersisterClassResolver]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [email], existing type = [org.hibernate.type.StringType@bd4dc25], incoming type = [org.hibernate.type.StringType@bd4dc25]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [fullname], existing type = [org.hibernate.type.StringType@bd4dc25], incoming type = [org.hibernate.type.StringType@bd4dc25]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [pass], existing type = [org.hibernate.type.StringType@bd4dc25], incoming type = [org.hibernate.type.StringType@bd4dc25]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [phone], existing type = [org.hibernate.type.StringType@bd4dc25], incoming type = [org.hibernate.type.StringType@bd4dc25]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [products], existing type = [org.hibernate.type.BagType(ua.artcode.model.User.products)], incoming type = [org.hibernate.type.BagType(ua.artcode.model.User.products)]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@4bb33f74], incoming type = [org.hibernate.type.LongType@4bb33f74]
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3592 - Static SQL for entity: ua.artcode.model.User
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3597 -  Version select: select id from users where id =?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3600 -  Snapshot select: select user_.id, user_.email as email2_1_, user_.fullname as fullname3_1_, user_.pass as pass4_1_, user_.phone as phone5_1_ from users user_ where user_.id=?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3603 -  Insert 0: insert into users (email, fullname, pass, phone, id) values (?, ?, ?, ?, ?)
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3604 -  Update 0: update users set email=?, fullname=?, pass=?, phone=? where id=?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3605 -  Delete 0: delete from users where id=?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3608 -  Identity insert: insert into users (email, fullname, pass, phone) values (?, ?, ?, ?)
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [owner.id], existing type = [org.hibernate.type.LongType@4bb33f74], incoming type = [org.hibernate.type.LongType@4bb33f74]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [description], existing type = [org.hibernate.type.StringType@bd4dc25], incoming type = [org.hibernate.type.StringType@bd4dc25]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [owner], existing type = [org.hibernate.type.ManyToOneType(ua.artcode.model.User)], incoming type = [org.hibernate.type.ManyToOneType(ua.artcode.model.User)]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [owner.id], existing type = [org.hibernate.type.LongType@4bb33f74], incoming type = [org.hibernate.type.LongType@4bb33f74]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [owner.id], existing type = [org.hibernate.type.LongType@4bb33f74], incoming type = [org.hibernate.type.LongType@4bb33f74]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [price], existing type = [org.hibernate.type.DoubleType@28f3b248], incoming type = [org.hibernate.type.DoubleType@28f3b248]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [title], existing type = [org.hibernate.type.StringType@bd4dc25], incoming type = [org.hibernate.type.StringType@bd4dc25]
+2015-08-30 13:53:13 TRACE AbstractPropertyMapping:143 - Skipping duplicate registration of path [id], existing type = [org.hibernate.type.LongType@4bb33f74], incoming type = [org.hibernate.type.LongType@4bb33f74]
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3592 - Static SQL for entity: ua.artcode.model.Product
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3597 -  Version select: select id from products where id =?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3600 -  Snapshot select: select product_.id, product_.description as descript2_0_, product_.user_id as user5_0_, product_.price as price3_0_, product_.title as title4_0_ from products product_ where product_.id=?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3603 -  Insert 0: insert into products (description, user_id, price, title, id) values (?, ?, ?, ?, ?)
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3604 -  Update 0: update products set description=?, user_id=?, price=?, title=? where id=?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3605 -  Delete 0: delete from products where id=?
+2015-08-30 13:53:13 DEBUG AbstractEntityPersister:3608 -  Identity insert: insert into products (description, user_id, price, title) values (?, ?, ?, ?)
+2015-08-30 13:53:13 DEBUG AbstractCollectionPersister:665 - Static SQL for collection: ua.artcode.model.User.products
+2015-08-30 13:53:13 DEBUG AbstractCollectionPersister:666 -  Row insert: update products set user_id=? where id=?
+2015-08-30 13:53:13 DEBUG AbstractCollectionPersister:667 -  Row update: update products set  where id=?
+2015-08-30 13:53:13 DEBUG AbstractCollectionPersister:668 -  Row delete: update products set user_id=null where user_id=? and id=?
+2015-08-30 13:53:13 DEBUG AbstractCollectionPersister:669 -  One-shot delete: update products set user_id=null where user_id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [NONE]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [READ]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [UPGRADE]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [UPGRADE_NOWAIT]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [FORCE]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [PESSIMISTIC_READ]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=? lock in share mode
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [PESSIMISTIC_WRITE]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [PESSIMISTIC_FORCE_INCREMENT]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [OPTIMISTIC]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.User [OPTIMISTIC_FORCE_INCREMENT]: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity ua.artcode.model.User: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity ua.artcode.model.User: select user0_.id as id1_1_0_, user0_.email as email2_1_0_, user0_.fullname as fullname3_1_0_, user0_.pass as pass4_1_0_, user0_.phone as phone5_1_0_ from users user0_ where user0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [NONE]: select product0_.id as id1_0_1_, product0_.description as descript2_0_1_, product0_.user_id as user5_0_1_, product0_.price as price3_0_1_, product0_.title as title4_0_1_, user1_.id as id1_1_0_, user1_.email as email2_1_0_, user1_.fullname as fullname3_1_0_, user1_.pass as pass4_1_0_, user1_.phone as phone5_1_0_ from products product0_ left outer join users user1_ on product0_.user_id=user1_.id where product0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [READ]: select product0_.id as id1_0_1_, product0_.description as descript2_0_1_, product0_.user_id as user5_0_1_, product0_.price as price3_0_1_, product0_.title as title4_0_1_, user1_.id as id1_1_0_, user1_.email as email2_1_0_, user1_.fullname as fullname3_1_0_, user1_.pass as pass4_1_0_, user1_.phone as phone5_1_0_ from products product0_ left outer join users user1_ on product0_.user_id=user1_.id where product0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [UPGRADE]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [UPGRADE_NOWAIT]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [FORCE]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [PESSIMISTIC_READ]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=? lock in share mode
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [PESSIMISTIC_WRITE]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [PESSIMISTIC_FORCE_INCREMENT]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=? for update
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [OPTIMISTIC]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:123 - Static select for entity ua.artcode.model.Product [OPTIMISTIC_FORCE_INCREMENT]: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity ua.artcode.model.Product: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=?
+2015-08-30 13:53:13 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity ua.artcode.model.Product: select product0_.id as id1_0_0_, product0_.description as descript2_0_0_, product0_.user_id as user5_0_0_, product0_.price as price3_0_0_, product0_.title as title4_0_0_ from products product0_ where product0_.id=?
+2015-08-30 13:53:13 DEBUG OneToManyLoader:82 - Static select for one-to-many ua.artcode.model.User.products: select products0_.user_id as user5_1_1_, products0_.id as id1_0_1_, products0_.id as id1_0_0_, products0_.description as descript2_0_0_, products0_.user_id as user5_0_0_, products0_.price as price3_0_0_, products0_.title as title4_0_0_ from products products0_ where products0_.user_id=?
+2015-08-30 13:53:13 DEBUG SessionFactoryRegistry:62 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@6175619b
+2015-08-30 13:53:13 DEBUG SessionFactoryRegistry:75 - Registering SessionFactory: cb2c12f3-5f34-49b0-a4b3-9f477b54e327 (<unnamed>)
+2015-08-30 13:53:13 DEBUG SessionFactoryRegistry:82 - Not binding SessionFactory to JNDI, no JNDI name configured
+2015-08-30 13:53:13 DEBUG SessionFactoryImpl:488 - Instantiated session factory
+2015-08-30 13:53:13 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-08-30 13:53:13 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-08-30 13:53:13 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://127.0.0.1:3306/EbayDB]
+2015-08-30 13:53:13 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-08-30 13:53:13 TRACE Configuration:1313 - Starting secondPassCompile() processing
+2015-08-30 13:53:13 DEBUG Configuration:3426 - Processing hbm.xml files
+2015-08-30 13:53:13 DEBUG Configuration:3456 - Process annotated classes
+2015-08-30 13:53:13 DEBUG Configuration:1416 - Processing fk mappings (*ToOne and JoinedSubclass)
+2015-08-30 13:53:13 DEBUG Configuration:1595 - Processing extends queue
+2015-08-30 13:53:13 DEBUG Configuration:1653 - Processing extends queue
+2015-08-30 13:53:13 DEBUG Configuration:1598 - Processing collection mappings
+2015-08-30 13:53:13 DEBUG Configuration:1608 - Processing native query and ResultSetMapping mappings
+2015-08-30 13:53:13 DEBUG Configuration:1616 - Processing association property references
+2015-08-30 13:53:13 DEBUG Configuration:1638 - Creating tables' unique integer identifiers
+2015-08-30 13:53:13 DEBUG Configuration:1639 - Processing foreign key constraints
+2015-08-30 13:53:13 DEBUG Configuration:1710 - Resolving reference to class: ua.artcode.model.User
+2015-08-30 13:53:13 TRACE UniqueConstraintSchemaUpdateStrategy:68 - Interpreting UniqueConstraintSchemaUpdateStrategy from setting : null
+2015-08-30 13:53:13 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.products
+2015-08-30 13:53:13 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, price, description, id, title]
+2015-08-30 13:53:13 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_2e2f282d773742e3ae7f8e10390]
+2015-08-30 13:53:13 INFO  TableMetadata:69 - HHH000126: Indexes: [fk_2e2f282d773742e3ae7f8e10390, primary]
+2015-08-30 13:53:13 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.users
+2015-08-30 13:53:13 INFO  TableMetadata:66 - HHH000037: Columns: [pass, phone, id, fullname, email]
+2015-08-30 13:53:13 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-08-30 13:53:13 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-08-30 13:53:13 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+2015-08-30 13:53:13 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQLDialect]
+2015-08-30 13:53:13 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-08-30 13:53:13 DEBUG SessionFactoryImpl:1068 - Checking 0 named HQL queries
+2015-08-30 13:53:13 DEBUG SessionFactoryImpl:1091 - Checking 0 named SQL queries
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.service.config.spi.ConfigurationService]
+2015-08-30 13:53:13 TRACE AbstractServiceRegistryImpl:146 - Initializing service [role=org.hibernate.stat.spi.StatisticsImplementor]
+2015-08-30 13:53:13 DEBUG StatisticsInitiator:110 - Statistics initialized [enabled=false]
+2015-08-30 13:53:13 TRACE MetadataContext:183 - Wrapping up metadata context...
+2015-08-30 13:53:13 TRACE MetadataContext:222 - Starting mapped superclass [ua.artcode.model.IdEntity]
+2015-08-30 13:53:13 TRACE AttributeFactory:146 - Building identifier attribute [ua.artcode.model.IdEntity.id]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [id]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private long ua.artcode.model.IdEntity.id]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=long, class=org.hibernate.type.LongType]
+2015-08-30 13:53:13 TRACE MetadataContext:245 - Completed mapped superclass [ua.artcode.model.IdEntity]
+2015-08-30 13:53:13 TRACE MetadataContext:189 - Starting entity [ua.artcode.model.User]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.User.email]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [email]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.lang.String ua.artcode.model.User.email]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.User.fullname]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [fullname]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.lang.String ua.artcode.model.User.fullname]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.User.pass]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [pass]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.lang.String ua.artcode.model.User.pass]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.User.phone]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [phone]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.lang.String ua.artcode.model.User.phone]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.User.products]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [products]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.util.List ua.artcode.model.User.products]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=java.util.Collection(ua.artcode.model.User.products), class=org.hibernate.type.BagType]
+2015-08-30 13:53:13 TRACE MetadataContext:216 - Completed entity [ua.artcode.model.User]
+2015-08-30 13:53:13 TRACE MetadataContext:189 - Starting entity [ua.artcode.model.Product]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.Product.description]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [description]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.lang.String ua.artcode.model.Product.description]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.Product.owner]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [owner]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private ua.artcode.model.User ua.artcode.model.Product.owner]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=ua.artcode.model.User, class=org.hibernate.type.ManyToOneType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.Product.price]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [price]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private double ua.artcode.model.Product.price]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=double, class=org.hibernate.type.DoubleType]
+2015-08-30 13:53:13 TRACE AttributeFactory:98 - Building attribute [ua.artcode.model.Product.title]
+2015-08-30 13:53:13 TRACE AttributeFactory:443 - Starting attribute metadata determination [title]
+2015-08-30 13:53:13 TRACE AttributeFactory:445 -     Determined member [private java.lang.String ua.artcode.model.Product.title]
+2015-08-30 13:53:13 TRACE AttributeFactory:449 -     Determined type [name=string, class=org.hibernate.type.StringType]
+2015-08-30 13:53:13 TRACE MetadataContext:216 - Completed entity [ua.artcode.model.Product]
+2015-08-30 13:53:13 DEBUG EntityManagerFactoryRegistry:56 - Initializing EntityManagerFactoryRegistry : org.hibernate.ejb.internal.EntityManagerFactoryRegistry@32fe9d0a
+2015-08-30 13:53:13 DEBUG EntityManagerFactoryRegistry:66 - Registering EntityManagerFactory: my-unit 
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'entityManagerFactory'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:741 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@58c1670b: defining beans [org.springframework.aop.config.internalAutoProxyCreator,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,userServiceImpl,jpaUserDao,consoleMenu,dataSource,entityManagerFactory,ua.artcode.dao.UserDaoJDBCImp#0,ua.artcode.aspect.UserDaoAspect#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor]; root of factory hierarchy
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.event.internalEventListenerProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.event.internalEventListenerProcessor' to allow for resolving potential circular references
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.context.event.EventListenerMethodProcessor]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.context.event.EventListenerMethodProcessor]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:297 - Found bean property 'applicationContext' of type [org.springframework.context.ApplicationContext]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.event.internalEventListenerProcessor'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'org.springframework.context.event.internalEventListenerFactory' to allow for resolving potential circular references
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [org.springframework.context.event.DefaultEventListenerFactory]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [org.springframework.context.event.DefaultEventListenerFactory]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:297 - Found bean property 'order' of type [int]
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'userServiceImpl'
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'userServiceImpl'
+2015-08-30 13:53:13 DEBUG InjectionMetadata:72 - Registered injected element on class [ua.artcode.service.UserServiceImpl]: AutowiredFieldElement for private ua.artcode.dao.UserDao ua.artcode.service.UserServiceImpl.userDao
+2015-08-30 13:53:13 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'userServiceImpl' to allow for resolving potential circular references
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [ua.artcode.service.UserServiceImpl]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [ua.artcode.service.UserServiceImpl]
+2015-08-30 13:53:13 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:13 DEBUG InjectionMetadata:86 - Processing injected element of bean 'userServiceImpl': AutowiredFieldElement for private ua.artcode.dao.UserDao ua.artcode.service.UserServiceImpl.userDao
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'jpaUserDao'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'jpaUserDao'
+2015-08-30 13:53:14 DEBUG InjectionMetadata:72 - Registered injected element on class [ua.artcode.dao.UserDaoJpaImpl]: AutowiredFieldElement for private javax.persistence.EntityManagerFactory ua.artcode.dao.UserDaoJpaImpl.factory
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'jpaUserDao' to allow for resolving potential circular references
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [ua.artcode.dao.UserDaoJpaImpl]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [ua.artcode.dao.UserDaoJpaImpl]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:14 DEBUG InjectionMetadata:86 - Processing injected element of bean 'jpaUserDao': AutowiredFieldElement for private javax.persistence.EntityManagerFactory ua.artcode.dao.UserDaoJpaImpl.factory
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'entityManagerFactory'
+2015-08-30 13:53:14 DEBUG AutowiredAnnotationBeanPostProcessor:490 - Autowiring by type from bean name 'jpaUserDao' to bean named 'entityManagerFactory'
+2015-08-30 13:53:14 DEBUG AnnotationAwareAspectJAutoProxyCreator:505 - Creating implicit proxy for bean 'jpaUserDao' with 0 common interceptors and 2 specific interceptors
+2015-08-30 13:53:14 DEBUG JdkDynamicAopProxy:117 - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [ua.artcode.dao.UserDaoJpaImpl@6e57e95e]
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'jpaUserDao'
+2015-08-30 13:53:14 DEBUG AutowiredAnnotationBeanPostProcessor:490 - Autowiring by type from bean name 'userServiceImpl' to bean named 'jpaUserDao'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'userServiceImpl'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'jpaUserDao'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'consoleMenu'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'consoleMenu'
+2015-08-30 13:53:14 DEBUG InjectionMetadata:72 - Registered injected element on class [ua.artcode.view.ConsoleMenu]: AutowiredFieldElement for private ua.artcode.service.UserService ua.artcode.view.ConsoleMenu.userService
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'consoleMenu' to allow for resolving potential circular references
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [ua.artcode.view.ConsoleMenu]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [ua.artcode.view.ConsoleMenu]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:297 - Found bean property 'productService' of type [ua.artcode.service.ProductService]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:297 - Found bean property 'userService' of type [ua.artcode.service.UserService]
+2015-08-30 13:53:14 DEBUG InjectionMetadata:86 - Processing injected element of bean 'consoleMenu': AutowiredFieldElement for private ua.artcode.service.UserService ua.artcode.view.ConsoleMenu.userService
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'userServiceImpl'
+2015-08-30 13:53:14 DEBUG AutowiredAnnotationBeanPostProcessor:490 - Autowiring by type from bean name 'consoleMenu' to bean named 'userServiceImpl'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'consoleMenu'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'dataSource'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'entityManagerFactory'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'ua.artcode.dao.UserDaoJDBCImp#0'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'ua.artcode.dao.UserDaoJDBCImp#0'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'ua.artcode.dao.UserDaoJDBCImp#0' to allow for resolving potential circular references
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [ua.artcode.dao.UserDaoJDBCImp]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [ua.artcode.dao.UserDaoJDBCImp]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:14 DEBUG AnnotationAwareAspectJAutoProxyCreator:505 - Creating implicit proxy for bean 'ua.artcode.dao.UserDaoJDBCImp#0' with 0 common interceptors and 2 specific interceptors
+2015-08-30 13:53:14 DEBUG JdkDynamicAopProxy:117 - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [ua.artcode.dao.UserDaoJDBCImp@7555b920]
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'ua.artcode.dao.UserDaoJDBCImp#0'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:221 - Creating shared instance of singleton bean 'ua.artcode.aspect.UserDaoAspect#0'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:448 - Creating instance of bean 'ua.artcode.aspect.UserDaoAspect#0'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:529 - Eagerly caching bean 'ua.artcode.aspect.UserDaoAspect#0' to allow for resolving potential circular references
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:265 - Getting BeanInfo for class [ua.artcode.aspect.UserDaoAspect]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:284 - Caching PropertyDescriptors for class [ua.artcode.aspect.UserDaoAspect]
+2015-08-30 13:53:14 TRACE CachedIntrospectionResults:297 - Found bean property 'class' of type [java.lang.Class]
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:484 - Finished creating instance of bean 'ua.artcode.aspect.UserDaoAspect#0'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.support.PropertySourcesPlaceholderConfigurer
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.annotation.ConfigurationClassPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.annotation.CommonAnnotationBeanPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.event.EventListenerMethodProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.event.DefaultEventListenerFactory
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class ua.artcode.service.UserServiceImpl
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'jpaUserDao'
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class com.sun.proxy.$Proxy23
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class ua.artcode.view.ConsoleMenu
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.jdbc.datasource.DriverManagerDataSource
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class com.sun.proxy.$Proxy18
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'ua.artcode.dao.UserDaoJDBCImp#0'
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class com.sun.proxy.$Proxy23
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class ua.artcode.aspect.UserDaoAspect
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.annotation.ConfigurationClassPostProcessor$EnhancedConfigurationBeanPostProcessor
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.core.env.StandardEnvironment
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class java.util.Properties
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class java.util.Collections$UnmodifiableMap
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.annotation.ConfigurationClassParser$ImportStack
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.support.DelegatingMessageSource
+2015-08-30 13:53:14 TRACE EventListenerMethodProcessor:132 - No @EventListener annotations found on bean class: class org.springframework.context.event.SimpleApplicationEventMulticaster
+2015-08-30 13:53:14 DEBUG ClassPathXmlApplicationContext:764 - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@544630b7]
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'lifecycleProcessor'
+2015-08-30 13:53:14 TRACE ClassPathXmlApplicationContext:360 - Publishing event in org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: org.springframework.context.event.ContextRefreshedEvent[source=org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun Aug 30 13:53:09 EEST 2015]; root of context hierarchy]
+2015-08-30 13:53:14 TRACE PropertySourcesPropertyResolver:76 - getProperty("spring.liveBeansView.mbeanDomain", String)
+2015-08-30 13:53:14 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+2015-08-30 13:53:14 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+2015-08-30 13:53:14 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+2015-08-30 13:53:14 DEBUG DefaultListableBeanFactory:250 - Returning cached instance of singleton bean 'consoleMenu'
+2015-08-30 13:55:00 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@c2e1f26: startup date [Sun Aug 30 13:55:00 EEST 2015]; root of context hierarchy
+2015-08-30 13:55:00 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-08-30 13:55:01 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-08-30 13:55:01 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-08-30 13:55:02 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-08-30 13:55:02 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-08-30 13:55:02 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-08-30 13:55:02 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-08-30 13:55:02 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-08-30 13:55:02 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-08-30 13:55:03 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-08-30 13:55:03 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-08-30 13:55:03 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-08-30 13:55:03 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-08-30 13:55:03 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-08-30 13:55:03 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-08-30 13:55:03 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-08-30 13:55:03 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.products
+2015-08-30 13:55:03 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, price, description, id, title]
+2015-08-30 13:55:03 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_2e2f282d773742e3ae7f8e10390]
+2015-08-30 13:55:03 INFO  TableMetadata:69 - HHH000126: Indexes: [fk_2e2f282d773742e3ae7f8e10390, primary]
+2015-08-30 13:55:04 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.users
+2015-08-30 13:55:04 INFO  TableMetadata:66 - HHH000037: Columns: [pass, phone, id, fullname, email]
+2015-08-30 13:55:04 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-08-30 13:55:04 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-08-30 13:55:04 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
