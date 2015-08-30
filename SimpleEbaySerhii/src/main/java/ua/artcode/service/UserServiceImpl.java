@@ -1,6 +1,7 @@
 package ua.artcode.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ua.artcode.dao.UserDao;
 import ua.artcode.exception.NoUserException;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
     public static final int ACCESS_TOKENT_LENGTH = 10;
 
     @Autowired
+    @Qualifier(value = "jpaUserDao")
     private UserDao userDao;
     private Validator<User> userValidator;
 
