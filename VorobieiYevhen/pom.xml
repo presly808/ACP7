@@ -7,9 +7,11 @@
     <groupId>groupId</groupId>
     <artifactId>VorobieiYevhen</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <mysql-version>5.1.36</mysql-version>
+        <spring-core.version>4.2.0.RELEASE</spring-core.version>
     </properties>
 
     <dependencies>
@@ -17,6 +19,11 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-core.version}</version>
         </dependency>
     </dependencies>
 

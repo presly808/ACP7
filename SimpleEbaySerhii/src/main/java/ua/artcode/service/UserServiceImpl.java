@@ -1,5 +1,8 @@
 package ua.artcode.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 import ua.artcode.dao.UserDao;
 import ua.artcode.exception.NoUserException;
 import ua.artcode.exception.ValidationException;
@@ -12,17 +15,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Created by serhii on 15.08.15.
- */
+@Component
 public class UserServiceImpl implements UserService {
 
 
     private Map<String,User> accessTokenUserMap = new ConcurrentHashMap<>();
     public static final int ACCESS_TOKENT_LENGTH = 10;
+
+    @Autowired
+    @Qualifier(value = "jpaUserDao")
     private UserDao userDao;
     private Validator<User> userValidator;
 
+    public UserServiceImpl() {
+    }
 
     public UserServiceImpl(UserDao userDao, Validator<User> validator) {
         this.userValidator = validator;
