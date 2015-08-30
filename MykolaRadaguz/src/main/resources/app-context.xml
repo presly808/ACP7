@@ -35,7 +35,7 @@
     <!--<bean class="ua.artcode.dao.UserDaoJpaImpl">
         <constructor-arg name="factory" ref="entityManagerFactory"/>
     </bean>
--->
+    -->
     <!--beans in context-->
     <!--
     <bean id="user" class="ua.artcode.model.User" scope="prototype">
