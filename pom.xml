@@ -25,7 +25,6 @@
         <mysql-version>5.1.36</mysql-version>
         <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
         <hibernate-core.version>4.2.1.Final</hibernate-core.version>
-        <spring-core.version>4.2.0.RELEASE</spring-core.version>
     </properties>
 
 
@@ -35,6 +34,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-version}</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
@@ -47,6 +47,7 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate-core.version}</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -66,6 +67,11 @@
             <version>${spring-core.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring-core.version}</version>
+        </dependency>
     </dependencies>
 
 

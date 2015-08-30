@@ -1,32 +1,27 @@
-package ua.artcode.service;
+package service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import ua.artcode.dao.UserDao;
-import ua.artcode.exception.NoUserException;
-import ua.artcode.exception.ValidationException;
-import ua.artcode.exception.WrongUserCredentialException;
-import ua.artcode.model.User;
-import ua.artcode.util.StringUtils;
-import ua.artcode.validation.Validator;
+import dao.UserDao;
+import exception.NoUserException;
+import exception.ValidationException;
+import exception.WrongUserCredentialException;
+import model.User;
+import util.StringUtils;
+import validation.Validator;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Component
+/**
+ * Created by serhii on 15.08.15.
+ */
 public class UserServiceImpl implements UserService {
 
 
-    private Map<String,User> accessTokenUserMap = new ConcurrentHashMap<>();
+    private Map<String, User> accessTokenUserMap = new ConcurrentHashMap<>();
     public static final int ACCESS_TOKENT_LENGTH = 10;
-
-    @Autowired
     private UserDao userDao;
     private Validator<User> userValidator;
 
-    public UserServiceImpl() {
-    }
 
     public UserServiceImpl(UserDao userDao, Validator<User> validator) {
         this.userValidator = validator;
@@ -34,9 +29,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User register(String fullname, String phone, String email, String pass) throws ValidationException {
+    public User register(String fullname, String rank, String email, String phone, String login, String pass) throws ValidationException {
         // compose user from parts
-        User user = new User(fullname, email, pass, phone);
+        User user = new User(fullname, rank, email, login, pass, phone);
         // validation
         // userValidator.isValid(user);
 
@@ -64,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User update(String sessionToken, String fullname, String pass, String phone) {
+    public User update(String sessionToken, String fullname, String login, String pass, String email, String rank, String phone) {
         return null;
     }
 

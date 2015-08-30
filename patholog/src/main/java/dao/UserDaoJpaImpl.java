@@ -1,9 +1,9 @@
-package ua.artcode.dao;
+package dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import ua.artcode.exception.NoUserException;
-import ua.artcode.model.User;
+
+
+import exception.NoUserException;
+import model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,14 +11,12 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.util.List;
 
-@Component("jpaUserDao")
+/**
+ * Created by serhii on 23.08.15.
+ */
 public class UserDaoJpaImpl implements UserDao {
 
-    @Autowired
     private EntityManagerFactory factory;
-
-    public UserDaoJpaImpl() {
-    }
 
     public UserDaoJpaImpl(EntityManagerFactory factory) {
         this.factory = factory;
@@ -39,9 +37,9 @@ public class UserDaoJpaImpl implements UserDao {
         return user;
     }
 
-    @Override
-    public User update(User user) {
-        EntityManager manager = factory.createEntityManager();
+   @Override
+   public User update(User user) {
+        /*  EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
 
 
@@ -62,8 +60,8 @@ public class UserDaoJpaImpl implements UserDao {
         } catch (Exception e){
             transaction.rollback();
         }
-
-        return found;
+*/
+        return null;
     }
 
     @Override
@@ -95,9 +93,9 @@ public class UserDaoJpaImpl implements UserDao {
         return user;
     }
 
-    @Override
+   @Override
     public boolean delete(User user) {
-        EntityManager manager = factory.createEntityManager();
+       /*  EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
 
 
@@ -116,7 +114,7 @@ public class UserDaoJpaImpl implements UserDao {
         } catch (Exception e){
             transaction.rollback();
         }
-
+*/
         return true;
     }
 }

@@ -27,6 +27,13 @@ public class Product extends IdEntity{
         this.description = desc;
     }
 
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
 
     public double getPrice() {
         return price;

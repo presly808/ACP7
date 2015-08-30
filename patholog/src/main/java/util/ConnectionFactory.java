@@ -1,4 +1,4 @@
-package ua.artcode.util;
+package util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,7 +22,8 @@ public class ConnectionFactory {
         try {
 
             properties.load(
-                    ConnectionFactory.class.getResourceAsStream("/db.properties"));
+                    new FileInputStream(
+                            "C:\\Users\\Gorobec\\GIT_SIMPLE\\ACP7\\patholog\\src\\main\\resources\\db.properties"));
             HOST = properties.getProperty("db.host");
             PORT = Integer.parseInt(properties.getProperty("db.port"));
             DB_NAME = properties.getProperty("db.name");

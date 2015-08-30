@@ -20,9 +20,8 @@ public class ConnectionFactory {
     private static void init() {
         Properties properties = new Properties();
         try {
-
             properties.load(
-                    ConnectionFactory.class.getResourceAsStream("/db.properties"));
+                    new FileInputStream("/home/serhii/dev/IdeaProjects/ACP7/SimpleEbaySerhii/resources/db.properties"));
             HOST = properties.getProperty("db.host");
             PORT = Integer.parseInt(properties.getProperty("db.port"));
             DB_NAME = properties.getProperty("db.name");

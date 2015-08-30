@@ -1,7 +1,5 @@
 package ua.artcode.view;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import ua.artcode.exception.ValidationException;
 import ua.artcode.exception.WrongUserCredentialException;
 import ua.artcode.model.Product;
@@ -12,18 +10,15 @@ import ua.artcode.service.UserService;
 import java.util.List;
 import java.util.Scanner;
 
-@Component
+/**
+ * Created by serhii on 15.08.15.
+ */
 public class ConsoleMenu {
 
-    @Autowired
     private UserService userService;
-
     private ProductService productService;
     private Scanner input = new Scanner(System.in);
     private String sessionToken;
-
-    public ConsoleMenu() {
-    }
 
     public ConsoleMenu(UserService userService, ProductService productService) {
         this.productService = productService;
