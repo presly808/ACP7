@@ -4,16 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>VorobieiYevhen</artifactId>
+    <groupId>ua.artcode</groupId>
+    <artifactId>Vorobiei</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>jar</packaging> <!--???-->
 
-    <properties>
+    <properties> <!--hibernate-->
         <mysql-version>5.1.36</mysql-version>
-        <spring-core.version>4.2.0.RELEASE</spring-core.version>
+        <hibernate-entitymanager.version>5.0.0.Final</hibernate-entitymanager.version>
     </properties>
 
+
+    <!-- зависимости от библиотек -->
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
@@ -21,12 +23,17 @@
             <version>${mysql-version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>${spring-core.version}</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-entitymanager.version}</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate-entitymanager.version}</version>
+        </dependency>
 
+    </dependencies>
 
     <build>
         <plugins>
