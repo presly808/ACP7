@@ -1,27 +1,28 @@
 package model;
 
-public class Client {
+import javax.persistence.*;
 
-
-    private long id;
-
+@Entity
+@Table(name = "clients")
+public class Client extends IdEntity {
+    @Column(nullable = false)
     private String firstName;
-
+    @Column(nullable = false)
     private String secondtName;
-
+    @Column(nullable = false)
     private String phoneNumber;
-
+    @Column
     private String email;
-
+    @Column(nullable = false)
     private String driverLicenseNumber;
 
     public Client() {
     }
 
 
-    public Client(long id, String firstName, String secondtName,
+    public Client(String firstName, String secondtName,
                   String phoneNumber, String email, String driverLicenseNumber) {
-        this.id = id;
+
         this.firstName = firstName;
         this.secondtName = secondtName;
         this.phoneNumber = phoneNumber;
@@ -29,14 +30,6 @@ public class Client {
         this.driverLicenseNumber = driverLicenseNumber;
     }
 
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -81,8 +74,7 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", secondtName='" + secondtName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
