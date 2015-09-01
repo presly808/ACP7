@@ -8,7 +8,7 @@ public class Client extends IdEntity {
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
-    private String secondtName;
+    private String secondName;
     @Column(nullable = false)
     private String phoneNumber;
     @Column
@@ -20,11 +20,11 @@ public class Client extends IdEntity {
     }
 
 
-    public Client(String firstName, String secondtName,
+    public Client(String firstName, String secondName,
                   String phoneNumber, String email, String driverLicenseNumber) {
 
         this.firstName = firstName;
-        this.secondtName = secondtName;
+        this.secondName = secondName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.driverLicenseNumber = driverLicenseNumber;
@@ -39,12 +39,12 @@ public class Client extends IdEntity {
         this.firstName = firstName;
     }
 
-    public String getSecondtName() {
-        return secondtName;
+    public String getSecondName() {
+        return secondName;
     }
 
     public void setSecondtName(String secondtName) {
-        this.secondtName = secondtName;
+        this.secondName = secondtName;
     }
 
     public String getPhoneNumber() {
@@ -75,7 +75,7 @@ public class Client extends IdEntity {
     public String toString() {
         return "Client{" +
                 "firstName='" + firstName + '\'' +
-                ", secondtName='" + secondtName + '\'' +
+                ", secondtName='" + secondName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", driverLicenseNumber='" + driverLicenseNumber + '\'' +
