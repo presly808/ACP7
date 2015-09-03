@@ -13,7 +13,8 @@
               <property name="service" ref="userServiceImpl"/>
               <!-- defaults to 1099 -->
               <property name="registryPort" value="1199"/>
-              <!--<property name="registryHost" value="127.0.0.1"/>-->
+              <!--<property name="registryHost" value="111.111.111.111"/>-->
+
        </bean>
 
 

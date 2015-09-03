@@ -1,17 +1,16 @@
 package model;
 
-import java.math.BigInteger;
+import javax.persistence.*;
 
-public class Worker {
-
-    private long id;
-
+@Entity
+@Table(name = "workers")
+public class Worker  extends IdEntity{
+    @Column(nullable = false)
     private String firstName;
-
-    private String secondtName;
-
+    @Column(nullable = false)
+    private String secondName;
+    @Column(nullable = false)
     private long salary;
-
     private boolean workStatusBusy = true;
 
     public Worker() {
@@ -20,18 +19,11 @@ public class Worker {
     public Worker(String firstName, String secondtName,
                   long salary, boolean workStatusBusy) {
         this.firstName = firstName;
-        this.secondtName = secondtName;
+        this.secondName = secondtName;
         this.salary = salary;
         this.workStatusBusy = workStatusBusy;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -41,12 +33,12 @@ public class Worker {
         this.firstName = firstName;
     }
 
-    public String getSecondtName() {
-        return secondtName;
+    public String getSecondName() {
+        return secondName;
     }
 
     public void setSecondtName(String secondtName) {
-        this.secondtName = secondtName;
+        this.secondName = secondtName;
     }
 
     public long getSalary() {
@@ -68,9 +60,8 @@ public class Worker {
     @Override
     public String toString() {
         return "Worker{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", secondtName='" + secondtName + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", secondtName='" + secondName + '\'' +
                 ", salary=" + salary +
                 ", workStatusBusy=" + workStatusBusy +
                 '}';

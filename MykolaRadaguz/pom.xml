@@ -9,19 +9,7 @@
     <groupId>ua.artcode</groupId>
     <artifactId>MykolaRadaguz</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
-<!--
-    <modules>
-        <module>OlesBovsunivsky</module>
-        <module>DarynaGrytsaieva</module>
-        <module>SerhiiBilobrov</module>
-        <module>VorobieiYevhen</module>
-        <module>AlenaTokar</module>
-        <module>MykolaRadaguz</module>
-        <module>VitaliiLaputko</module>
-        <module>MakarenkoArtem</module>
-    </modules>
--->
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>ua.artcode</groupId>
@@ -33,6 +21,7 @@
         <mysql-version>5.1.6</mysql-version>
         <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
         <hibernate-core.version>4.2.1.Final</hibernate-core.version>
+        <spring-core.version>4.2.0.RELEASE</spring-core.version>
     </properties>
 
     <dependencies>
@@ -43,32 +32,23 @@
             <version>${mysql-version}</version>
         </dependency>
 
-        <!-- Hibernate main -->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.0.0.Final</version>
-        </dependency>
-
-        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.0.0.Final</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-core.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>${hibernate-jpa-2.0-api.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-core.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate-core.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring-core.version}</version>
         </dependency>
-
 
     </dependencies>
 
