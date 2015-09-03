@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by serhii on 15.08.15.
  */
-public interface ProductDao {
+public interface PatientDao {
 
     // + id         -id
     Patient create(Patient patient);
