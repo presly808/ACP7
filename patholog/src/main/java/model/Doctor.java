@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "doctors")
+public class Doctor extends IdEntity{
 
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;*/
 
     @Column(unique=true, nullable=false)
-    private String fullname;
+    private String fullName;
     @Column(unique=true, nullable=false)
     private String email;
     @Column(nullable=false)
@@ -29,16 +29,16 @@ public class User {
     @OneToMany(mappedBy = "doctor")
     private List<Patient> patients = new ArrayList<Patient>();
 
-    public User() {
+    public Doctor() {
     }
 
-    public User(String login, String pass) {
+    public Doctor(String login, String pass) {
         this.login = login;
         this.pass = pass;
     }
 
-    public User(String fullname, String rank, String email, String phone, String login, String pass) {
-        this.fullname = fullname;
+    public Doctor(String fullName, String rank, String email, String phone, String login, String pass) {
+        this.fullName = fullName;
         this.rank = rank;
         this.email = email;
         this.phone = phone;
@@ -50,12 +50,12 @@ public class User {
         patients.add(patient);
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
@@ -106,18 +106,18 @@ public class User {
         this.patients = patients;
     }
 
-    public int getId() {
+    /*public long getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
+    }*/
 
     @Override
     public String toString() {
         return "Doctor{" +
-                "fullname='" + fullname + '\'' +
+                "fullName='" + fullName + '\'' +
                 ", rank='" + rank + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +

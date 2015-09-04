@@ -1,10 +1,10 @@
 package service;
 
-import dao.UserDao;
+import dao.DoctorDao;
 import exception.NoUserException;
 import exception.ValidationException;
 import exception.WrongUserCredentialException;
-import model.User;
+import model.Doctor;
 import util.StringUtils;
 import validation.Validator;
 
@@ -14,52 +14,52 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by serhii on 15.08.15.
  */
-public class UserServiceImpl implements UserService {
+public class DoctorServiceImpl implements DoctorService {
 
 
-    private Map<String, User> accessTokenUserMap = new ConcurrentHashMap<>();
+    private Map<String, Doctor> accessTokenUserMap = new ConcurrentHashMap<>();
     public static final int ACCESS_TOKENT_LENGTH = 10;
-    private UserDao userDao;
-    private Validator<User> userValidator;
+    private DoctorDao doctorDao;
+    private Validator<Doctor> userValidator;
 
 
-    public UserServiceImpl(UserDao userDao, Validator<User> validator) {
+    public DoctorServiceImpl(DoctorDao doctorDao, Validator<Doctor> validator) {
         this.userValidator = validator;
-        this.userDao = userDao;
+        this.doctorDao = doctorDao;
     }
 
     @Override
-    public User register(String fullname, String rank, String email, String phone, String login, String pass) throws ValidationException {
+    public Doctor register(String fullname, String rank, String email, String phone, String login, String pass) throws ValidationException {
         // compose user from parts
-        User user = new User(fullname, rank, email, login, pass, phone);
+        Doctor doctor = new Doctor(fullname, rank, email, login, pass, phone);
         // validation
         // userValidator.isValid(user);
 
-        return userDao.create(user);
+        return doctorDao.create(doctor);
     }
 
     @Override
     public String login(String email, String pass) throws WrongUserCredentialException {
 
-        User user = null;
+        Doctor doctor = null;
         try {
-            user = userDao.findByEmail(email);
+            doctor = doctorDao.findByEmail(email);
         } catch (NoUserException e) {
             throw new WrongUserCredentialException("wrong pass or email");
         }
 
-        if(!pass.equals(user.getPass())){
+        if(!pass.equals(doctor.getPass())){
             throw new WrongUserCredentialException("wrong pass or email");
         }
 
         String accessToken = StringUtils.generateRandomToken(ACCESS_TOKENT_LENGTH);
-        accessTokenUserMap.put(accessToken,user);
+        accessTokenUserMap.put(accessToken, doctor);
 
         return accessToken;
     }
 
     @Override
-    public User update(String sessionToken, String fullname, String login, String pass, String email, String rank, String phone) {
+    public Doctor update(String sessionToken, String fullname, String login, String pass, String email, String rank, String phone) {
         return null;
     }
 

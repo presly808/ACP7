@@ -3,24 +3,24 @@ package dao;
 
 
 import exception.NoUserException;
-import model.User;
+import model.Doctor;
 import util.ConnectionFactory;
 
 import java.sql.*;
 import java.util.List;
 
-public class UserDaoJDBCImp implements UserDao {
+public class DoctorDaoJDBCImp implements DoctorDao {
     @Override
-    public User create(User user) {
+    public Doctor create(Doctor doctor) {
 
         try (Connection connection = ConnectionFactory.getConnection();
              Statement statement = connection.createStatement()) {
             String sqlRequest = String.format(
-                    "INSERT INTO users(fullname,email,pass,phone) VALUES ('%s','%s','%s','%s')",
-                    user.getFullname(), user.getEmail(), user.getPass(), user.getPhone());
+                    "INSERT INTO doctors(fullname,email,pass,phone) VALUES ('%s','%s','%s','%s')",
+                    doctor.getFullName(), doctor.getEmail(), doctor.getPass(), doctor.getPhone());
             statement.executeUpdate(sqlRequest);
 
-            return findByEmail(user.getEmail());
+            return findByEmail(doctor.getEmail());
 
         } catch (SQLException | NoUserException e) {
             e.printStackTrace();
@@ -29,22 +29,22 @@ public class UserDaoJDBCImp implements UserDao {
     }
 
     @Override
-    public User update(User user) {
+    public Doctor update(Doctor doctor) {
         return null;
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Doctor> findAll() {
         return null;
     }
 
     @Override
-    public User findById(long id) throws NoUserException {
+    public Doctor findById(long id) throws NoUserException {
         return null;
     }
 
     @Override
-    public User findByEmail(String email) throws NoUserException {
+    public Doctor findByEmail(String email) throws NoUserException {
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement statement = connection.prepareStatement(
                      "SELECT id,fullname,email,phone,pass FROM users WHERE email=?")) {
@@ -56,14 +56,14 @@ public class UserDaoJDBCImp implements UserDao {
             }
 
             //convert ResultSet to user
-            User user = new User();
+            Doctor doctor = new Doctor();
            // user.setId(rs.getInt("id"));
-            user.setEmail(rs.getString("email"));
-            user.setPhone(rs.getString("phone"));
-            user.setFullname(rs.getString("fullname"));
-            user.setPass(rs.getString("pass"));
+            doctor.setEmail(rs.getString("email"));
+            doctor.setPhone(rs.getString("phone"));
+            doctor.setFullName(rs.getString("fullname"));
+            doctor.setPass(rs.getString("pass"));
 
-            return user;
+            return doctor;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -72,7 +72,7 @@ public class UserDaoJDBCImp implements UserDao {
     }
 
     @Override
-    public boolean delete(User user) {
+    public boolean delete(Doctor doctor) {
         return false;
     }
 }
