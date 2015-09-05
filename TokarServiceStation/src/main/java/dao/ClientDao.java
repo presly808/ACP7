@@ -21,4 +21,6 @@ public interface ClientDao {
     Client findByDriverLicenseNumber(String driverLicenseNumber) throws NoClientFoundException;
 
     boolean delete(Client client);
+
+    Client findByEmail (String email) throws NoClientFoundException;
 }

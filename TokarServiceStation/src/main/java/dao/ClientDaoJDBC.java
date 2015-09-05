@@ -40,4 +40,9 @@ public class ClientDaoJDBC implements ClientDao {
     public boolean delete(Client client) {
         return false;
     }
+
+    @Override
+    public Client findByEmail(String email) throws NoClientFoundException {
+        return null;
+    }
 }
