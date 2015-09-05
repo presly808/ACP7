@@ -3,7 +3,7 @@ package dao;
 
 
 import exception.NoUserException;
-import model.User;
+import model.Doctor;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,44 +14,44 @@ import java.util.List;
 /**
  * Created by serhii on 23.08.15.
  */
-public class UserDaoJpaImpl implements UserDao {
+public class DoctorDaoJpaImpl implements DoctorDao {
 
     private EntityManagerFactory factory;
 
-    public UserDaoJpaImpl(EntityManagerFactory factory) {
+    public DoctorDaoJpaImpl(EntityManagerFactory factory) {
         this.factory = factory;
     }
 
     @Override
-    public User create(User user) {
+    public Doctor create(Doctor doctor) {
         EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
         try{
             transaction.begin();
-            manager.persist(user);
+            manager.persist(doctor);
             transaction.commit();
         } catch (Exception e){
             transaction.rollback();
         }
 
-        return user;
+        return doctor;
     }
 
    @Override
-   public User update(User user) {
-        /*  EntityManager manager = factory.createEntityManager();
+   public Doctor update(Doctor doctor) {
+        EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
 
 
-        User found = findById(user.getId(), manager);
+       Doctor found = findById(doctor.getId(), manager);
 
         if(found == null){
             return null;
         }
 
-        found.setFullname(user.getFullname());
-        found.setPass(user.getPass());
-        found.setPhone(user.getPhone());
+        found.setFullName(doctor.getFullName());
+        found.setPass(doctor.getPass());
+        found.setPhone(doctor.getPhone());
 
         try{
             transaction.begin();
@@ -60,41 +60,41 @@ public class UserDaoJpaImpl implements UserDao {
         } catch (Exception e){
             transaction.rollback();
         }
-*/
+
         return null;
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Doctor> findAll() {
         EntityManager manager = factory.createEntityManager();
-        Query query = manager.createQuery("SELECT u FROM User u");
-        List<User> users = query.getResultList();
+        Query query = manager.createQuery("SELECT u FROM Doctor u");
+        List<Doctor> doctors = query.getResultList();
 
-        return users;
+        return doctors;
     }
 
     @Override
-    public User findById(long id) throws NoUserException {
+    public Doctor findById(long id) throws NoUserException {
         EntityManager manager = factory.createEntityManager();
-        return manager.find(User.class,id);
+        return manager.find(Doctor.class,id);
     }
 
-    private User findById(long id, EntityManager manager){
-        return manager.find(User.class,id);
+    private Doctor findById(long id, EntityManager manager){
+        return manager.find(Doctor.class,id);
     }
 
     @Override
-    public User findByEmail(String email) throws NoUserException {
+    public Doctor findByEmail(String email) throws NoUserException {
         // JPQL
         EntityManager manager = factory.createEntityManager();
-        Query query = manager.createQuery("SELECT u FROM User u WHERE u.email = :email");
-        User user = (User) query.setParameter("email", email).getSingleResult();
+        Query query = manager.createQuery("SELECT u FROM Doctor u WHERE u.email = :email");
+        Doctor doctor = (Doctor) query.setParameter("email", email).getSingleResult();
 
-        return user;
+        return doctor;
     }
 
    @Override
-    public boolean delete(User user) {
+    public boolean delete(Doctor doctor) {
        /*  EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
 

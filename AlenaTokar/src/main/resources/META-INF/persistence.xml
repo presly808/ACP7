@@ -8,17 +8,11 @@
         <description>My Persistence Unit</description>
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-        <class>model.Patient</class>
-        <class>model.Doctor</class>
-        <class>model.Assistant</class>
-        <class>model.Antibody</class>
-        <class>model.ImmunohistochemicalResearch</class>
-        <class>model.Department</class>
-        <class>model.Localization</class>
+
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/patholog"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/EbayDB"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="root"/>
 
