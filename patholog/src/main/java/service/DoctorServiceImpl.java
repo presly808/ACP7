@@ -31,7 +31,7 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Doctor register(String fullname, String rank, String email, String phone, String login, String pass) throws ValidationException {
         // compose user from parts
-        Doctor doctor = new Doctor(fullname, rank, email, login, pass, phone);
+        Doctor doctor = new Doctor(fullname, rank, email, phone, login, pass);
         // validation
         // userValidator.isValid(user);
 

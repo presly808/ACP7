@@ -4,15 +4,15 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
-@Table(name = "assistance's")
+@Table(name = "assistances")
 public class Assistant extends IdEntity{
 
     @Column(unique=true, nullable=false)
     private String fullName;
     @Column(nullable=false)
     private String rank;
-    @OneToMany(mappedBy = "assistant")
-    private ArrayList<Patient> patients;
+    /*@OneToMany(mappedBy = "assistant")
+    private ArrayList<Patient> patients;*/
 
     public Assistant() {
     }
@@ -37,12 +37,12 @@ public class Assistant extends IdEntity{
         this.rank = rank;
     }
 
-    public ArrayList<Patient> getPatients() {
+    /*public ArrayList<Patient> getPatients() {
         return patients;
     }
 
     public void setPatients(ArrayList<Patient> patients) {
         this.patients = patients;
-    }
+    }*/
 
 }

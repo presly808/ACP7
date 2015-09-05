@@ -1,29 +1,37 @@
 package model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+
 
 @Entity
 @Table(name = "immunohistochemical_research")
 public class ImmunohistochemicalResearch extends IdEntity{
-
-    private Patient patient;
-    private Reaction reaction;
-    private ArrayList<Antibody> antibodies;
-    private boolean isPositive;
-    private long price;
+   @OneToOne//(mappedBy = "antibody")
+   @JoinColumn (name = "antibody_id", referencedColumnName = "id")
+    private Antibody antibody;
+    @Column
+    private String reaction;
+    @ManyToOne
+    @JoinColumn(name = "immunohistochemical_research_id", referencedColumnName = "id")
+    private Patient diagnose;
 
     public ImmunohistochemicalResearch() {
     }
 
-    public boolean isPositive() {
-        return isPositive;
+    public Antibody getAntibody() {
+        return antibody;
     }
 
-    public void setPositive(boolean isPositive) {
-        this.isPositive = isPositive;
+    public void setAntibody(Antibody antibody) {
+        this.antibody = antibody;
     }
 
+    public String getReaction() {
+        return reaction;
+    }
 
+    public void setReaction(String reaction) {
+        this.reaction = reaction;
+    }
 
 }
