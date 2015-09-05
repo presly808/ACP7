@@ -87,7 +87,7 @@ public class DoctorDaoJpaImpl implements DoctorDao {
     public Doctor findByEmail(String email) throws NoUserException {
         // JPQL
         EntityManager manager = factory.createEntityManager();
-        Query query = manager.createQuery("SELECT u FROM User u WHERE u.email = :email");
+        Query query = manager.createQuery("SELECT u FROM Doctor u WHERE u.email = :email");
         Doctor doctor = (Doctor) query.setParameter("email", email).getSingleResult();
 
         return doctor;

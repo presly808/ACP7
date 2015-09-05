@@ -3,7 +3,8 @@ package model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
+
 
 @Entity
 @Table(name = "patients")
@@ -14,23 +15,41 @@ public class Patient extends IdEntity{
     private long id;*/
     @Column(unique=true, nullable=false)
     private String fullName;
-
     @Column(nullable=false)
     private int age;
-    private int birthYear;
+    @Column
+    @Temporal(value = TemporalType.DATE)
+    private Date birthYear;
+    @Column(nullable=false)
     private boolean isConsultation;
+    @Column(nullable=false)
     private String town;
+    @ManyToOne
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    private Department department;
+    @Column(nullable=false)
     private String sex;
+    @Column(nullable=false)
     private String diagnosis;
+    @Column(nullable=false)
     private String histoType;
-    private String localization;
+    @OneToOne
+    private Localization localization;
+    @Column(nullable=false)
     private String operation;
-    /*@OneToMany(mappedBy = "diagnose")
-    private ImmunohistochemicalResearch IhcDiagnosis;*/
+    @OneToMany(mappedBy = "diagnose")
+    //@JoinColumn(name = "immunohistochemical_research_id", referencedColumnName = "id")
+    private List<ImmunohistochemicalResearch> IhcDiagnosis = new ArrayList<>();
+    //private ImmunohistochemicalResearch IhcDiagnosis;
+    @Column
     private long prepayment;
+    @Column(nullable=false)
     private boolean isPayed;
     @Column
+    @Temporal(value = TemporalType.DATE)
     private Date start;
+    @Column
+    @Temporal(value = TemporalType.DATE)
     private Date finish;
 
     @ManyToOne
@@ -76,11 +95,11 @@ public class Patient extends IdEntity{
         this.age = age;
     }
 
-    public int getBirthYear() {
+    public Date getBirthYear() {
         return birthYear;
     }
 
-    public void setBirthYear(int birthYear) {
+    public void setBirthYear(Date birthYear) {
         this.birthYear = birthYear;
     }
 
@@ -124,11 +143,11 @@ public class Patient extends IdEntity{
         this.histoType = histoType;
     }
 
-    public String getLocalization() {
+    public Localization getLocalization() {
         return localization;
     }
 
-    public void setLocalization(String localization) {
+    public void setLocalization(Localization localization) {
         this.localization = localization;
     }
 
@@ -178,5 +197,21 @@ public class Patient extends IdEntity{
 
     public void setAssistant(Assistant assistant) {
         this.assistant = assistant;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
+    public List<ImmunohistochemicalResearch> getIhcDiagnosis() {
+        return IhcDiagnosis;
+    }
+
+    public void setIhcDiagnosis(List<ImmunohistochemicalResearch> ihcDiagnosis) {
+        IhcDiagnosis = ihcDiagnosis;
     }
 }
