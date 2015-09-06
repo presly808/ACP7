@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 public class HelloWordServlet extends HttpServlet {
 
 
-
     @Override
     public void init() throws ServletException {
         System.out.println("SERVLET CREATED");
@@ -21,12 +20,13 @@ public class HelloWordServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String info = String.format("method %s, remote %s, query %s", req.getMethod(),
+        String info = String.format("method %s, remote %s, query %s",
+                req.getMethod(),
                 req.getRemoteAddr(),
                 req.getQueryString());
 
         PrintWriter pw = resp.getWriter();
-        pw.println("<div><h1>User INfo</h1>" +
+        pw.println("<div><h1>User Info</h1>" +
                 "Your info from server " + info +
                 "<div>");
 
