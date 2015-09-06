@@ -1454,3 +1454,124 @@ ua.artcode.exception.WrongUserCredentialException: wrong pass or email
 2015-09-06 12:34:51 INFO  LoginController:47 - User in system User{id=1, fullname='Serhii', email='sdfs@email.com', phone='23423'}
 2015-09-06 12:35:11 INFO  AddProductController:19 - in product controller
 2015-09-06 12:47:39 INFO  AddProductController:19 - in product controller
+2015-09-06 14:13:40 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@ddbe466: startup date [Sun Sep 06 14:13:40 EEST 2015]; root of context hierarchy
+2015-09-06 14:13:40 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-09-06 14:13:41 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-09-06 14:13:41 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-09-06 14:13:41 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-09-06 14:13:42 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-09-06 14:13:42 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-09-06 14:13:42 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-09-06 14:13:42 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-09-06 14:13:42 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-09-06 14:13:43 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-09-06 14:13:44 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-09-06 14:13:44 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-06 14:13:44 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-06 14:13:44 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-06 14:13:44 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-06 14:13:44 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-06 14:13:45 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.products
+2015-09-06 14:13:45 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, price, description, id, title]
+2015-09-06 14:13:45 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_2e2f282d773742e3ae7f8e10390]
+2015-09-06 14:13:45 INFO  TableMetadata:69 - HHH000126: Indexes: [fk_2e2f282d773742e3ae7f8e10390, primary]
+2015-09-06 14:13:45 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.users
+2015-09-06 14:13:45 INFO  TableMetadata:66 - HHH000037: Columns: [pass, phone, id, fullname, email]
+2015-09-06 14:13:45 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-06 14:13:45 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-06 14:13:45 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-06 14:14:17 INFO  SessionCheckFilter:40 - Auth fail
+2015-09-06 14:16:21 INFO  UserServiceImpl:71 - return user access token
+2015-09-06 14:16:21 INFO  LoginController:47 - User in system User{id=1, fullname='Serhii', email='sdfs@email.com', phone='23423'}
+2015-09-06 14:21:35 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6b2a2d4a: startup date [Sun Sep 06 14:21:35 EEST 2015]; root of context hierarchy
+2015-09-06 14:21:35 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-09-06 14:21:36 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-09-06 14:21:36 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-09-06 14:21:36 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-09-06 14:21:37 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-09-06 14:21:37 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-09-06 14:21:37 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-09-06 14:21:37 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-09-06 14:21:37 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-09-06 14:21:37 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-09-06 14:21:38 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-09-06 14:21:38 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-06 14:21:38 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-06 14:21:39 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-06 14:21:39 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-06 14:21:39 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-06 14:21:39 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.products
+2015-09-06 14:21:39 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, price, description, id, title]
+2015-09-06 14:21:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_2e2f282d773742e3ae7f8e10390]
+2015-09-06 14:21:39 INFO  TableMetadata:69 - HHH000126: Indexes: [fk_2e2f282d773742e3ae7f8e10390, primary]
+2015-09-06 14:21:39 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.users
+2015-09-06 14:21:39 INFO  TableMetadata:66 - HHH000037: Columns: [pass, phone, id, fullname, email]
+2015-09-06 14:21:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-06 14:21:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-06 14:21:39 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-06 14:22:03 INFO  UserServiceImpl:71 - return user access token
+2015-09-06 14:22:03 INFO  LoginController:47 - User in system User{id=1, fullname='Serhii', email='sdfs@email.com', phone='23423'}
+2015-09-06 14:31:34 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4b6a90ed: startup date [Sun Sep 06 14:31:34 EEST 2015]; root of context hierarchy
+2015-09-06 14:31:34 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-09-06 14:31:35 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-09-06 14:31:36 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-09-06 14:31:36 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-09-06 14:31:36 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-09-06 14:31:36 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-09-06 14:31:36 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-09-06 14:31:36 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-09-06 14:31:36 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-09-06 14:31:37 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-09-06 14:31:37 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-09-06 14:31:37 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-06 14:31:37 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-06 14:31:38 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-06 14:31:38 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-06 14:31:38 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-06 14:31:38 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.products
+2015-09-06 14:31:38 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, price, description, id, title]
+2015-09-06 14:31:38 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_2e2f282d773742e3ae7f8e10390]
+2015-09-06 14:31:38 INFO  TableMetadata:69 - HHH000126: Indexes: [fk_2e2f282d773742e3ae7f8e10390, primary]
+2015-09-06 14:31:38 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.users
+2015-09-06 14:31:38 INFO  TableMetadata:66 - HHH000037: Columns: [pass, phone, id, fullname, email]
+2015-09-06 14:31:38 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-06 14:31:38 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-06 14:31:38 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-06 14:31:51 INFO  UserServiceImpl:71 - return user access token
+2015-09-06 14:31:51 INFO  LoginController:47 - User in system User{id=1, fullname='Serhii', email='sdfs@email.com', phone='23423'}
+2015-09-06 14:34:51 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7d3adee8: startup date [Sun Sep 06 14:34:51 EEST 2015]; root of context hierarchy
+2015-09-06 14:34:51 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-09-06 14:34:52 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-09-06 14:34:52 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-09-06 14:34:52 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-09-06 14:34:52 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-09-06 14:34:52 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-09-06 14:34:52 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-09-06 14:34:52 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-09-06 14:34:52 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-09-06 14:34:53 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-09-06 14:34:54 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-09-06 14:34:54 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-06 14:34:54 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-06 14:34:54 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-06 14:34:54 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-06 14:34:55 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-06 14:34:55 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.products
+2015-09-06 14:34:55 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, price, description, id, title]
+2015-09-06 14:34:55 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_2e2f282d773742e3ae7f8e10390]
+2015-09-06 14:34:55 INFO  TableMetadata:69 - HHH000126: Indexes: [fk_2e2f282d773742e3ae7f8e10390, primary]
+2015-09-06 14:34:55 INFO  TableMetadata:65 - HHH000261: Table found: EbayDB.users
+2015-09-06 14:34:55 INFO  TableMetadata:66 - HHH000037: Columns: [pass, phone, id, fullname, email]
+2015-09-06 14:34:55 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-06 14:34:55 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-06 14:34:55 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-06 14:35:10 INFO  UserServiceImpl:71 - return user access token
+2015-09-06 14:35:10 INFO  LoginController:47 - User in system User{id=1, fullname='Serhii', email='sdfs@email.com', phone='23423'}
