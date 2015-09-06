@@ -19,7 +19,8 @@
         <module>VitaliiLaputko</module>
         <module>MakarenkoArtem</module>
         <module>SimpleEbaySerhii</module>
-     </modules>
+        <module>MakarenkoArtemWeb</module>
+    </modules>
 
     <properties>
         <mysql-version>5.1.36</mysql-version>

@@ -12,6 +12,8 @@ import java.io.PrintWriter;
  */
 public class HelloWordServlet extends HttpServlet {
 
+
+
     @Override
     public void init() throws ServletException {
         System.out.println("SERVLET CREATED");
