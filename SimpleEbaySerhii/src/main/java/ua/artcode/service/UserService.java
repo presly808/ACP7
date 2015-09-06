@@ -19,5 +19,8 @@ public interface UserService {
 
     boolean delete(String sessionToken);
 
+    User getUser(long id);
+
+    User getUser(String accessToken);
 
 }
