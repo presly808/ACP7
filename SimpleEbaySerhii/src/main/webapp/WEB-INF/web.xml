@@ -5,11 +5,30 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
 
+    <context-param>
+        <param-name>spring-context-location</param-name>
+        <param-value>app-context.xml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>app-url</param-name>
+        <param-value>ebay</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>SessionFilter</filter-name>
+        <filter-class>ua.artcode.filter.SessionCheckFilter</filter-class>
+    </filter>
+
+
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/add-product</url-pattern>
+    </filter-mapping>
+
     <listener>
         <listener-class>ua.artcode.listener.SpringContextIntiListener</listener-class>
     </listener>
-
-
 
 
 </web-app>
