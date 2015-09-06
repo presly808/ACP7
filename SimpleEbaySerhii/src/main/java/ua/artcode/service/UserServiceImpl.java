@@ -1,5 +1,6 @@
 package ua.artcode.service;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class UserServiceImpl implements UserService {
 
+    private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 
     private Map<String,User> accessTokenUserMap = new ConcurrentHashMap<>();
     public static final int ACCESS_TOKENT_LENGTH = 10;
@@ -42,6 +44,8 @@ public class UserServiceImpl implements UserService {
         // validation
         // userValidator.isValid(user);
 
+
+
         return userDao.create(user);
     }
 
@@ -52,15 +56,20 @@ public class UserServiceImpl implements UserService {
         try {
             user = userDao.findByEmail(email);
         } catch (NoUserException e) {
+            LOGGER.error(e.getMessage(),e);
             throw new WrongUserCredentialException("wrong pass or email");
         }
 
         if(!pass.equals(user.getPass())){
+            LOGGER.warn(String.format("wrong user %s pass", email));
             throw new WrongUserCredentialException("wrong pass or email");
         }
 
         String accessToken = StringUtils.generateRandomToken(ACCESS_TOKENT_LENGTH);
         accessTokenUserMap.put(accessToken,user);
+
+        LOGGER.info("return user access token");
+
 
         return accessToken;
     }

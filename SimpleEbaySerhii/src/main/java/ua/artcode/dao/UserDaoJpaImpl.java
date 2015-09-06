@@ -91,9 +91,13 @@ public class UserDaoJpaImpl implements UserDao {
         // JPQL
         EntityManager manager = factory.createEntityManager();
         Query query = manager.createQuery("SELECT u FROM User u WHERE u.email = :email");
-        User user = (User) query.setParameter("email", email).getSingleResult();
+        List<User> users = query.setParameter("email", email).getResultList();
 
-        return user;
+        if(users == null || users.size() == 0){
+            throw new NoUserException();
+        }
+
+        return users.get(0);
     }
 
     @Override
@@ -107,8 +111,6 @@ public class UserDaoJpaImpl implements UserDao {
         if(found == null){
             return false;
         }
-
-
 
         try{
             transaction.begin();

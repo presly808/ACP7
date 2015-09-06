@@ -3,19 +3,41 @@ package view;
 
 import exception.ValidationException;
 import exception.WrongUserCredentialException;
-import model.User;
-import service.UserService;
+import model.Doctor;
+import service.DoctorService;
+import org.apache.log4j.*;
 
+import java.io.IOException;
 import java.util.Scanner;
 
+
+
 public class ConsoleMenu {
-    private UserService userService;
+    private DoctorService doctorService;
     private Scanner input = new Scanner(System.in);
     private String sessionToken;
 
-    public ConsoleMenu(UserService userService) {
-        this.userService = userService;
+    public ConsoleMenu(DoctorService doctorService) throws IOException {
+        this.doctorService = doctorService;
+
     }
+
+    private Logger loggerWriter() {
+        Logger logger = LogManager.getLogger(ConsoleMenu.class);
+
+        logger.setLevel(Level.ALL);
+        Layout layout = new TTCCLayout("ISO8601");
+        Appender appenderConsole = new ConsoleAppender(layout);
+        logger.addAppender(appenderConsole);
+        try {
+            logger.addAppender(new FileAppender(layout, "tmp/log.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return logger;
+    }
+
+
 
     public void showMainMenu() {
         System.out.println("1.Login");
@@ -23,8 +45,9 @@ public class ConsoleMenu {
         System.out.println("3.Add patient");
         System.out.println("4.All patients");
         System.out.println("5.Show my patients");
-        System.out.println("6.Logout");
-        System.out.println("7.Exit");
+        System.out.println("6.Edit patient");
+        System.out.println("7.Logout");
+        System.out.println("8.Exit");
     }
 
     public void start() {
@@ -74,10 +97,12 @@ public class ConsoleMenu {
         String pass = input.next();
 
         try {
-            sessionToken = userService.login(login, pass);
+            sessionToken = doctorService.login(login, pass);
+            loggerWriter().info("Doctor " + login + " log in");
             System.out.println("You are in the system!");
         } catch (WrongUserCredentialException e) {
             System.err.println(e.getMessage());
+            loggerWriter().error("Wrong User Credential enter, login - " + login + ", pass - " + pass);
             System.out.println("Try Again");
         }
 
@@ -85,8 +110,8 @@ public class ConsoleMenu {
     }
 
     private void showRegisterMenu() {
-        System.out.println("Input fullname");
-        String fullname = input.next();
+        System.out.println("Input fullName");
+        String fullName = input.next();
         System.out.println("Input rank");
         String rank = input.next();
         System.out.println("Input phone");
@@ -99,11 +124,20 @@ public class ConsoleMenu {
         String pass = input.next();
 
         try {
-            User user = userService.register(fullname, rank, email, phone, login, pass);
-            System.out.println(user);
+            Doctor doctor = doctorService.register(fullName, rank, email, phone, login, pass);
+            System.out.println(doctor);
+            loggerWriter().info(doctor.getFullName() + " registered in system");
         } catch (ValidationException e) {
             System.err.println(e.getMessage());
             System.out.println("Try Again");
+            loggerWriter().error("ValidationException during registration: " +
+                    "Doctor{" +
+                    "fullName='" + fullName + '\'' +
+                    ", rank='" + rank + '\'' +
+                    ", email='" + email + '\'' +
+                    ", phone='" + phone + '\'' +
+                    ", login='" + login + '\'' +
+                    '}');
         }
 
     }

@@ -1,0 +1,18 @@
+1. Spring Framework
+
+   III. Core Technologies
+   http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/
+   
+   Design patterns: ServiceLocator, DependencyInjection
+
+   Spring Configuration: XML, Annotation
+
+   Spring RMI
+
+   Log4j (Logger->Appender)
+  				  Layout
+
+2. Keep coding own project with spring and log4J. Make client server app using SpringMvc
+
+
+ 

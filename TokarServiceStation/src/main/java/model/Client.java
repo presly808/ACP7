@@ -1,41 +1,49 @@
 package model;
 
-public class Client {
+import javax.persistence.*;
 
-
-    private long id;
-
+@Entity
+@Table(name = "clients")
+public class Client extends IdEntity {
+    @Column(nullable = false)
     private String firstName;
-
-    private String secondtName;
-
+    @Column(nullable = false)
+    private String secondName;
+    @Column(nullable = false)
     private String phoneNumber;
-
+    @Column
     private String email;
-
+    @Column(nullable = false)
     private String driverLicenseNumber;
+
+    private String pass;
 
     public Client() {
     }
 
 
-    public Client(long id, String firstName, String secondtName,
-                  String phoneNumber, String email, String driverLicenseNumber) {
-        this.id = id;
+    public Client(String firstName, String secondName,
+                  String phoneNumber, String email,
+                  String driverLicenseNumber,String pass) {
+
         this.firstName = firstName;
-        this.secondtName = secondtName;
+        this.secondName = secondName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.driverLicenseNumber = driverLicenseNumber;
+        this.pass = pass;
     }
 
-
-    public long getId() {
-        return id;
+    public String getPass() {
+        return pass;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
     public String getFirstName() {
@@ -46,12 +54,12 @@ public class Client {
         this.firstName = firstName;
     }
 
-    public String getSecondtName() {
-        return secondtName;
+    public String getSecondName() {
+        return secondName;
     }
 
     public void setSecondtName(String secondtName) {
-        this.secondtName = secondtName;
+        this.secondName = secondtName;
     }
 
     public String getPhoneNumber() {
@@ -81,9 +89,8 @@ public class Client {
     @Override
     public String toString() {
         return "Client{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", secondtName='" + secondtName + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", secondtName='" + secondName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", driverLicenseNumber='" + driverLicenseNumber + '\'' +

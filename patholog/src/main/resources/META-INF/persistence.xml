@@ -9,7 +9,12 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <class>model.Patient</class>
-        <class>model.User</class>
+        <class>model.Doctor</class>
+        <class>model.Assistant</class>
+        <class>model.Antibody</class>
+        <class>model.ImmunohistochemicalResearch</class>
+        <class>model.Department</class>
+        <class>model.Localization</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
