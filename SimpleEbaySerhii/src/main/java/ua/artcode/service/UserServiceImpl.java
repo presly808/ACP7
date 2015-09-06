@@ -83,4 +83,15 @@ public class UserServiceImpl implements UserService {
     public boolean delete(String sessionToken) {
         return false;
     }
+
+    @Override
+    public User getUser(long id) {
+        return null;
+    }
+
+    @Override
+    public User getUser(String accessToken) {
+
+        return accessTokenUserMap.get(accessToken);
+    }
 }

@@ -16,20 +16,35 @@ public class Client extends IdEntity {
     @Column(nullable = false)
     private String driverLicenseNumber;
 
+    private String pass;
+
     public Client() {
     }
 
 
     public Client(String firstName, String secondName,
-                  String phoneNumber, String email, String driverLicenseNumber) {
+                  String phoneNumber, String email,
+                  String driverLicenseNumber,String pass) {
 
         this.firstName = firstName;
         this.secondName = secondName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.driverLicenseNumber = driverLicenseNumber;
+        this.pass = pass;
     }
 
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
 
     public String getFirstName() {
         return firstName;

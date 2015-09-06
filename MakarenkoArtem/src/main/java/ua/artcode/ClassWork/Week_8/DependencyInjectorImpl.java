@@ -15,13 +15,12 @@ public class DependencyInjectorImpl implements DependencyInjector {
     File prop = new File("ioc/context.properties");
     String text = prop.toString();
 
-    
 
 
-    public DependencyInjectorImpl() {
+    /*public DependencyInjectorImpl() {
         // load prop file and inti context
         context.put(text,);
-    }
+    }*/
 
     @Override
     public void inject(Object obj) {
