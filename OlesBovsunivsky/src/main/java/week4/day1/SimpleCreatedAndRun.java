@@ -1,7 +1,5 @@
 package week4.day1;
 
-import Consol.MyFileClass;
-
 /**
  * Created by Legion on 18.07.2015.
  */

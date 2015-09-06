@@ -104,6 +104,15 @@ public class ClientDaoJPAImpl implements ClientDao {
     }
 
     @Override
+    public Client findByEmail(String email) throws NoClientFoundException {
+
+      EntityManager manager = factory.createEntityManager();
+
+
+        return manager.find(Client.class, email);
+    }
+
+    @Override
     public boolean delete(Client client) {
         EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
