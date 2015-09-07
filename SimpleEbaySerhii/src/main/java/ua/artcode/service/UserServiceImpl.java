@@ -86,6 +86,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(long id) {
+        try {
+            return userDao.findById(id);
+        } catch (NoUserException e) {
+            LOGGER.error(e.getMessage(), e);
+        }
         return null;
     }
 

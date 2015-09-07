@@ -33,6 +33,9 @@ public class SessionCheckFilter implements Filter {
             if(cookie.getName().equals("accessToken")){
                 String val = cookie.getValue();
                 User user = userService.getUser(val);
+
+                req.setAttribute("userSessionToken", val);
+
                 if(user == null){
                     LOG.info("Auth fail");
                     resp.sendRedirect("auth-error.html");

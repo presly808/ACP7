@@ -6,7 +6,7 @@
 <body>
 
     <%@include file="menu.jsp"%>
-    <br>
+    <br>r
 
     <h1>Error</h1>
     <c:set var="message" value="${ex.message}"/>

@@ -13,7 +13,7 @@ public class Product extends IdEntity{
     @Column()
     private String description;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User owner;
 
