@@ -7,6 +7,4 @@ public interface DependencyInjector {
 
     void inject(Object obj);
 
-
-
 }

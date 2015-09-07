@@ -62,7 +62,7 @@
     </bean>-->
 
 
-    <bean class="ua.artcode.aspect.UserDaoAspect"/>
+    <!--<bean class="ua.artcode.aspect.UserDaoAspect"/>-->
 
 
 
