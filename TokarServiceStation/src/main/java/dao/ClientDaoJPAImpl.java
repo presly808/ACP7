@@ -11,7 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import java.util.List;
 
-@Component("jpaUserDao")
+@Component("jpaClientDaoJPA")
 public class ClientDaoJPAImpl implements ClientDao {
     @Autowired
     private EntityManagerFactory factory;
@@ -35,9 +35,12 @@ public class ClientDaoJPAImpl implements ClientDao {
             transaction.begin();
             manager.persist(client);
             transaction.commit();
+            System.out.println("client made!!!!");
         } catch (Exception e) {
             transaction.rollback();
         }
+
+
 
 
         return client;

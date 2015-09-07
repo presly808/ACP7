@@ -1,11 +1,13 @@
 package service;
 
 import dao.ClientDao;
+import dao.ClientDaoJPAImpl;
 import dao.WorkerDao;
 import exeption.NoClientFoundException;
 import model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import util.StringUtils;
 import validation.Validator;
@@ -24,10 +26,11 @@ public class ClientServImpl implements ClientServ {
     public static final int ACCESS_TOKEN_LENGHT = 12;
 
     @Autowired
-    @Qualifier(value = "jpaClientDao")
-    private ClientDao clientDao;
+    private ClientDaoJPAImpl clientDaoJPA;
 
     private WorkerDao workerDao;
+
+    private Client client;
 
 
     private Validator<Client> clientValidator;
@@ -45,20 +48,23 @@ public class ClientServImpl implements ClientServ {
     @Override
     public Client register(String firstName, String secondName,
                            String phoneNumber, String email,
-                           String driverLicenseNumber) {
-        Client client = new Client();
+                           String driverLicenseNumber,String pass) {
+        Client client = new Client(firstName,secondName,phoneNumber,
+                email,driverLicenseNumber,pass);
 
-        return clientDao.create(client);
+
+
+        return clientDaoJPA.create(client);
     }
 
     @Override
     public String login(String email, String pass,String driverLicenseNumber) {
 
-       Client client = null;
+       //Client client;
 
 
         try {
-            client = clientDao.findByDriverLicenseNumber(driverLicenseNumber);
+            client = clientDaoJPA.findByDriverLicenseNumber(driverLicenseNumber);
         } catch (NoClientFoundException e) {
             e.printStackTrace();
         }

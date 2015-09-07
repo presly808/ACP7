@@ -13,13 +13,17 @@
                             http://www.springframework.org/schema/tx
                             http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <aop:aspectj-autoproxy/>
+
 
     <context:property-placeholder location="classpath:db.properties"/>
 
     <context:annotation-config/>
-    <context:component-scan base-package="model"/>
+     <!-- scanning only in model and dao-->
+    <context:component-scan base-package="view"/>
     <context:component-scan base-package="dao"/>
+    <context:component-scan base-package="service"/>
+
+
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="url" value="jdbc:mysql://${db.host}:${db.port}/${db.name}"/>
@@ -40,8 +44,8 @@
         </property>
     </bean>
 
-    <bean class="dao.ClientDaoJDBC"/>
-    <bean class="aspect.ClientDaoAspect"/>
+
+    <!--<bean class="aspect.ClientDaoAspect"/> -->
 
 
 </beans>

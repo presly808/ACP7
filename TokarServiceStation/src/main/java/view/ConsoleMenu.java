@@ -46,6 +46,7 @@ public class ConsoleMenu {
         int choice = 0;
 
         while (true) {
+            showMainMenu();
             choice = scanner.nextInt();
             dispatcherChois(choice);
 
@@ -128,8 +129,13 @@ public class ConsoleMenu {
         String pass = scanner.next();
 
 
-        Client client = new Client(firstName, secondName, phoneNumber,
-                email, driverLicenseNumber, pass);
+        /*Client client = new Client(firstName, secondName, phoneNumber,
+                email, driverLicenseNumber, pass);*/
+
+        Client client = clientServ.register(firstName,secondName,phoneNumber,
+                email,driverLicenseNumber,pass);
+
+
 
         //TODO validation for righ data in creating client;
 
