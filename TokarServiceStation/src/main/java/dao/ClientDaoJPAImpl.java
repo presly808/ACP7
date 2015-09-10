@@ -41,8 +41,6 @@ public class ClientDaoJPAImpl implements ClientDao {
         }
 
 
-
-
         return client;
     }
 
@@ -109,10 +107,15 @@ public class ClientDaoJPAImpl implements ClientDao {
     @Override
     public Client findByEmail(String email) throws NoClientFoundException {
 
-      EntityManager manager = factory.createEntityManager();
+        EntityManager manager = factory.createEntityManager();
+        javax.persistence.Query query = manager.createQuery("SELECT c FROM Client c  WHERE c.email = :email");
+        List<Client> clients = query.setParameter("email", email).getResultList();
+        if (clients == null || clients.size() == 0) {
+            System.out.println("no client found");
+        }
 
+        return clients.get(0);
 
-        return manager.find(Client.class, email);
     }
 
     @Override

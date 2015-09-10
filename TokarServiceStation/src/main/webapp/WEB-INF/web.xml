@@ -15,10 +15,10 @@
         <param-value>servicestation</param-value>
     </context-param>
 
-    <!-- <filter>
+     <!--<filter>
          <filter-name>SessionFilter</filter-name>
-         <filter-class>ua.artcode.filter.SessionCheckFilter</filter-class>
-     </filter>-->
+         <filter-class>filter.SessionFilter</filter-class>
+     </filter>&ndash;&gt;-->
 
 
     <!--<filter-mapping>
@@ -26,8 +26,8 @@
         <url-pattern>/add-product</url-pattern>
     </filter-mapping>-->
 
-    <!-- <listener>
-         <listener-class>ua.artcode.listener.SpringContextIntiListener</listener-class>
+    <listener>
+         <listener-class>listener.SpringContextInitListener</listener-class>
      </listener>-->
 
 

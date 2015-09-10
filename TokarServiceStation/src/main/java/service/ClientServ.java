@@ -15,5 +15,10 @@ public interface ClientServ {
     boolean delete(String sessionToken);
 
 
+    Client getClient (String accessToken);
+
+    Client getClient (long id);
+
+
 
 }

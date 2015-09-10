@@ -6,9 +6,6 @@ import view.ConsoleMenu;
 
 import java.applet.AppletContext;
 
-/**
- * Created by root on 05.09.15.
- */
 public class RunTokarServiceStation {
 
     public static void main(String[] args) {

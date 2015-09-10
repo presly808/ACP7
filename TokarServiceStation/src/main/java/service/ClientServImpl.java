@@ -5,6 +5,7 @@ import dao.ClientDaoJPAImpl;
 import dao.WorkerDao;
 import exeption.NoClientFoundException;
 import model.Client;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -21,6 +22,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class ClientServImpl implements ClientServ {
+
+    private static final Logger LOGGER = Logger.getLogger(ClientServImpl.class);
 
     private Map<String, Client> accessClientTokenMap = new ConcurrentHashMap<>();
     public static final int ACCESS_TOKEN_LENGHT = 12;
@@ -60,17 +63,15 @@ public class ClientServImpl implements ClientServ {
     @Override
     public String login(String email, String pass,String driverLicenseNumber) {
 
-       //Client client;
-
-
         try {
-            client = clientDaoJPA.findByDriverLicenseNumber(driverLicenseNumber);
+            client = clientDaoJPA.findByEmail(email);
         } catch (NoClientFoundException e) {
             e.printStackTrace();
         }
 
-        if (!pass.equals(client.getPass())){
-            System.out.println("wrong pass or email");
+        if (!pass.equals(client.getPass())&&
+                !driverLicenseNumber.equals(client.getDriverLicenseNumber())){
+            System.out.println("wrong pass,email or driverlicense number!!!");
         }
 
         String accessToken = StringUtils.generateRandomToken(ACCESS_TOKEN_LENGHT);
@@ -93,5 +94,17 @@ public class ClientServImpl implements ClientServ {
     @Override
     public boolean delete(String sessionToken) {
         return false;
+    }
+
+    @Override
+    public Client getClient(String accessToken) {
+
+        return accessClientTokenMap.get(accessToken);
+
+    }
+
+    @Override
+    public Client getClient(long id) {
+        return null;
     }
 }
