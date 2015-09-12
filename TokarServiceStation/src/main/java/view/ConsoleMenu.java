@@ -1,17 +1,12 @@
 package view;
 
-import dao.ClientDao;
 import dao.ClientDaoJPAImpl;
 import exeption.NoClientFoundException;
-import exeption.WrongUserCredentionalException;
 import model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import service.ClientServ;
-import sun.security.validator.ValidatorException;
-import validation.MyValidationException;
 
-import javax.xml.bind.ValidationException;
 import java.util.Scanner;
 
 /**
@@ -26,6 +21,7 @@ public class ConsoleMenu {
 
     private Scanner scanner = new Scanner(System.in);
     private String sessionToken;
+    @Autowired
     private ClientDaoJPAImpl clientDao;
 
 
@@ -46,6 +42,7 @@ public class ConsoleMenu {
         int choice = 0;
 
         while (true) {
+            showMainMenu();
             choice = scanner.nextInt();
             dispatcherChois(choice);
 
@@ -128,7 +125,10 @@ public class ConsoleMenu {
         String pass = scanner.next();
 
 
-        Client client = new Client(firstName, secondName, phoneNumber,
+        /*Client client = new Client(firstName, secondName, phoneNumber,
+                email, driverLicenseNumber, pass);*/
+
+        Client client = clientServ.register(firstName, secondName, phoneNumber,
                 email, driverLicenseNumber, pass);
 
         //TODO validation for righ data in creating client;
@@ -145,31 +145,28 @@ public class ConsoleMenu {
         System.out.println("Input driverLicenseNumber");
         String driverLicenseNumber = scanner.next();
 
-
-       /* try {
-            sessionToken = clientServ.login(email, pass, driverLicenseNumber);
-            System.out.println("You are in the system!");
-
-        } catch (WrongUserCredentionalException e) {
-            System.err.println(e.getMessage());
-            System.out.println("Try Again");
-        }*/
-
-
+      /*  String foundEmail = null;
+        String foundPass = null;
         try {
-            if(email.equals( clientDao.findByEmail(email).getEmail())&&
-                    pass.equals(clientDao.findByEmail(email).getPass()))
-
-             sessionToken = clientServ.login(email, pass, driverLicenseNumber);
+            Client client = clientDao.findByEmail(email);
+            foundEmail = client.getEmail();
+            foundPass = client.getPass();
         } catch (NoClientFoundException e) {
-            System.err.println(e.getMessage());
-            System.out.println("Try Again");
             e.printStackTrace();
         }
+
+        if (email.equals(foundEmail)) {
+
+            if(pass.equals(foundPass))*/
+
+        sessionToken = clientServ.login(email, pass, driverLicenseNumber);
         System.out.println("You are in the system!");
+        }
+
+
 
 
     }
 
 
-}
+

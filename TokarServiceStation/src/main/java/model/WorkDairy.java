@@ -6,10 +6,10 @@ import java.sql.Time;
 import java.util.List;
 
 @Entity
-@Table
+@Table// TODO fix this class with references
 public class WorkDairy extends IdEntity {
     @Column
-    private Client clients;
+    private Client clients;// where is ManyToOne it is not just column, this relation
     @Column
     private Worker workers;
     @Column

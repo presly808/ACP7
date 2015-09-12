@@ -6,10 +6,7 @@ import view.ConsoleMenu;
 
 import java.applet.AppletContext;
 
-/**
- * Created by root on 05.09.15.
- */
-public class Run {
+public class RunTokarServiceStation {
 
     public static void main(String[] args) {
 
@@ -18,5 +15,6 @@ public class Run {
 
 
         ConsoleMenu consoleMenu = applicationContext.getBean(ConsoleMenu.class);
+        consoleMenu.start();
     }
 }

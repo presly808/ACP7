@@ -1,0 +1,19 @@
+DROP DATABASE IF EXISTS tokarServiceStation;
+CREATE DATABASE tokarServiceStation;
+
+use tokarServiceStation;
+DROP TABLE IF EXISTS clients;
+DROP TABLE IF EXISTS workers;
+
+
+CREATE TABLE clients(
+id int AUTO_INCREMENT,
+firstName VARCHAR(255) NOT NULL,
+secondName VARCHAR(255) NOT NULL,
+phoneNumber VARCHAR(10) UNIQUE,
+email VARCHAR(255) NOT NULL UNIQUE,
+driverLicenseNumber VARCHAR (255) NOT NULL UNIQUE,
+pass VARCHAR (255) NOT NULL UNIQUE,
+PRIMARY KEY (id));
+
+
