@@ -1,4 +1,4 @@
-package ua.artcode.week23.remote.simple_app;
+package ua.artcode.week2.remote.simple_app;
 
 /**
  * Created by serhii on 12.07.15.

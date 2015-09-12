@@ -1,4 +1,4 @@
-package ua.artcode.week23.remote.sample;
+package ua.artcode.week2.remote.sample;
 
 import ua.artcode.utils.io.IOUtils;
 
