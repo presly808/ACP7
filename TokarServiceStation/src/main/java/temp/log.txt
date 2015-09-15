@@ -1578,3 +1578,75 @@ Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No
 2015-09-15 23:29:38 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
 2015-09-15 23:29:38 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
 2015-09-15 23:29:38 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-16 00:35:23 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@685214: startup date [Wed Sep 16 00:35:23 EEST 2015]; root of context hierarchy
+2015-09-16 00:35:23 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-09-16 00:35:24 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-09-16 00:35:24 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-09-16 00:35:24 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-09-16 00:35:24 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-09-16 00:35:24 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-09-16 00:35:24 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-09-16 00:35:24 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-09-16 00:35:25 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-09-16 00:35:25 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-09-16 00:35:26 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-09-16 00:35:26 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-16 00:35:26 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-16 00:35:26 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-16 00:35:26 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-16 00:35:26 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-16 00:35:26 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.ServiceType
+2015-09-16 00:35:26 INFO  TableMetadata:66 - HHH000037: Columns: [typeofservice, priceofservice, id, nameservice, timetodo]
+2015-09-16 00:35:26 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:35:26 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:35:27 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.WorkDairy
+2015-09-16 00:35:27 INFO  TableMetadata:66 - HHH000037: Columns: [clients, id, services, workers, timestartservice]
+2015-09-16 00:35:27 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:35:27 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:35:27 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.clients
+2015-09-16 00:35:27 INFO  TableMetadata:66 - HHH000037: Columns: [secondname, firstname, pass, phonenumber, id, email, driverlicensenumber]
+2015-09-16 00:35:27 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:35:27 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:35:27 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.workers
+2015-09-16 00:35:27 INFO  TableMetadata:66 - HHH000037: Columns: [secondname, firstname, workstatusbusy, id, salary]
+2015-09-16 00:35:27 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:35:27 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:35:27 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
+2015-09-16 00:49:38 INFO  ClassPathXmlApplicationContext:573 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@d29c16: startup date [Wed Sep 16 00:49:38 EEST 2015]; root of context hierarchy
+2015-09-16 00:49:38 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [app-context.xml]
+2015-09-16 00:49:39 INFO  PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [db.properties]
+2015-09-16 00:49:40 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-09-16 00:49:40 INFO  LocalContainerEntityManagerFactoryBean:339 - Building JPA container EntityManagerFactory for persistence unit 'my-unit'
+2015-09-16 00:49:40 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2015-09-16 00:49:40 INFO  Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+2015-09-16 00:49:40 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2015-09-16 00:49:40 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2015-09-16 00:49:40 INFO  Ejb3Configuration:528 - HHH000204: Processing PersistenceUnitInfo [
+	name: my-unit
+	...]
+2015-09-16 00:49:41 INFO  ConnectionProviderInitiator:188 - HHH000130: Instantiating explicit connection provider: org.hibernate.ejb.connection.InjectedDataSourceConnectionProvider
+2015-09-16 00:49:42 INFO  Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-09-16 00:49:42 INFO  TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+2015-09-16 00:49:42 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2015-09-16 00:49:42 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2015-09-16 00:49:42 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2015-09-16 00:49:42 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2015-09-16 00:49:42 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.ServiceType
+2015-09-16 00:49:42 INFO  TableMetadata:66 - HHH000037: Columns: [typeofservice, priceofservice, id, nameservice, timetodo]
+2015-09-16 00:49:42 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:49:42 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:49:43 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.WorkDairy
+2015-09-16 00:49:43 INFO  TableMetadata:66 - HHH000037: Columns: [clients, id, services, workers, timestartservice]
+2015-09-16 00:49:43 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:49:43 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:49:43 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.clients
+2015-09-16 00:49:43 INFO  TableMetadata:66 - HHH000037: Columns: [secondname, firstname, pass, phonenumber, id, email, driverlicensenumber]
+2015-09-16 00:49:43 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:49:43 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:49:43 INFO  TableMetadata:65 - HHH000261: Table found: tokarServiceStation.workers
+2015-09-16 00:49:43 INFO  TableMetadata:66 - HHH000037: Columns: [secondname, firstname, workstatusbusy, id, salary]
+2015-09-16 00:49:43 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2015-09-16 00:49:43 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2015-09-16 00:49:43 INFO  SchemaUpdate:242 - HHH000232: Schema update complete
