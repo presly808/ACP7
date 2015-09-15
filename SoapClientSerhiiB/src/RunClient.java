@@ -2,9 +2,7 @@ import ua.artcode.week10.soap.endpoint.Car;
 import ua.artcode.week10.soap.endpoint.ServiceEndpoint;
 import ua.artcode.week10.soap.endpoint.ServiceEndpointImplService;
 
-/**
- * Created by serhii on 12.09.15.
- */
+
 public class RunClient {
 
     public static void main(String[] args) {
