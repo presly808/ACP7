@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet
+@WebServlet(urlPatterns = {"/login"})
 public class LoginController extends HttpServlet {
 
     private static final Logger LOGGER = Logger.getLogger(LoginController.class);
@@ -42,6 +42,7 @@ public class LoginController extends HttpServlet {
         String driverLicenseNumber = req.getParameter("driverLicenseNumber");
 
         PrintWriter printWriter = resp.getWriter();
+        req.getRequestDispatcher("WEB-INF/clientMenu.jsp").forward(req,resp);
 
         //try{
         String accessToken = clientServ.login(email, pass, driverLicenseNumber);
