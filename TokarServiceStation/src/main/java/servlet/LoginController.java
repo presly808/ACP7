@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
         String driverLicenseNumber = req.getParameter("driverLicenseNumber");
 
         PrintWriter printWriter = resp.getWriter();
-        req.getRequestDispatcher("WEB-INF/clientMenu.jsp").forward(req,resp);
+        req.getRequestDispatcher("WEB-INF/pages/clientMenu.jsp").forward(req,resp);
 
         //try{
         String accessToken = clientServ.login(email, pass, driverLicenseNumber);

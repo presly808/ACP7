@@ -15,20 +15,20 @@
         <param-value>servicestation</param-value>
     </context-param>
 
-     <!--<filter>
-         <filter-name>SessionFilter</filter-name>
-         <filter-class>filter.SessionFilter</filter-class>
-     </filter>&ndash;&gt;-->
-
-
-    <!--<filter-mapping>
+    <filter>
         <filter-name>SessionFilter</filter-name>
-        <url-pattern>/add-product</url-pattern>
-    </filter-mapping>-->
+        <filter-class>filter.SessionFilter</filter-class>
+    </filter>
+
+
+    <filter-mapping>
+        <filter-name>SessionFilter</filter-name>
+        <url-pattern>/clientMenu</url-pattern>
+    </filter-mapping>
 
     <listener>
          <listener-class>listener.SpringContextInitListener</listener-class>
-     </listener>-->
+     </listener>
 
 
 </web-app>

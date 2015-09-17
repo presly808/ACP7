@@ -108,7 +108,7 @@ public class ClientDaoJPAImpl implements ClientDao {
     public Client findByEmail(String email) throws NoClientFoundException {
 
         EntityManager manager = factory.createEntityManager();
-        javax.persistence.Query query = manager.createQuery("SELECT c FROM Client c  WHERE c.email = :email");
+        javax.persistence.Query query = manager.createQuery("SELECT u FROM Client u WHERE u.email = :email");
         List<Client> clients = query.setParameter("email", email).getResultList();
         if (clients == null || clients.size() == 0) {
             System.out.println("no client found");

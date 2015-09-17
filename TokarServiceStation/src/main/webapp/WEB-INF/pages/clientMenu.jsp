@@ -6,7 +6,15 @@
 
 </head>
 <body>
+<%@include file="import.jsp" %>
+
 <div class="clien menu">
+
+    <h1>Client</h1>
+    id : <c:out value="${client.id}"/><br>
+    email : <c:out value="${client.email}"/><br>
+    phone : <c:out value="${client.phone}"/><br>
+
     <ul>
         <li><a href="showServices.jsp">services</a></li>
         <li>store</li>
@@ -18,6 +26,9 @@
     </ul>
 
 </div>
+
+
+
 
 
 </body>
