@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Show services menu</title>
+        <title>Show services menu</title>
 
 </head>
 <body>
@@ -19,3 +20,4 @@
 
 </ul>
 </body>
+</html>

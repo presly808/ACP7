@@ -55,6 +55,11 @@ public class ClientServImpl implements ClientServ {
         Client client = new Client(firstName,secondName,phoneNumber,
                 email,driverLicenseNumber,pass);
 
+        String accessToken = StringUtils.generateRandomToken(ACCESS_TOKEN_LENGHT);
+
+
+        accessClientTokenMap.put(accessToken,client);
+
 
 
         return clientDaoJPA.create(client);
