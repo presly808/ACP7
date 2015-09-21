@@ -17,7 +17,8 @@ public class ClientDaoJDBC implements ClientDao {
     }
 
     @Override
-    public Client update(Client client) {
+    public Client update(String email,String pass, String driverLicenseNumber,
+                         String phoneNumber, long id) {
         return null;
     }
 

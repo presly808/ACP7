@@ -12,7 +12,7 @@
     <title>Register page</title>
 </head>
 <body>
-<div class="login form">
+<div class="register form">
 
     <form action="register" method="post">
         FirstName : <input name="firstName" type="text"><br>

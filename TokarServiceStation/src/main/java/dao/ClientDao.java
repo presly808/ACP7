@@ -12,7 +12,8 @@ public interface ClientDao {
 
     Client create(Client client);
 
-    Client update(Client client);
+    Client update(String email,String pass, String driverLicenseNumber,
+                  String phoneNumber, long id);
 
     List<Client> findAll();
 
