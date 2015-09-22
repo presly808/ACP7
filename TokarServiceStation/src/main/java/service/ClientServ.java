@@ -9,8 +9,8 @@ public interface ClientServ {
 
     String login (String email, String pass, String driverLicenseNumber);
 
-    Client update(String sessionToken, String firstName, String secondName,
-                String pass,String phoneNumber, String driverLicenseNumber);
+    Client update(String phoneNumber, String email,
+                  String driverLicenseNumber,String pass);
 
     boolean delete(String sessionToken);
 

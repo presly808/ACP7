@@ -12,7 +12,7 @@
 
     <context-param>
         <param-name>app-url</param-name>
-        <param-value>servicestation</param-value>
+        <param-value>tokarServiceStation</param-value>
     </context-param>
 
     <filter>

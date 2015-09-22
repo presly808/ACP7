@@ -45,7 +45,8 @@ public class ClientDaoJPAImpl implements ClientDao {
     }
 
     @Override
-    public Client update(Client client) {
+    public Client update(String email,String pass, String driverLicenseNumber,
+                         String phoneNumber, long id) {
         EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
 
@@ -53,16 +54,17 @@ public class ClientDaoJPAImpl implements ClientDao {
 
 
         try {
-            found = findById(client.getId());
+            found = findById(id);
             if (found == null) {
                 return null;
             }
 
-            found.setDriverLicenseNumber(client.getDriverLicenseNumber());
-            found.setEmail(client.getEmail());
-            found.setPhoneNumber(client.getPhoneNumber());
-            found.setFirstName(client.getFirstName());
-            found.setSecondtName(client.getSecondName());
+            found.setDriverLicenseNumber(driverLicenseNumber);
+            found.setEmail(email);
+            found.setPhoneNumber(phoneNumber);
+            /*found.setFirstName(client.getFirstName());
+            found.setSecondtName(client.getSecondName());*/
+            found.setPass(pass);
 
         } catch (NoClientFoundException e) {
             e.printStackTrace();

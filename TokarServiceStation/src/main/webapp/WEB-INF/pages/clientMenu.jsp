@@ -24,7 +24,17 @@
     email : <%= client.getEmail()%><br>
     phone : <%= client.getPhoneNumber()%><br>--%>
 
+    <div class="updater">
+
+            <a href="/${APP_NAME}/updater">Update</a>
+
+    </div>
+
+
     <ul>
+
+        <li>delete client</li><br>
+
         <li><a href="/WEB-INF/pages/showServices.jsp">services</a></li>
         <li>store</li>
         <li>recording on diagnostic</li>

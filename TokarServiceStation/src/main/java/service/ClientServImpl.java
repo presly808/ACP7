@@ -16,10 +16,6 @@ import validation.Validator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Created by root on 04.09.15.
- */
-
 @Component
 public class ClientServImpl implements ClientServ {
 
@@ -90,10 +86,33 @@ public class ClientServImpl implements ClientServ {
     }
 
     @Override
-    public Client update(String sessionToken, String firstName,
-                         String secondName, String pass, String phoneNumber,
-                         String driverLicenseNumber) {
-        return null;
+    public Client update(String phoneNumber, String email,
+                         String driverLicenseNumber,String pass) {
+        /*Client updateClient  = new Client(firstName,secondName,phoneNumber,
+                email,driverLicenseNumber,pass);*/
+
+/*
+
+        try {
+            clientDaoJPA.findByEmail(email);
+
+        } catch (NoClientFoundException e) {
+            e.printStackTrace();
+        }
+
+        */
+       String accessToken =login(email, pass, driverLicenseNumber);
+
+       Client client = accessClientTokenMap.get(accessToken);
+
+       long id = client.getId();
+
+
+
+        clientDaoJPA.update(email,pass,driverLicenseNumber,
+                phoneNumber,id);
+
+        return client;
     }
 
     @Override
