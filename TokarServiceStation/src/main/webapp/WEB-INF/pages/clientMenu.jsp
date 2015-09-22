@@ -13,7 +13,7 @@
     secondName : <c:out value="${client.secondName}"/><br>
     id : <c:out value="${client.id}"/><br>
     email : <c:out value="${client.email}"/><br>
-    phone : <c:out value="${client.phoneNumber}"/><br>
+    <%--phone : <c:out value="${client.phoneNumber}"/><br>--%>
 
 
 <%--
@@ -29,6 +29,13 @@
             <a href="/${APP_NAME}/updater">Update</a>
 
     </div>
+
+    <div class="deleter">
+
+        <a href="/${APP_NAME}/deleter">Delete</a>
+
+    </div>
+
 
 
     <ul>

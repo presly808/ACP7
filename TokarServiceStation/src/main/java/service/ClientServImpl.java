@@ -116,8 +116,15 @@ public class ClientServImpl implements ClientServ {
     }
 
     @Override
-    public boolean delete(String sessionToken) {
-        return false;
+    public boolean delete(String accessToken) {
+
+        Client client = accessClientTokenMap.get(accessToken);
+
+        clientDaoJPA.delete(client);
+        System.out.println("client deleted!!!");
+
+
+        return true;
     }
 
     @Override

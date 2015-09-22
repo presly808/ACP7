@@ -127,7 +127,7 @@ public class ClientDaoJPAImpl implements ClientDao {
         Client found = null;
 
         try {
-            found = findById(client.getId());
+            found = findByEmail(client.getEmail());
 
             if (found == null) {
                 return false;

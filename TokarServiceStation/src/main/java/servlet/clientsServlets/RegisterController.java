@@ -1,4 +1,4 @@
-package servlet;
+package servlet.clientsServlets;
 
 import model.Client;
 import org.apache.log4j.Logger;

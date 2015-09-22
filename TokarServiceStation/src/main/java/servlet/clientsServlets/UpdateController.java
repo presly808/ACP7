@@ -1,4 +1,4 @@
-package servlet;
+package servlet.clientsServlets;
 
 import model.Client;
 import org.apache.log4j.Logger;
@@ -33,32 +33,29 @@ public class UpdateController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-       /* String phoneNumber = req.getParameter("phoneNumber");*/
-        String email = req.getParameter("email");
+       /* String email = req.getParameter("email");
         String driverLicenseNumber = req.getParameter("driverLicenseNumber");
         String pass = req.getParameter("pass");
-
+*/
         // why do you need this code
         PrintWriter printWriter = resp.getWriter();
-        printWriter.flush();
+        //printWriter.flush();
 
 
-        String accessToken = clientServ.login(email, pass, driverLicenseNumber);
+        //String accessToken = clientServ.login(email, pass, driverLicenseNumber);
 
         String newphoneNumber = req.getParameter("phoneNumber");
         String newemail = req.getParameter("email");
         String newdriverLicenseNumber = req.getParameter("driverLicenseNumber");
         String newpass = req.getParameter("pass");
-
-
-        //try{
-        //String accessToken = clientServ.login(email, pass, driverLicenseNumber);
-        //Client client = clientServ.getClient(accessToken);
+        String accessToken = clientServ.login(newemail,newpass,
+                newdriverLicenseNumber);
 
         Client client = clientServ.update(newphoneNumber, newemail,
                 newdriverLicenseNumber, newpass);
         resp.addCookie(new Cookie("accessToken", accessToken));
         req.setAttribute("client", client);
+        System.out.println("update your information");
         LOGGER.info("update your information" + client.toString());
         req.getRequestDispatcher("/WEB-INF/pages/clientMenu.jsp").
                 forward(req, resp);
@@ -70,9 +67,7 @@ public class UpdateController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Get request in updater");
-
         // Can do any actions before forwarding
-
 
         req.getRequestDispatcher("/WEB-INF/pages/updater.jsp").forward(req,resp);
     }

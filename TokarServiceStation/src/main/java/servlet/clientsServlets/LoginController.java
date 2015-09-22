@@ -1,7 +1,6 @@
-package servlet;
+package servlet.clientsServlets;
 
 
-import exeption.WrongUserCredentionalException;
 import model.Client;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;

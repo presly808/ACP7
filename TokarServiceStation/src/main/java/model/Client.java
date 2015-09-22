@@ -50,6 +50,7 @@ public class Client extends IdEntity {
         return firstName;
     }
 
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -77,6 +78,7 @@ public class Client extends IdEntity {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     public String getDriverLicenseNumber() {
         return driverLicenseNumber;
