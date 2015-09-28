@@ -19,6 +19,7 @@
     Email : <input name="email" type="text"><br>
     Pass : <input name="pass" type="text"><br>
     DriverLicenseNumber : <input name="driverLicenseNumber" type="text"><br>
+    Id: <input name="id" type="number"><br>
     <input type="submit">
 
   </form>

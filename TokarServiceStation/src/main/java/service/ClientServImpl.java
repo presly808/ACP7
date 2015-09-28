@@ -116,12 +116,19 @@ public class ClientServImpl implements ClientServ {
     }
 
     @Override
-    public boolean delete(String accessToken) {
+    public boolean delete(String email, String pass,String driverLicenseNumber,long id) {
+
+
+        String accessToken =login(email, pass, driverLicenseNumber);
 
         Client client = accessClientTokenMap.get(accessToken);
 
+       // long id = client.getId();
+
+
+
         clientDaoJPA.delete(client);
-        System.out.println("client deleted!!!");
+        System.out.println("client deleted (info from clientServ)!!!");
 
 
         return true;
@@ -136,6 +143,14 @@ public class ClientServImpl implements ClientServ {
 
     @Override
     public Client getClient(long id) {
-        return null;
+        Client found = null;
+
+        try {
+            clientDaoJPA.findById(id);
+        } catch (NoClientFoundException e) {
+            e.printStackTrace();
+        }
+
+        return found;
     }
 }

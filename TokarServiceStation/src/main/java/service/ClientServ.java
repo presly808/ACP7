@@ -12,7 +12,7 @@ public interface ClientServ {
     Client update(String phoneNumber, String email,
                   String driverLicenseNumber,String pass);
 
-    boolean delete(String sessionToken);
+    boolean delete(String email, String pass,String driverLicenseNumber,long id);
 
 
     Client getClient (String accessToken);

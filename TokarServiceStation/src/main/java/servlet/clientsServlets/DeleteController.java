@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import service.ClientServ;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +24,7 @@ public class DeleteController extends HttpServlet {
             LoginController.class);
     private ClientServ clientServ;
     private LoginController loginController;
+    Client client;
 
 
     @Override
@@ -40,24 +42,44 @@ public class DeleteController extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter printWriter = resp.getWriter();
 
-        String phoneNumber = req.getParameter("phoneNumber");
+        String newId = req.getParameter("id");
+        long newIdd = Long.parseLong(newId);
+
+
+/*
+        long id = Long.parseLong(req.getParameter("id"));
+        System.out.println(id+"id");
+
+        String phoneNumber = req.getParameter("phoneNumber");*/
         String email = req.getParameter("email");
         String driverLicenseNumber = req.getParameter("driverLicenseNumber");
         String pass = req.getParameter("pass");
-        String accessToken = clientServ.login(email,pass,
+
+
+        String accessToken = clientServ.login(email, pass,
                 driverLicenseNumber);
-        printWriter.flush();
 
-        Client client = clientServ.getClient(accessToken);
-        req.setAttribute("client", client);
+       /* Client client = clientServ.getClient(accessToken);*/
 
-        clientServ.delete(accessToken);
+       //String access2 = clientServ.login(email,pass,driverLicenseNumber);
+
+       /* Client client = clientServ.getClient(newIdd);
+        System.out.println(clientServ.getClient(newIdd));
+
+        req.setAttribute("client", client);*/
+
+        clientServ.delete(email,pass,driverLicenseNumber,newIdd);
+        System.out.println("delete info from deleter servlet");
+        //printWriter.flush();
         req.getRequestDispatcher("/index.html").
                 forward(req, resp);
+        printWriter.flush();
+
+
+
 
 
     }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Get request in deleter");
