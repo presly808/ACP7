@@ -1,13 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: root
-  Date: 20.09.15
-  Time: 14:11
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@include file="import.jsp" %>
+<%@include file="../../stylesheet.css" %>
+<%@include file="../mainLogoImport.jsp"%>
 <head>
   <title>Delete Client from data base</title>
 </head>

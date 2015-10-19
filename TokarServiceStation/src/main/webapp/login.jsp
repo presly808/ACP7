@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<%@include file="WEB-INF/pages/import.jsp" %>
 <head>
     <meta charset="UTF-8">
     <title>Main Client Menu of TokarServrciceStation</title>
 
+
 </head>
 
 <body>
+<%@include file="WEB-INF/mainLogoImport.jsp"%>
+<link rel="stylesheet" href="stylesheet.css">
 
 <div class="login form">
 
@@ -30,3 +34,4 @@
 </div>
 
 </body>
+</html>
