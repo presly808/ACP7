@@ -124,34 +124,11 @@ public class ClientDaoJPAImpl implements ClientDao {
     public boolean delete(Client client) {
         EntityManager manager = factory.createEntityManager();
         EntityTransaction transaction = manager.getTransaction();
-       /* Client found = null;
-
-        try {
-            found = findByEmail(client.getEmail());
-
-            if (found == null) {
-                return false;
-            }
-
-
-        } catch (NoClientFoundException e) {
-            e.printStackTrace();
-        }*/
 
         try {
             transaction.begin();
             System.out.println("begin jpa");
-   /*         //Client found = findById(client.getId());
-            String emailTodelete = client.getEmail();
-            *//*
-            long id2 = client.getId();
-            System.out.println("find id" + id2);*//*
-            javax.persistence.Query query =
-                    manager.createQuery("DELETE  from Client c WHERE c.email = :emailTodelete");
-            query.executeUpdate();
 
-            //manager.remove(found);
-            //manager.clear();*/
 
             Client found = manager.find(Client.class, client.getId());
             manager.remove(found);

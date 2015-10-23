@@ -12,7 +12,8 @@ public interface ClientServ {
     Client update(String phoneNumber, String email,
                   String driverLicenseNumber,String pass);
 
-    boolean delete(String email, String pass,String driverLicenseNumber,long id);
+    boolean delete(String email, String pass,
+                   String driverLicenseNumber);
 
 
     Client getClient (String accessToken);

@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(urlPatterns = {"/login"})
-public class LoginController extends HttpServlet {
+public class LoginController extends HttpServlet{
 
     private static final Logger LOGGER = Logger.getLogger(LoginController.class);
     private ClientServ clientServ;
@@ -41,6 +41,16 @@ public class LoginController extends HttpServlet {
         String driverLicenseNumber = req.getParameter("driverLicenseNumber");
 
         PrintWriter printWriter = resp.getWriter();
+
+        req.getSession().setAttribute("email", email);
+        req.getSession().setAttribute("pass", pass);
+        req.getSession().setAttribute("driverLicenseNumber",
+                driverLicenseNumber);
+
+
+
+
+
 
 
         //try{

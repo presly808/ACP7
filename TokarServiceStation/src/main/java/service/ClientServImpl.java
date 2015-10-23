@@ -88,19 +88,7 @@ public class ClientServImpl implements ClientServ {
     @Override
     public Client update(String phoneNumber, String email,
                          String driverLicenseNumber,String pass) {
-        /*Client updateClient  = new Client(firstName,secondName,phoneNumber,
-                email,driverLicenseNumber,pass);*/
 
-/*
-
-        try {
-            clientDaoJPA.findByEmail(email);
-
-        } catch (NoClientFoundException e) {
-            e.printStackTrace();
-        }
-
-        */
        String accessToken =login(email, pass, driverLicenseNumber);
 
        Client client = accessClientTokenMap.get(accessToken);
@@ -116,14 +104,14 @@ public class ClientServImpl implements ClientServ {
     }
 
     @Override
-    public boolean delete(String email, String pass,String driverLicenseNumber,long id) {
+    public boolean delete(String email, String pass,
+                          String driverLicenseNumber) {
 
 
         String accessToken =login(email, pass, driverLicenseNumber);
 
         Client client = accessClientTokenMap.get(accessToken);
 
-       // long id = client.getId();
 
 
 

@@ -14,9 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * Created by root on 22.09.15.
- */
 @WebServlet(urlPatterns = {"/deleter"})
 public class DeleteController extends HttpServlet {
 
@@ -42,35 +39,28 @@ public class DeleteController extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter printWriter = resp.getWriter();
 
-        String newId = req.getParameter("id");
-        long newIdd = Long.parseLong(newId);
+       String pass = (String) req.getSession().getAttribute("pass");
+       String email = (String) req.getSession().getAttribute("email");
+       String driverLicenseNumber = (String) req.getSession().
+               getAttribute("driverLicenseNumber");
 
-
-/*
-        long id = Long.parseLong(req.getParameter("id"));
-        System.out.println(id+"id");
-
-        String phoneNumber = req.getParameter("phoneNumber");*/
-        String email = req.getParameter("email");
-        String driverLicenseNumber = req.getParameter("driverLicenseNumber");
-        String pass = req.getParameter("pass");
+       /*Client cl = (Client) req.getSession().getAttribute("client");
+       long newIdd =  cl.getId();*/
+        //String newId = req.getParameter("id");
+       // long newIdd = Long.parseLong(newId);
+        //String email = req.getParameter("email");
+        //String driverLicenseNumber = req.getParameter("driverLicenseNumber");
+        //String pass = req.getParameter("pass");
 
 
         String accessToken = clientServ.login(email, pass,
                 driverLicenseNumber);
 
-       /* Client client = clientServ.getClient(accessToken);*/
 
-       //String access2 = clientServ.login(email,pass,driverLicenseNumber);
+        clientServ.delete(email,pass,driverLicenseNumber);
 
-       /* Client client = clientServ.getClient(newIdd);
-        System.out.println(clientServ.getClient(newIdd));
-
-        req.setAttribute("client", client);*/
-
-        clientServ.delete(email,pass,driverLicenseNumber,newIdd);
         System.out.println("delete info from deleter servlet");
-        //printWriter.flush();
+
         req.getRequestDispatcher("/index.html").
                 forward(req, resp);
         printWriter.flush();
@@ -81,7 +71,9 @@ public class DeleteController extends HttpServlet {
 
     }
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
         System.out.println("Get request in deleter");
 
         req.getRequestDispatcher("/WEB-INF/pages/deleter.jsp").forward(req, resp);
